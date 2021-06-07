@@ -1,0 +1,61 @@
+---
+name: test-network-fer
+version: 1.0.0
+client:
+  organization: fer
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  fer:
+    mspid: ferMSP
+    peers:
+    - peer0.fer.unizg.hr
+    certificateAuthorities:
+    - ca.fer.unizg.hr
+peers:
+  peer0.fer.unizg.hr:
+    url: grpcs://localhost:7051
+    tlsCACerts:
+      pem: |
+          -----BEGIN CERTIFICATE-----
+          MIICBTCCAaugAwIBAgIUA7UiFaUFnp2Bze+r1A1rf0zJ9gowCgYIKoZIzj0EAwIw
+          XzELMAkGA1UEBhMCSFIxDzANBgNVBAgTBlphZ3JlYjEOMAwGA1UEBxMFVHJuamUx
+          FTATBgNVBAoTDGZlci51bml6Zy5ocjEYMBYGA1UEAxMPY2EuZmVyLnVuaXpnLmhy
+          MB4XDTIxMDUzMDE5MzcwMFoXDTM2MDUyNjE5MzcwMFowXzELMAkGA1UEBhMCSFIx
+          DzANBgNVBAgTBlphZ3JlYjEOMAwGA1UEBxMFVHJuamUxFTATBgNVBAoTDGZlci51
+          bml6Zy5ocjEYMBYGA1UEAxMPY2EuZmVyLnVuaXpnLmhyMFkwEwYHKoZIzj0CAQYI
+          KoZIzj0DAQcDQgAEKeRW1Ors28n32vldkzJSTyIVZ8JutyeXSfScO9fLve1fdQ9Z
+          h64++aKiNuBsaaZoyktw7aMlT5bN64xlbnHdzqNFMEMwDgYDVR0PAQH/BAQDAgEG
+          MBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFDk2QVIQO6sJZSGTRJ1iy7zN
+          q6rcMAoGCCqGSM49BAMCA0gAMEUCIQDBmM+gEDIvloJRM202E2SZHx9wmJT//p43
+          swaOoushzwIgBHQHM1+WSK7rlcs6eYEFCcFLU9ZZVZefB8WEpQJyItw=
+          -----END CERTIFICATE-----
+          
+    grpcOptions:
+      ssl-target-name-override: peer0.fer.unizg.hr
+      hostnameOverride: peer0.fer.unizg.hr
+certificateAuthorities:
+  ca.fer.unizg.hr:
+    url: https://localhost:7054
+    caName: ca-fer
+    tlsCACerts:
+      pem: 
+        - |
+          -----BEGIN CERTIFICATE-----
+          MIICBTCCAaugAwIBAgIUA7UiFaUFnp2Bze+r1A1rf0zJ9gowCgYIKoZIzj0EAwIw
+          XzELMAkGA1UEBhMCSFIxDzANBgNVBAgTBlphZ3JlYjEOMAwGA1UEBxMFVHJuamUx
+          FTATBgNVBAoTDGZlci51bml6Zy5ocjEYMBYGA1UEAxMPY2EuZmVyLnVuaXpnLmhy
+          MB4XDTIxMDUzMDE5MzcwMFoXDTM2MDUyNjE5MzcwMFowXzELMAkGA1UEBhMCSFIx
+          DzANBgNVBAgTBlphZ3JlYjEOMAwGA1UEBxMFVHJuamUxFTATBgNVBAoTDGZlci51
+          bml6Zy5ocjEYMBYGA1UEAxMPY2EuZmVyLnVuaXpnLmhyMFkwEwYHKoZIzj0CAQYI
+          KoZIzj0DAQcDQgAEKeRW1Ors28n32vldkzJSTyIVZ8JutyeXSfScO9fLve1fdQ9Z
+          h64++aKiNuBsaaZoyktw7aMlT5bN64xlbnHdzqNFMEMwDgYDVR0PAQH/BAQDAgEG
+          MBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFDk2QVIQO6sJZSGTRJ1iy7zN
+          q6rcMAoGCCqGSM49BAMCA0gAMEUCIQDBmM+gEDIvloJRM202E2SZHx9wmJT//p43
+          swaOoushzwIgBHQHM1+WSK7rlcs6eYEFCcFLU9ZZVZefB8WEpQJyItw=
+          -----END CERTIFICATE-----
+          
+    httpOptions:
+      verify: false

@@ -1,0 +1,3 @@
+cd network
+./start.sh
+
