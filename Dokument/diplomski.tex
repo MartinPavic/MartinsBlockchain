@@ -220,8 +220,9 @@ function balanceOf(address _owner) public view returns (uint256 balance)
 function transfer(address _to, uint256 _value) public returns (bool success)
 function transferFrom(address _from, address _to, uint256 _value) public returns (bool success)
 function approve(address _spender, uint256 _value) public returns ( bool success)
-function allowance(address _owner, address _spender) public viewr eturns (uint256 remaining)
-
+function allowance(address _owner, address _spender) public view returns (uint256 remaining)
+\end{lstlisting}
+\begin{lstlisting}
 event Transfer(address indexed _from, address indexed _to, uint256 _value)
 event Approval(address indexed _owner, address indexed _spender,  uint256 _value)
 \end{lstlisting}
@@ -232,31 +233,20 @@ Standard ERC-721 (Ethereum zahtjev za komentare 721, eng. \textit{Ethereum Reque
 Ako pametni ugovor implementira sljedeće metode i događaje, može se nazvati ERC-721 ugovorom o nezamjenjivom tokenu i nakon što se jednom primijeni, bit će odgovoran za praćenje stvorenih tokena na Ethereumu.
 
 \begin{lstlisting}
-function balanceOf(address _owner) external view returns (
-uint256);
-function ownerOf(uint256 _tokenId) external view returns (
-address);
-function safeTransferFrom(address _from, address _to, uint256
-_tokenId, bytes data) external payable;
-function safeTransferFrom(address _from, address _to, uint256
-_tokenId) external payable;
-function transferFrom(address _from, address _to, uint256
-_tokenId) external payable;
-function approve(address _approved, uint256 _tokenId) external
-payable;
-function setApprovalForAll(address _operator, bool _approved)
-external;
-function getApproved(uint256 _tokenId) external view returns (
-address);
-function isApprovedForAll(address _owner, address _operator)
-external view returns (bool);
-
-event Transfer(address indexed _from, address indexed _to,
-uint256 indexed _tokenId);
-event Approval(address indexed _owner, address indexed _approved
-, uint256 indexed _tokenId);
-event ApprovalForAll(address indexed _owner, address indexed
-_operator, bool _approved);
+function balanceOf(address _owner) external view returns (uint256);
+function ownerOf(uint256 _tokenId) external view returns (address);
+function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;
+function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;
+function transferFrom(address _from, address _to, uint256 _tokenId) external payable;
+function approve(address _approved, uint256 _tokenId) external payable;
+function setApprovalForAll(address _operator, bool _approved) external;
+function getApproved(uint256 _tokenId) external view returns (address);
+function isApprovedForAll(address _owner, address _operator) external view returns (bool);
+\end{lstlisting}
+\begin{lstlisting}
+event Transfer(address indexed _from, address indexed _to,  uint256 indexed _tokenId);
+event Approval(address indexed _owner, address indexed _approved,  uint256 indexed _tokenId);
+event ApprovalForAll(address indexed _owner, address indexed _operator, bool _approved);
 \end{lstlisting}
 
 \section{Corda, Quorum i Hyperledger Fabric}
@@ -570,18 +560,35 @@ Propusnost transakcija je brzina kojom su valjane transakcije postavljene na blo
 
 \subsubsection{Zaključak}
 
-Fabric, razvijen od strane Linux fundacije u sklopu multi-projekta otvorenog koda je radni okvir koji sam odluio koristiti za implementacijski dio ovoga rada. Analiza propusnosti transakcija odrađena je od strane Monrat et al. (2020) između Ethereum, Quorum, Corda i Hyperledger Fabric platforme. Možemo primjetiti da Fabric nadmašuje Quorum i Ethereum s velikom razlikom, ali samo nešto bolje od Corde. Fabric ima nisku latenciju obrade transakcija u usporedbi s ostalim blockchainima s ograničenim pravom pristupa. Stoga je ova platforma sposobna također pružiti i bolju propusnost transakcija. Njihova eksperimentalna opažanja otkrivaju da Hyperledger Fabric ima bolje rezultate od ostalih platformi zbog svog jednostavnog i uinkovitog modularnog pristupa konsenzusu.
+Fabric, razvijen od strane Linux fundacije u sklopu multi-projekta otvorenog koda je radni okvir koji sam odlučio koristiti za implementacijski dio ovoga rada. Analiza propusnosti transakcija odrađena je od strane \citep{9411380} između Ethereum, Quorum, Corda i Hyperledger Fabric platforme. Možemo primjetiti da Fabric nadmašuje Quorum i Ethereum s velikom razlikom, ali samo nešto bolje od Corde. Fabric ima nisku latenciju obrade transakcija u usporedbi s ostalim blockchainima s ograničenim pravom pristupa. Stoga je ova platforma sposobna također pružiti i bolju propusnost transakcija. Njihova eksperimentalna opažanja otkrivaju da Hyperledger Fabric ima bolje rezultate od ostalih platformi zbog svog jednostavnog i uinkovitog modularnog pristupa konsenzusu.
 
 \chapter{Implementacija}
 Implementacijski dio ovog rada odradio sam koristeći Hyperledger Fabric radni okvir.  Ovaj radni okvir omogućava da sustav koji želimo napraviti prilagodimo potrebi aplikacije vrlo detaljno. Od određivanja uloga korisnika sustava do same poslovne logike. U Fabricu svaki čvor je pokrenut kao Docker kontejner (eng. container). Docker je set "platforma kao servis" (eng. Platform as a Service, skr. PaaS) proizvoda koji koriste virtualizaciju na razini operativnog sustava kako bi dostavili softver u pakiranjima koji se zovu kontejneri (eng. container). Kontejneri su odvojeni jedni od drugih, ali skupa rade na istoj mreži. Datoteka koja služi za definiranje konfiguracije Docker-a je docker-compose.yaml. U ovoj datoteci definirani su kontejneri i mreža kojoj su pridruženi i njihove varijable okruženja. Pokreće se naredbom docker-compose kojoj se pridodaje putanja do docker-compose.yaml datoteke.
 Implementirao sam primjer dodjeljivanja hipotetskih bodova za menzu studentima i dodjeljivanje rektorovih nagrada u obliku virtualnih tokena. Bodovi za menzu predstavljeni su tokenom koji slijedi ERC-20 standard, što znači da je token "zamjenjiv" (eng. fungible), a tokenom koji slijedi ERC-721 standard predstavljene su rektorove nagrade, a takav token je "nezamjenjiv" (eng. non-fungible).
 
-%BIN FOLDER
+Direktorij u kojem se nalaze izvršne datoteke potrebne za pokretanje Fabric mreže je "bin" direktorij unutar "network" direktorija. U "bin" direktoriju nalaze se sljedeće datoteke:
 
-\section{Mreža}
-Mreža se sastoji od sveukupno tri organizacije. FER, FSB i ordering organizacija. Ordering organizacija je mogla biti i jedna od spomenute dvije, ali u ovom primjeru je odvojena. FER i FSB imaju svaka po jedan glavni čvor koji je zadužen za održavanje raspodijeljene glavne knjige, blockchaina i pametnih ugovora. Taj čvor se naziva peer.
+\begin{itemize}
+\item \textit{peer} - ova datoteka služi kao naredba preko komandne linije i dijeli se na više podnaredbi:
+	\begin{itemize}
+	\item \textit{peer node} - naredba omogućuje administratoru da pokrene peer čvor, resetira sve kanale kojima je peer član do genesis (nultog) bloka ili vrati kanal na zadani broj bloka.
+	\item \textit{peer channel} - naredba omogućuje administratorima 			izvođenje operacija povezanih s kanalom na peer-u, poput pridruživanja peer-a kanalu ili popisa kanala kojima je peer pridružen.
+	\item \textit{peer chaincode} - naredba omogućuje administratorima izvođenje operacija povezanih s lančanim kodom, poput instaliranja, instanciranja, pozivanja, pakiranja, postavljanja upita i nadogradnje lančanog koda.
+	\item \textit{peer lifecycle chaincode} - podnaredba omogućuje administratorima da koriste životni ciklus lančanog koda za pakiranje lančanog koda, njegovo instaliranje na peer-ove, odobravanje definicije lančanog koda za organizaciju i potom definiranje na kanalu. Lančani kôd spreman je za upotrebu nakon što je uspješno definiran na kanalu.
+	\end{itemize}
+	
+\item \textit{configtxgen} - naredba omogućuje korisnicima stvaranje i pregled artefakata povezanih s konfiguracijom kanala. Sadržaj generiranih artefakata diktira sadržaj datoteke configtx.yaml. Ta datoteka nalazi se u korijenskom "network" direktoriju i služi za definiranje konfiguracije kanala i politike u kanalu.
 
-Peer direktno komunicira s poslužiteljem autoriteta za certifikate.
+\item \textit{configtxlator} - naredba omogućuje korisnicima prevođenje između protobuf i JSON inačica struktura podataka i stvaranje ažuriranja konfiguracije. Naredba može pokrenuti REST poslužitelj da izloži svoje funkcije preko HTTP-a ili se može koristiti izravno kao alat naredbenog retka.
+
+\item \textit{fabric-ca-client} - naredba omogućuje upravljanje identitetima (uključujući upravljanje atributima) i certifikatima (uključujući obnavljanje i opoziv). 
+
+\item \textit{fabric-ca-server} - naredba omogućuje inicijalizaciju i pokretanje procesa poslužitelja koji može poslužiti jedno ili više tijela za izdavanje certifikata. Konfiguracija se nalazi u fabric-ca-server-config.yaml datoteci.
+
+\item \textit{orderer} - naredba omogućuje pokretanje orderer čvora. Konfiguracija za taj čvor nalazi se u orderer.yaml datoteci.
+
+\end{itemize}
+
 
 \begin{figure}[htb]
 \centering
@@ -590,25 +597,171 @@ Peer direktno komunicira s poslužiteljem autoriteta za certifikate.
 \label{fig:arhitektura}
 \end{figure}
 
-% TU ubacit neke grafice
-\subsection{Chaincode}
+\section{Mreža}
+Mreža se sastoji od sveukupno tri organizacije. FER, FSB i ordering organizacija. Ordering organizacija je mogla biti i jedna od spomenute dvije, ali u ovom primjeru je odvojena. FER i FSB imaju svaka po jedan glavni čvor koji je zadužen za održavanje raspodijeljene glavne knjige, blockchaina i pametnih ugovora. Taj čvor se naziva peer.  Ti peer-ovi, skupa s orderer čvorom, povezani su u jednom kanalu.  
 
-Životni ciklus chaincodea u Fabric mreži:
+\subsection{Servis članstva}
+Autoriteti za izdavanje certifikata izdaju identitete generiranjem javnog i privatnog ključa koji oblikuje par ključeva koji se može koristiti za dokazivanje identiteta. Budući da se privatni ključ nikada ne može javno dijeliti, potreban je mehanizam kako bi se omogućilo dokazivanje identiteta,  i tu dolazi "servis članstva" (eng. Membership Service Provider, skr. MSP). Na primjer, peer koristi svoj privatni ključ za digitalno potpisivanje, ili odobravanje,  transakcije. MSP na ordering usluzi sadrži javni ključ peer-a koji se tada koristi za provjeru da je potpis transakcije validan. Privatni ključ se koristi za proizvodnju potpisa na transakciji koju samo odgovarajući javni ključ, koji je dio MSP-a,  može otključati.  Dakle, MSP je mehanizam koji omogućuje da se identitetu može vjerovati i prepoznati od strane ostatka mreže bez otkrivanja privatnog ključa člana.
+
+Implementacija MSP-a je skup direktorija koje se dodaju konfiguraciji mreže i koristi se za definiranje organizacije iznutra (organizacije odlučuju tko su njeni administratori) i izvana (dopuštajući drugim organizacijama da potvrde da subjekti imaju ovlasti za činjenje onoga što pokušavaju učiniti). Autoriteti za izdavanje certifikata generiraju potvrde koje predstavljaju identitete,  MSP sadrži popis odobrenih identiteta.
+
+MSP se pojavljuje u dvije domene:
+\begin{itemize}
+\item Lokalna - definirani su za klijente i čvorove (peer i orderer). Svaki čvor mora imati lokalni MSP.
+\item Kanalska - definiraju administrativna prava i prava sudjelovanja na razini kanala.  Identificira tko ima vlasti na razini kanala.  Svaka organizacija koja sudjeluje u kanalu mora imati MSP definiran za to.  MSP sustava uključuje MSP svih organizacija koje sudjeluju u ordering servise.  Lokalni MSP-ovi su definirani samo na datotečnom sustavu čvora ili korisnika.  Kanalni MSP je također instanciran na datotečnom sustavu svakog čvora u kanalu i čuva se sinkroniziranim konsenzusnim protokolom.
+\end{itemize}
+
+Organizacija se također može podijeliti u više organizacijskih jedinica (eng. Organizational Unit, skr. OU), od kojih svaka ima određeni skup odgovornosti, koje se nazivaju i afilijacije.   Navođenje OU-a nije obavezno. Ako se OU ne koriste, svi identiteti koji su dio MSP-a - kako su identificirani u korijenskim i posredničkim CA direktorijima- smatrat će se članovima organizacije.
+
+Uz to, postoji posebna vrsta OU, koja se ponekad naziva OU čvora, a koja se može koristiti za dodjeljivanje uloge identitetu. Ove uloge OU čvora definirane su u datoteci "/msp/config.yaml" i sadrže popis organizacijskih jedinica čiji se članovi smatraju dijelom organizacije koju predstavlja ovaj MSP. To je osobito korisno kada želite ograničiti članove organizacije na one koji imaju identitet (potpisan od jednog od MSP-a određenih CA-a) s određenom ulogom OU čvora. Na primjer, s OU čvora možete provesti detaljniju politiku odobrenja koja zahtijeva da org1 ravnopravni korisnici odobre transakciju, a ne bilo koji član Org1.
+
+Da bi se koristile uloge OU čvora, mora biti omogućena značajka "klasifikacija identiteta" za mrežu. Kada se koristi struktura MSP-a koja se temelji na mapi, to se postiže omogućavanjem "Node OU" u datoteci config.yaml koja se nalazi u korijenu mape MSP:
+
+\begin{verbatim}
+NodeOUs:
+  Enable: true
+  ClientOUIdentifier:
+    Certificate: cacerts/localhost-7054-ca-fer.pem
+    OrganizationalUnitIdentifier: client
+  PeerOUIdentifier:
+    Certificate: cacerts/localhost-7054-ca-fer.pem
+    OrganizationalUnitIdentifier: peer
+  AdminOUIdentifier:
+    Certificate: cacerts/localhost-7054-ca-fer.pem
+    OrganizationalUnitIdentifier: admin
+  OrdererOUIdentifier:
+    Certificate: cacerts/localhost-7054-ca-fer.pem
+    OrganizationalUnitIdentifier: orderer
+
+\end{verbatim}
+
+U ovom primjeru nalaze se 4 moguće uloge:
+\begin{itemize}
+\item klijent (eng. client)
+\item peer
+\item administrator (eng. admin)
+\item orderer
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics{imgs/msp-folder.png}
+\caption{Struktura msp direktorija}
+\label{fig:msp}
+\end{figure}
+
+Struktura MSP direktorija prikazana na slici \ref{fig:msp}:
+
+\begin{itemize}
+\item config.yaml - Koristi se za konfiguriranje značajke klasifikacije identiteta u Fabricu omogućavanjem "Node OUs" i definiranjem prihvaćenih uloga.
+\item cacerts - Ovaj direktorij sadrži popis samopotpisanih X.509 certifikata korijenskih CA-a kojima vjeruje organizacija koju predstavlja ovaj MSP.
+\item signcerts - Za peer ili orderer (ili u lokalnom MSP-u klijenta) ovaj direktorij sadrži certifikat čvora koji je izdao CA.
+\item keystore - Ovaj direktorij sadrži privatni ključ.
+\item itd.
+\end{itemize}
+
+\subsection{Peer}
+Blockchain mreža se sastoji uglavnom od skupa peer-ova. Peer-ovi su temeljni element mreže jer su poslužitelji glavnih knjiga i pametnih ugovora. Podsjetimo da glavna knjiga nepromjenjivo bilježi sve transakcije generirane pametnim ugovorima (koji su u Fabric-u sadržani u chaincode-u). Pametni ugovori i glavne knjige koriste se za enkapsuliranje zajedničkih procesa i zajedničkih informacija u mreži.
+Peer poslužuje instance glavnih knjiga i instance chaincode-ova.
+Budući da je peer poslužitelj za glavne knjige i chaincode-ove,  aplikacije i administratori moraju komunicirati s peer-om ako žele pristupiti tim resursima. Zato se peer-ovi smatraju temljnim građevnim blokovima Fabric mreže. 
+
+
+\subsection{Glavna knjiga}
+U Fabricu, glavna knjiga se sastoji od dva različita, iako povezana, dijela - globalno stanje i blockchain. Svaki od njih predstavlja skup činjenica o skupu poslovnih objekata.
+
+Prvo, postoji globalno stanje - baza podataka koja ima trenutne vrijednosti skupa stanja glavne knjige. Globalno stanje olakšava programu za izravno pristup trenutnoj vrijednosti stanja,  bez da ga mora izračunavati preloskom kroz dnevnik stanja.  Stanja glavne knjigu su, prema zadanim postavkama izražene kao parovi ključ-vrijednost. Globalno stanje se može često mijenjati, jer se stanja mogu stvoriti, ažurirati i izbrisati.
+
+Drugo, tu je blockchain - dnevnik transakcija koji bilježi sve promjene koje su rezultirale trenutnim globalnim stanjem. Transakcije se prikupljaju unutar blokova koji se dodaju na blockchain - omogućujući pregled povijest promjena koje su rezultirale trenutnim globalnim stanjem. Blockchain struktura podataka je vrlo različita od globalnog stanja, jerjednom napisana, ne može se mijenjati.
+
+Globaln stanje fizički je implementirano kao baza podataka, kako bi se omogućilo jednostavno i učinkovito pohranjivanje i pronalaženje stanja glavne knjige. Stanja glavne knjige mogu imati jednostavne ili složene vrijednosti, a kako bi se to prilagodilo, implementacija baze podataka može se razlikovati,  što omogućuje učinkovitu implementaciju tih vrijednosti. Opcije za bazu podataka globalnog stanja trenutno uključuju LevelDB i CouchDB.
+
+U mom primjeru koristio sam CouchDB.  CouchDB je posebno prikladan izbor kada su stanja glavne knjige strukturirana kao JSON dokumenti jer CouchDB podržava bogate upite i ažuriranje bogatijih tipova podataka koji se često nalaze u poslovnim transakcijama.  Implementacijski,  CouchDB radi u odvojenom procesu operativnog sustava, ali postoji odnos 1:1 između peer-a i instance CouchDB baze podataka. Sve je to nevidljivo za pametni ugovor.
+
+Da ponovimo, Blockchain u Fabricu strukturiran je kao sekvencijalni dnevnik međusobno povezanih blokova, gdje svaki blok sadrži slijed transakcija, a svaka transakcija predstavlja upit ili ažuriranje globalnog stanja.  Blockchain je implementiran kao datoteka. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{imgs/Block.png}
+\caption{Blok}
+\label{fig:blok}
+\end{figure}
+
+Struktura bloka prikazana na slici \ref{fig:blok}:
+\begin{itemize}
+\item Zaglavlje - sastoji se od tri polja:
+	\begin{itemize}
+		\item Redni broj bloka - počinje od 0 (genesis blok) i povećava se za 1 sa svakim dodanim blokom u lanac.
+		\item Hash trenutnog bloka - hash svih transakcija koje trenutni blok sadrži.
+		\item Hash prethodnog bloka
+	\end{itemize}
+
+\item Podaci o transakcijama - ovaj dio sadrži popis transakcija poredanih redom. Zapisuje se kada je blok kreiran od orderer servisa.
+\item Metapodaci o bloku - ovaj dio sadrži certifikat i potpis tvorca bloka koji se koristi za provjeru bloka na mrežnim čvorovima.  Postavljač bloka dodaje pokazatelj vrijedi/ne vrijedi za svaku transakciju u "bitmap"-u koja se također nalazi u metapodacima bloka,  kao i hash kumulativnih ažuriranja stanja do i uključujući taj blok,  kako bi se otkrilo račvanje (eng. fork) stanja.  Ovaj dio nije ulaz u funkciju za izračunavanje hash-a bloka.
+\end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=0.5]{imgs/Transakcija.png}
+\caption{Transakcija}
+\label{fig:transakcija}
+\end{figure}
+
+Struktura transakcije prikazana na slici \ref{fig:transakcija}:
+\begin{itemize}
+\item Zaglavlje - bitni metapodaci o transakciji, na primjer, naziv odgovarajućeg chaincode-a i njegova verzija.
+\item Potpis - kriptografski potpis,  stvoren od strane klijentske aplikacije. Ovo se polje koristi za provjeru da detalji transakcije nisu kompromitirani, jer za njegovo generiranje potreban je privatni ključ aplikacije.
+\item Prijedlog - kodira ulazne parametre koje aplikacija šalje pametnom ugovoru koji kreira predloženo ažuriranje glavne knjige. Kada se izvrši pametni ugovor, ovaj prijedlog pruža skup ulaznih parametara koji, u kombinaciji s trenutnim globalnim stanjem, određuju novo globalno stanje.
+\item Odgovor - bilježi globalno stanje prije i poslije, kao skup za čitanje i upisivanje (eng. Read-Write set, skr. RW-set). To je rezultat pametnog ugovora i ako se transakcija uspješno potvrdi, primijenit će se na glavnu knjigu i ažurirati globalno stanje.
+\item Odobrenja - ovo je popis potpisanih odgovora na transakcije svake potrebne organizacije dovoljan da zadovolji politiku odobrenja. 
+\end{itemize}
+\subsection{Orderer servis}
+
+Hipereledger tkanina radi drugačije. Ima čvor pod nazivom naručitelja (to je također poznat kao "naručiv čvor") koji radi ovaj naručivanje transakcije, koji zajedno s drugim čvorovima naručitelja čini uslugu naručivanja. Budući da se dizajn tkanina oslanja na determinističke konsenzusne algoritme, bilo koji blok potvrđen od strane vršnjaka zasigurno će biti konačan i točan. Ledgers ne mogu vikati na način na koji rade u mnogim drugim distribuiranim i dopuštenim blockchain mrežama.
+
+Osim promicanja konačnosti, odvajanje potvrde izvođenja lančanog koda (koji se događa na vršnjacima) od naručivanja daje prednosti tkanine u performansama i skalabilnosti, uklanjanje uskih grla koje se mogu pojaviti kada izvršenje i naručivanje provode isti čvorovi.
+
+
+\subsection{Chaincode}
+Chaincode je program napisan u programskom jeziku Go,  Node.js ili Java koji implementira propisano sučelje.  Chaincode radi u zaštićenom Dockerovom kontejneru izoliranom od procesa odobravajućeg peer-a.  Chaincode inicijalizira stanje glavne knjige i upravlja njime putem transakcija koje prima od aplikacija.
+
+Chaincode obično obrađuje poslovnu logiku s kojom su se složili članovi mreže, pa se može smatrati „pametnim ugovorom”. Ažuriranja glavne knjige stvorena chaincode-om opsega su isključivo na taj chaincode i ne može im se izravno pristupiti drugim chaincode-om. Međutim, unutar iste mreže, s obzirom na odgovarajuće dopuštenje,  chaincode može pozvati drugi chaincode za pristup svom stanju.
+
+Životni ciklus chaincode-a u Fabric mreži zahtjeva da se ogranizacije slože u parametrima koji definiraju chaincode, kao što su ime, verzija i politiku odobravanja.  Članovi kanala dolaze do sporazuma kroz sljedeća četiri koraka, ali ne moraju sve organizacije napraviti svaki korak:
 
 \begin{enumerate}
-\item Pakiranje - 
+\item Pakiranje chaincode-a - ovaj korak može napraviti jedna,  više ili sve organizacije u kanalu.  Naredba koja se koristi za ovaj korak je: 
+\textit{peer lifecycle chaincode package}
 
-\item
+\item Instaliranje chaincode-a na peer - svaka organizacija koja će koristiti chaincode kako bi odobrila transakciju ili zatražila podatke s glavne knjige mora izvršiti ovaj korak.  Naredba:
+\textit{peer lifecycle chaincode install}
 
-\item
+\item Odobrenje definicije chaincode-a za organizaciju - svaka organizacija koja će koristiti chaincode mora izvršiti ovaj korak.  Definiciju chaincode-a mora odobriti dovoljan broj organizacija kako bi se zadovoljile politike životnog vijeka kanala (većina,  prema zadanim postavkama) prije nego što se chaincode može pokrenuti na kanalu.  Naredba:
+\textit{peer lifecycle chaincode approveformyorg}
+
+\item  Postavljanje definicije chaincode-a na kanal - transakciju postavljanja mora predati jedna organizacija nakon što je potreban broj organizacija na kanalu odobrilo chaincode. Podnositelj zahtjeva prvo prikuplja odobrenja od dovoljnog broja organizacija,  a zatim predaje transakciju kako bi postavio definiciju chaincode-a na kanal. Naredba:
+\textit{peer lifecycle chaincode commit}
 \end{enumerate}
 
+\subsection{Kanal}
+
+Kanal je primarni komunikacijski mehanizam kojim članovi konzorcija mogu međusobno komunicirati. U mreži mogu biti više kanala. Kanali su korisni jer pružaju mehanizam za privatne komunikacije i privatne podatke između članova konzorcija. Kanali pružaju privatnost iz drugih kanala, a od mreže. Hipereledger tkanina je moćna u tom pogledu, jer organizacijama omogućuje dijeljenje infrastrukture i da ga u isto vrijeme čuvaju. Ovdje nema kontradikcije - različite konzorcije unutar mreže imat će potrebu za različitim informacijama i procesima da se na odgovarajući način dijele, a kanali pružaju učinkovit mehanizam za to. Kanali pružaju učinkovito dijeljenje infrastrukture uz zadržavanje privatnosti podataka i komunikacije.
+
 \section{Klijent}
+
+Klijentska aplikacija se sastoji od dva dijela,"prednji" (eng. frontend) i "stražnji" (eng. backend). Ovakva struktura je standardna u aplikacijama koje koriste Hyperledger Fabric mrežu.  Omogućava odvajanje direktne komunikacije između aplikacije i mreže te aplikacije i klijenta. Prednost tome je jednostavnije korištenje i programiranje aplikacije. 
 %O KLIJENTSKOJ APLIKACIJI
 \subsection{Frontend}
+
+"Prednji" dio aplikacije ili popularno nazvano \textit{Frontend},  programirao sam koristeći radni okvir Angular.  Angular je radni okvir otvorenog koda i napisan je u programskom jeziku TypeScript od strane Angular tima u Google-u. Ovaj radni okvir,  koji se koristi za izradu web aplikacija, uz korištenje Angular Material biblioteke čini programiranje frontenda relativno jednostavnim. Zbog toga razloga sam se odlučio za taj radni okvir, a i zbog prijašnjeg iskustva.  
 % ANGULAR
 \subsection{Backend}
-% ZAPRAVO KLIJENT, NODEJS
+
+"Stražnji" dio aplikacije ili \textit{Backend}, programirao sam koristeći TypeScript programski jezik i Node.js runtime okruženje.  Ovaj dio aplikacije izveden je uz REST načela. %citat rest
+
+U "običnim" web aplikacijama, ovaj dio bi komunicirao s "običnom" bazom podataka, na primjer MySQL, PostgreSQL i slično. U ovom primjeru komunicira s Fabric blockchain mrežom, koja zapravo služi kao baza podataka, raspodijeljena baza podataka do koje pristup imaju, i svi podaci su jednaki, sve organizacije koje su članovi te mreže ili kanala unutar te mreže. 
+
+
+% ZAPRAVO KLIJENT, NODEJS, REST; HTTP
 
 \chapter{Zaključak}
 Blockchain je tehnologija koja sasvim sigurno ostavlja veliki utjecaj u četvrtoj industrijskoj revoluciji. Predstavlja novi način na koji razmišljamo o djeljenju podataka. Donosi rješenja za probleme koje se dugo vremena nije moglo riješiti. To se naročito svidjelo poslovnom svijetu. Stoga su nastale razne implementacije te tehnologije koje se natječu u rješavanju poslovnih problema, a u ovom radu smo spomenuli Quorum, Corda i Hyperledger Fabric. Hyperledger Fabric je radni okvir za implementaciju blockchaina s ograničenim pravom pristupa koji sam koristio za implementacijski dio rada. Fabric je najmodularniji i pokazuje najbolje performanse od svih prethodno spomenutih izvedbi blockchaina s ograničenim pravom pristupa.
