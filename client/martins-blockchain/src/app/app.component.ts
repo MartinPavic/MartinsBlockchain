@@ -9,10 +9,11 @@ import { ApiService } from './services/api.service';
 })
 export class AppComponent {
   title = 'martins-blockchain';
-  organization$: Observable<Organization>
+  organization: Organization
 
   constructor(public apiService: ApiService) {
-    this.organization$ = this.apiService.getCurrentOrganization();
+    this.apiService.getCurrentOrganization();
+    this.apiService.organization$.subscribe(res => this.organization = res);
   }
 
 }

@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() organization$: Observable<Organization>;
+  @Input() organization: Organization;
 
   constructor() {}
 

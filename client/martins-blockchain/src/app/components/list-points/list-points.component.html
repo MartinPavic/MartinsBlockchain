@@ -1,14 +1,5 @@
 <mat-list>
   <mat-option *ngFor="let user of users">
-    <mat-card class="list-card">
-      <span>{{ user.id }}</span>
-      <span>{{ user.balance }}</span>
-      <mat-card-actions class="card-actions">
-        <mat-form-field appearance="outline">
-          <input matInput [(ngModel)]="numOfPoints" type="number">
-        </mat-form-field>
-        <button style="height: 43px;" mat-stroked-button [disabled]="!numOfPoints" (click)="assignToUser(user)">Add</button>
-      </mat-card-actions>
-    </mat-card>
+    <app-user-card [user]="user" (assignPoints)="assignToUser($event)"></app-user-card>
   </mat-option>
 </mat-list>

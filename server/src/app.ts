@@ -6,6 +6,7 @@ import { Wallets } from "fabric-network";
 import * as path from "path";
 import * as fs from 'fs';
 import { Response } from "response";
+import { getConfig } from "./config";
 
 const app = express();
 app.use(morgan("combined"));
@@ -22,9 +23,10 @@ app.route("/points")
   .post(async (req, res) => {
     const response = await network.MintPoints(req.body.numOfPoints);
     response.success
-      ? res.status(200).json(req.body)
+      ? res.status(200).json(req.body.numOfPoints)
       : res.status(400).send(response.error.message);
   });
+
 app.route("/points/:userId")
   .put(async (req, res) => {
     const walletPath = path.join(process.cwd(), "wallet");
@@ -36,12 +38,19 @@ app.route("/points/:userId")
 
 app.route("/organization").get(async (req, res) => {
   const organization: Response = await network.GetUserID();
-  console.log(organization.data)
   const balance: Response = await network.GetCurrentOrgBalance();
+  if (!balance.success) {
+    const config = getConfig(); 
+    res.json({
+      id: config.organization + 'unizg.hr',
+      name: config.organization,
+      balance: 0
+    })
+  }
   res.json({
     id: extractOrganizationId(organization.data),
     name: extractOrganizationName(organization.data),
-    balance: balance.data[0],
+    balance: balance.data,
   });
 });
 
@@ -85,14 +94,24 @@ app.route("/users/:id")
 app.route("/awards")
   .post(async (req, res) => {
     const response = await network.MintAward(req.body.id)
-    const token = response.data;
-    const tokenPath = path.join(process.cwd(), "nfts", `${token.id}.json`);
-    fs.writeFileSync(tokenPath, JSON.stringify(token));
-    response.success ? res.status(200).send(token) : res.status(400).send(response.error.message)
+    if (response.success) {
+      const token = JSON.parse(response.data);
+      const tokenPath = path.join(process.cwd(), "nfts", `${token.tokenId}.json`);
+      fs.writeFileSync(tokenPath, JSON.stringify(token));
+      res.status(200).send(token);
+    } else {
+      res.status(400).send(response.error.message)
+    }
   })
   .get(async (req, res) => {
-    const response = await network.GetAwardsSupply()
-    response.success ? res.status(200).send(response.data[0]) : res.status(400).send(response.error.message)
+    try {
+      const tokensPath = path.join(process.cwd(), "nfts");
+      const tokensFiles = fs.readdirSync(tokensPath);
+      const tokens = tokensFiles.map(file => JSON.parse(fs.readFileSync(tokensPath + `/${file}`, 'utf-8')));
+      res.status(200).json(tokens);
+    } catch {
+      res.status(404).send("Not found")
+    }
   })
 
 app.route("/awards/:studentId")

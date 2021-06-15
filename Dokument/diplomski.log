@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.5)  9 JUN 2021 16:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.5)  14 JUN 2021 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -300,21 +300,21 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 (./diplomski.aux)
 \openout1 = `diplomski.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 38
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 39
 .
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -379,7 +379,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count283
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 49
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 50
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -406,12 +406,12 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
                Found on input line 46.
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
 
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 49.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -419,7 +419,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 52
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 53
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
@@ -431,12 +431,18 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 \tf@toc=\write3
 \openout3 = `diplomski.toc'.
 
- [5]
+ [5] (./diplomski.lof)
+\tf@lof=\write4
+\openout4 = `diplomski.lof'.
+
+ [6
+
+]
 Poglavlje 1.
-<imgs/Blockchain.png, id=24, 563.10374pt x 221.82875pt>
+<imgs/Blockchain.png, id=28, 563.10374pt x 221.82875pt>
 File: imgs/Blockchain.png Graphic file (type png)
 <use imgs/Blockchain.png>
-Package pdftex.def Info: imgs/Blockchain.png  used on input line 79.
+Package pdftex.def Info: imgs/Blockchain.png  used on input line 82.
 (pdftex.def)             Requested size: 341.43306pt x 134.50296pt.
 [1
 
@@ -445,145 +451,151 @@ Poglavlje 2.
 [4
 
 ] [5]
-<imgs/PoW.png, id=44, 522.95375pt x 683.55376pt>
+<imgs/PoW.png, id=47, 522.95375pt x 683.55376pt>
 File: imgs/PoW.png Graphic file (type png)
 <use imgs/PoW.png>
-Package pdftex.def Info: imgs/PoW.png  used on input line 104.
+Package pdftex.def Info: imgs/PoW.png  used on input line 113.
 (pdftex.def)             Requested size: 341.43306pt x 446.29684pt.
  [6 <./imgs/PoW.png>]
-<imgs/PoS.png, id=49, 894.34125pt x 282.05376pt>
+<imgs/PoS.png, id=52, 894.34125pt x 282.05376pt>
 File: imgs/PoS.png Graphic file (type png)
 <use imgs/PoS.png>
-Package pdftex.def Info: imgs/PoS.png  used on input line 113.
+Package pdftex.def Info: imgs/PoS.png  used on input line 122.
 (pdftex.def)             Requested size: 341.43306pt x 107.68077pt.
  [7 <./imgs/PoS.png>]
-<imgs/Raft.png, id=54, 772.8875pt x 252.945pt>
+<imgs/Raft.png, id=58, 772.8875pt x 252.945pt>
 File: imgs/Raft.png Graphic file (type png)
 <use imgs/Raft.png>
-Package pdftex.def Info: imgs/Raft.png  used on input line 131.
+Package pdftex.def Info: imgs/Raft.png  used on input line 140.
 (pdftex.def)             Requested size: 341.43306pt x 111.73999pt.
  [8 <./imgs/Raft.png>]
 [9] [10] [11] [12]
 
-Package natbib Warning: Citation `Corda' on page 13 undefined on input line 256
+Package natbib Warning: Citation `Corda' on page 13 undefined on input line 265
 .
 
 [13] [14]
-Overfull \hbox (0.5886pt too wide) in paragraph at lines 300--301
+Overfull \hbox (0.5886pt too wide) in paragraph at lines 309--310
 []\T1/ptm/m/n/12 Ograni£eno su-dje-lo-va-nje - stav-lja res-trik-ciju na su-dje
 -lo-va-nje u bloc-k-c-hain mreºi
  []
 
 [15] [16] [17]
-Overfull \hbox (10.0332pt too wide) in paragraph at lines 365--366
-\T1/ptm/m/n/12 gu¢e samo do-da-vati blo-kove i kao snap-shot po-s-ljed-njeg sta
--nja u "klju£-vrijednost"
- []
+
+LaTeX Warning: Reference `sec:raft' on page 18 undefined on input line 386.
 
 [18]
-<imgs/Kafka.png, id=93, 406.51875pt x 388.45125pt>
+<imgs/Kafka.png, id=96, 406.51875pt x 388.45125pt>
 File: imgs/Kafka.png Graphic file (type png)
 <use imgs/Kafka.png>
-Package pdftex.def Info: imgs/Kafka.png  used on input line 381.
+Package pdftex.def Info: imgs/Kafka.png  used on input line 390.
 (pdftex.def)             Requested size: 341.43306pt x 326.26718pt.
  [19 <./imgs/Kafka.png>]
-<imgs/IBFT.png, id=98, 693.59125pt x 392.46625pt>
+<imgs/IBFT.png, id=102, 693.59125pt x 392.46625pt>
 File: imgs/IBFT.png Graphic file (type png)
 <use imgs/IBFT.png>
-Package pdftex.def Info: imgs/IBFT.png  used on input line 390.
+Package pdftex.def Info: imgs/IBFT.png  used on input line 399.
 (pdftex.def)             Requested size: 341.43306pt x 193.20242pt.
-<imgs/Validity consensus.png, id=99, 763.85374pt x 208.78pt>
+<imgs/Validity consensus.png, id=103, 763.85374pt x 208.78pt>
 File: imgs/Validity consensus.png Graphic file (type png)
 <use imgs/Validity consensus.png>
-Package pdftex.def Info: imgs/Validity consensus.png  used on input line 399.
+Package pdftex.def Info: imgs/Validity consensus.png  used on input line 408.
 (pdftex.def)             Requested size: 341.43306pt x 93.32253pt.
  [20 <./imgs/IBFT.png>]
-<imgs/Uniqueness consensus.png, id=105, 432.61626pt x 332.24126pt>
+<imgs/Uniqueness consensus.png, id=108, 432.61626pt x 332.24126pt>
 File: imgs/Uniqueness consensus.png Graphic file (type png)
 <use imgs/Uniqueness consensus.png>
-Package pdftex.def Info: imgs/Uniqueness consensus.png  used on input line 408.
+Package pdftex.def Info: imgs/Uniqueness consensus.png  used on input line 417.
 
 (pdftex.def)             Requested size: 341.43306pt x 262.22437pt.
-
-
-Package natbib Warning: Citation `smartcontract' on page 21 undefined on input 
-line 416.
-
-[21 <./imgs/Validity consensus.png> <./imgs/Uniqueness consensus.png>]
+ [21 <./imgs/Validity consensus.png> <./imgs/Uniqueness consensus.png>]
 
 Package natbib Warning: Citation `johnson2001elliptic' on page 22 undefined on 
-input line 423.
+input line 432.
 
 [22] [23]
 
 Package natbib Warning: Citation `lagarde2019security' on page 24 undefined on 
-input line 458.
+input line 467.
 
 [24]
-<imgs/Tx Flow.png, id=120, 1044.90375pt x 302.12875pt>
+<imgs/Tx Flow.png, id=123, 1044.90375pt x 302.12875pt>
 File: imgs/Tx Flow.png Graphic file (type png)
 <use imgs/Tx Flow.png>
-Package pdftex.def Info: imgs/Tx Flow.png  used on input line 494.
+Package pdftex.def Info: imgs/Tx Flow.png  used on input line 503.
 (pdftex.def)             Requested size: 426.78703pt x 170.71689pt.
 
-Overfull \hbox (14.22206pt too wide) in paragraph at lines 494--495
+Overfull \hbox (14.22206pt too wide) in paragraph at lines 503--504
  [][] 
  []
 
-[25 <./imgs/Tx Flow.png>] [26]
-<imgs/monra10-CSDE92-large.png, id=129, 823.075pt x 531.9875pt>
+[25 <./imgs/Tx Flow.png>]
+<imgs/Corda flow.png, id=129, 1086.0575pt x 243.91125pt>
+File: imgs/Corda flow.png Graphic file (type png)
+<use imgs/Corda flow.png>
+Package pdftex.def Info: imgs/Corda flow.png  used on input line 538.
+(pdftex.def)             Requested size: 426.79134pt x 95.85074pt.
+
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 538--539
+ [][] 
+ []
+
+[26 <./imgs/Corda flow.png>]
+<imgs/monra10-CSDE92-large.png, id=134, 823.075pt x 531.9875pt>
 File: imgs/monra10-CSDE92-large.png Graphic file (type png)
 <use imgs/monra10-CSDE92-large.png>
-Package pdftex.def Info: imgs/monra10-CSDE92-large.png  used on input line 556.
+Package pdftex.def Info: imgs/monra10-CSDE92-large.png  used on input line 572.
 
-(pdftex.def)             Requested size: 341.43306pt x 220.6814pt.
+(pdftex.def)             Requested size: 369.89052pt x 199.162pt.
  [27 <./imgs/monra10-CSDE92-large.png>] [28]
 Poglavlje 3.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
-74.
+90.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [29
 
 ]
-Overfull \hbox (8.96426pt too wide) in paragraph at lines 584--585
+Overfull \hbox (8.96426pt too wide) in paragraph at lines 600--601
 []\T1/ptm/m/it/12 fabric-ca-client \T1/ptm/m/n/12 - na-redba omo-gu-¢uje uprav-
 lja-nje iden-ti-te-tima (uklju-£u-ju¢i uprav-
  []
 
-<imgs/Arhitektura.png, id=140, 975.645pt x 463.7325pt>
+<imgs/Arhitektura.png, id=145, 975.645pt x 463.7325pt>
 File: imgs/Arhitektura.png Graphic file (type png)
 <use imgs/Arhitektura.png>
-Package pdftex.def Info: imgs/Arhitektura.png  used on input line 595.
-(pdftex.def)             Requested size: 341.43306pt x 162.28757pt.
-[30 <./imgs/Arhitektura.png>] [31] [32]
-<imgs/msp-folder.png, id=152, 228.855pt x 180.675pt>
+Package pdftex.def Info: imgs/Arhitektura.png  used on input line 611.
+(pdftex.def)             Requested size: 321.96385pt x 153.03218pt.
+[30 <./imgs/Arhitektura.png>] [31]
+<imgs/msp-folder.png, id=154, 226.8475pt x 204.765pt>
 File: imgs/msp-folder.png Graphic file (type png)
 <use imgs/msp-folder.png>
-Package pdftex.def Info: imgs/msp-folder.png  used on input line 648.
-(pdftex.def)             Requested size: 228.85443pt x 180.67455pt.
- [33 <./imgs/msp-folder.png>]
-<imgs/Block.png, id=157, 332.24126pt x 256.96pt>
+Package pdftex.def Info: imgs/msp-folder.png  used on input line 662.
+(pdftex.def)             Requested size: 226.84694pt x 204.76448pt.
+ [32] [33 <./imgs/msp-folder.png>]
+
+Package natbib Warning: Citation `DBLP:journals/corr/abs-2004-07060' on page 34
+ undefined on input line 696.
+
+[34] [35]
+<imgs/Block.png, id=168, 332.24126pt x 256.96pt>
 File: imgs/Block.png Graphic file (type png)
 <use imgs/Block.png>
-Package pdftex.def Info: imgs/Block.png  used on input line 684.
+Package pdftex.def Info: imgs/Block.png  used on input line 713.
 (pdftex.def)             Requested size: 166.12021pt x 128.47968pt.
- [34]
-<imgs/Transakcija.png, id=161, 161.60374pt x 292.09125pt>
+<imgs/Transakcija.png, id=169, 161.60374pt x 292.09125pt>
 File: imgs/Transakcija.png Graphic file (type png)
 <use imgs/Transakcija.png>
-Package pdftex.def Info: imgs/Transakcija.png  used on input line 704.
+Package pdftex.def Info: imgs/Transakcija.png  used on input line 733.
 (pdftex.def)             Requested size: 80.80167pt x 146.04526pt.
+ [36 <./imgs/Block.png>] [37 <./imgs/Transakcija.png>] [38]
 
-[35 <./imgs/Block.png> <./imgs/Transakcija.png>]
-Overfull \hbox (0.49521pt too wide) in paragraph at lines 727--728
-\T1/ptm/m/n/12 se moºe sma-trati ^^Rpa-met-nim ugo-vo-rom^^Q. Aºu-ri-ra-nja gla
-vne knjige stvo-rena chaincode-
- []
+Package natbib Warning: Citation `BATTLE200861' on page 39 undefined on input l
+ine 794.
 
-[36] [37] [38]
+[39] [40]
 Poglavlje 4.
-(./diplomski.bbl [39
+(./diplomski.bbl [41
 
 ]
 Underfull \hbox (badness 3118) in paragraph at lines 19--23
@@ -597,36 +609,42 @@ Underfull \hbox (badness 2245) in paragraph at lines 19--23
 / pub / tex / doc / amsmath /
  []
 
-) [40
+) [42
 
 ]
 
 Package natbib Warning: There were undefined citations.
 
-[41] (./diplomski.aux) ) 
+[43] (./diplomski.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 8387 strings out of 480608
- 115971 string characters out of 5903631
- 440239 words of memory out of 5000000
- 24129 multiletter control sequences out of 15000+600000
- 595236 words of font info for 98 fonts, out of 8000000 for 9000
+ 8403 strings out of 480608
+ 116212 string characters out of 5903631
+ 440251 words of memory out of 5000000
+ 24140 multiletter control sequences out of 15000+600000
+ 598084 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,7n,46p,2242b,1350s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb>
-</usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/lo
-cal/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/tex
-live/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2020/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/u
-rw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/u
-tmri8a.pfb>
-Output written on diplomski.pdf (46 pages, 478045 bytes).
+ 49i,7n,46p,2010b,1350s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2020/texmf-dist/f
+onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utm
+r8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
+usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on diplomski.pdf (49 pages, 500922 bytes).
 PDF statistics:
- 224 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 236 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

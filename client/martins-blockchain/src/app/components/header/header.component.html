@@ -2,8 +2,8 @@
   <mat-toolbar style="display: flex; justify-content: space-between;">
     <span>Martin's blockchain</span>
     <span style="display: flex; align-items: center;">Organization:
-      <ng-container *ngIf="organization$ | async as org; else loading">
-        {{ org.name }}
+      <ng-container *ngIf="organization; else loading">
+        {{ organization.name }}
       </ng-container>
       <ng-template #loading>
         <mat-spinner style="margin-left: 20px;" diameter="20"></mat-spinner>

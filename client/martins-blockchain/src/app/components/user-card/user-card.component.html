@@ -1,0 +1,10 @@
+<mat-card class="list-card">
+  <span>{{ user.id }}</span>
+  <span>{{ user.balance }}</span>
+  <mat-card-actions class="card-actions">
+    <mat-form-field appearance="outline">
+      <input matInput [(ngModel)]="numOfPoints" type="number">
+    </mat-form-field>
+    <button style="height: 43px;" mat-stroked-button [disabled]="!numOfPoints" (click)="assignToUser()">Add</button>
+  </mat-card-actions>
+</mat-card>

@@ -3,8 +3,8 @@
     <mat-card class="card-header">
       <h2 style="margin-bottom: 0; display: flex;">
         Total supply:
-        <ng-container *ngIf="totalSupply$ | async as ts; else loading">
-          {{ ts }}
+        <ng-container *ngIf="totalSupply; else loading">
+          {{ totalSupply }}
         </ng-container>
         <ng-template #loading>
           <mat-spinner style="margin-left: 20px" diameter="20"></mat-spinner>
@@ -12,8 +12,8 @@
       </h2>
       <h2 style="display: flex;">
         Organization's balance:
-        <ng-container *ngIf="organization$ | async as org; else loadingtwo">
-          {{ org.balance }}
+        <ng-container *ngIf="organization; else loadingtwo">
+          {{ organization.balance }}
         </ng-container>
         <ng-template #loadingtwo>
           <mat-spinner style="margin-left: 20px" diameter="20"></mat-spinner>
@@ -47,15 +47,18 @@
     <h1 style="margin-top: 1rem;">Rector award</h1>
     <button mat-stroked-button (click)="createAward()">Create award</button>
     <mat-card style="margin-top: 1rem;" *ngIf="award">
-     <mat-card-header>
-       <mat-card-title>
-        {{ award.id }}
-       </mat-card-title>
-     </mat-card-header> 
-     <mat-card-content>
-       {{ award.holder }}
-     </mat-card-content>
-      <!-- add user to award -->
+      <mat-card-header>
+        <mat-card-title>
+          {{ award.id }}
+        </mat-card-title>
+      </mat-card-header> 
+      <mat-card-content>
+        {{ award.holder }}
+      </mat-card-content>
+    
+    <button mat-stroked-button (click)="assignAwardToStudent(award)">
+      Assign award to student
+    </button>
     </mat-card>
     <!-- <mat-spinner></mat-spinner> -->
   </div>

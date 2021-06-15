@@ -1,2 +1,0 @@
-Committed chaincode definition for chaincode 'erc721' on channel 'mychannel':
-Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Approvals: [ferMSP: true, fsbMSP: true]

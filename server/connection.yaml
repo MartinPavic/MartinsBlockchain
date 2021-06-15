@@ -28,7 +28,7 @@ organizations:
     certificateAuthorities:
       - ca.fer.unizg.hr
     adminPrivateKey:
-      path: ../network/organizations/peerOrganizations/fer.unizg.hr/users/Admin@fer.unizg.hr/msp/keystore/2dbd44db637636d70b0e134cb7b3b29bdd96c0abe5f630d5c70cfd6e5c1bdc60_sk
+      path: ../network/organizations/peerOrganizations/fer.unizg.hr/users/Admin@fer.unizg.hr/msp/keystore/0321638943bbf8a9667109a310936bc6261b335286a2b48141678b41475aca92_sk
     signedCert:
       path: ../network/organizations/peerOrganizations/fer.unizg.hr/users/Admin@fer.unizg.hr/msp/signcerts/Admin@fer.unizg.hr-cert.pem
   
@@ -39,7 +39,7 @@ organizations:
     certificateAuthorities:
       - ca.fsb.unizg.hr
     adminPrivateKey:
-      path: ../network/organizations/peerOrganizations/fsb.unizg.hr/users/Admin@fsb.unizg.hr/msp/keystore/7ef5b5d95fdbd9f62fe3d85af3f024ffcfa44b9958d4b30b15044db88eb8f486_sk
+      path: ../network/organizations/peerOrganizations/fsb.unizg.hr/users/Admin@fsb.unizg.hr/msp/keystore/9b3db453690916f69fae36eaa0821c6fecd30bacd4c53d146fa5adade58bb22e_sk
     signedCert:
       path: ../network/organizations/peerOrganizations/fsb.unizg.hr/users/Admin@fsb.unizg.hr/msp/signcerts/Admin@fsb.unizg.hr-cert.pem
       

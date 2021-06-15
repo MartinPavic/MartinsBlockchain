@@ -133,7 +133,7 @@ queryCommitted() {
   # we either get a successful response, or reach MAX RETRY
   while [ $rc -ne 0 -a $COUNTER -lt $MAX_RETRY ]; do
     sleep $DELAY
-    infoln "Attempting to Query committed status on peer0.org${ORG}, Retry after $DELAY seconds."
+    infoln "Attempting to Query committed status on peer0.${ORG}, Retry after $DELAY seconds."
     set -x
     peer lifecycle chaincode querycommitted --channelID $CHANNEL_NAME --name ${CC_NAME} >&log.txt
     res=$?

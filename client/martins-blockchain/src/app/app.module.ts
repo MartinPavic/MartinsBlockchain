@@ -12,12 +12,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorHandlerService } from './services/error-handler.service';
 import { BodyComponent } from './components/body/body.component';
 import { FormsModule } from '@angular/forms';
+import { UserCardComponent } from './components/user-card/user-card.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListPointsComponent,
     HeaderComponent,
     BodyComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule,
