@@ -1,7 +1,7 @@
 \documentclass[times, utf8, diplomski]{fer}
 \usepackage{booktabs}
 \usepackage{listings}
-\usepackage{xcolor}
+\usepackage[table,xcdraw]{xcolor}
 
 \definecolor{verylightgray}{rgb}{.97,.97,.97}
 \lstdefinelanguage{Solidity}{
@@ -59,9 +59,9 @@
 \listoffigures
 
 \chapter{Uvod}
-Baze podataka su posvuda.  Koristimo ih svaki dan. Na primjer, popis kontakata u mobitelu je jednostavna baza podataka - elektronička verzija papirnatog adresara. Detaljnije baze podataka uključuju popise kupaca, zaposlenika, pacijenata ili glasača i njihove svojstva i odnose. Složenije baze podataka mogu sadržavati čak i programe koji mogu međusobno komunicirati. Zapravo, o bazi podataka možemo razmišljati kao o bilo kojem organiziranom skupu informacija koje možete pro- naći i eventualno ažurirati stavke. Otkako je računalna revolucija započela pedesetih godina prošlog stoljeća, baze podataka igrale su važnu ulogu u poslu i društvu.
+Baze podataka su posvuda.  Koristimo ih svaki dan. Na primjer, popis kontakata u mobitelu je jednostavna baza podataka - elektronička verzija papirnatog adresara. Detaljnije baze podataka uključuju popise kupaca, zaposlenika, pacijenata ili glasača i njihove svojstva i odnose. Složenije baze podataka mogu sadržavati čak i programe koji mogu međusobno komunicirati. Zapravo, o bazi podataka možemo razmišljati kao o bilo kojem organiziranom skupu informacija koje možete pronaći i eventualno ažurirati stavke. Otkako je računalna revolucija započela pedesetih godina prošlog stoljeća, baze podataka igrale su važnu ulogu u poslu i društvu.
 
-Mnoge su baze podataka danas dijeljene. Do sada je svijet toliko povezan da različiti ljudi često trebaju pristupiti istim podacima. Da bi se udovoljilo ovoj potrebi, pojavile su se distribuirane baze podataka, u kojima određenim dijelovima podataka može pristupiti više osoba odjednom. Primjerice, radi pojednostavljenja postavlja- nja ili ponovnog zakazivanja sastanaka, svi članovi radne skupine mogu dijeliti svoje sastanke na internetskom kalendaru. To se ne može učiniti s papirnatim kalendarom. Naravno, u poslu se koriste složenije zajedničke baze podataka. Neka od pitanja koja možemo postaviti pri radu s bazama podataka.
+Mnoge su baze podataka danas dijeljene. Do sada je svijet toliko povezan da različiti ljudi često trebaju pristupiti istim podacima. Da bi se udovoljilo ovoj potrebi, pojavile su se distribuirane baze podataka, u kojima određenim dijelovima podataka može pristupiti više osoba odjednom. Primjerice, radi pojednostavljenja postavlja- nja ili ponovnog zakazivanja sastanaka, svi članovi radne skupine mogu dijeliti svoje sastanke na internetskom kalendaru. To se ne može učiniti s papirnatim kalendarom. Naravno, u poslu se koriste složenije zajedničke baze podataka. Neka od pitanja koja možemo postaviti pri radu s dijeljenim bazama podataka.
 
 \begin{itemize}
 
@@ -75,7 +75,7 @@ Mnoge su baze podataka danas dijeljene. Do sada je svijet toliko povezan da razl
 
 \end{itemize}
 
-Jasno je da postoji mnogo praktičnih problema s dijeljenjem baze podataka. Tijekom vremena ljudi su isprobali mnogo različitih rješenja. Jedan uzbudljiv novi način dijeljenja baza podataka koji može pomoći u rješavanju tih problema je tehnologija ulančanih blokova (eng. Blockchain). 
+Jasno je da postoji mnogo praktičnih problema s dijeljenjem baze podataka. Tijekom vremena ljudi su isprobali mnogo različitih rješenja. Jedan uzbudljiv novi način dijeljenja baza podataka koji može pomoći u rješavanju tih problema je tehnologija ulančanih blokova (eng. \textit{Blockchain}). 
 
 \begin{figure}[htb]
 \centering
@@ -84,7 +84,7 @@ Jasno je da postoji mnogo praktičnih problema s dijeljenjem baze podataka. Tije
 \label{fig:blockchain}
 \end{figure}
 
-Blockchain je tehnologija koja stoji iza Bitcoina. Mediji su prepuni priča o Bitcoinu i drugim kriptovalutama. Većina tvrtki ne brinu previše o kriptovalutama. Većina tvrtki je sretna što kupuje i prodaje s dolarima, eurima, funtama,  jenima ili bilo kojom drugom prihvaćenom valutom - možda čak i kriptovalutom - sve dok to djeluje za njih. Za poduzeća je daleko značajnija tehnologija koja stoji iza kriptovaluta, tzv \textit{\textit{blockchain}}.
+Blockchain je tehnologija koja stoji iza Bitcoina. Mediji su prepuni priča o Bitcoinu i drugim kriptovalutama. Većina tvrtki ne brinu previše o kriptovalutama. Većina tvrtki je sretna što kupuje i prodaje s dolarima, eurima, funtama,  jenima ili bilo kojom drugom prihvaćenom valutom - možda čak i kriptovalutom - sve dok to djeluje za njih. Za poduzeća je daleko značajnija tehnologija koja stoji iza kriptovaluta, tzv.  \textit{blockchain}.
 
 Blockchain je novi oblik zajedničke baze podataka.  Blockchain je distribuirana baza podataka bez središnjeg tijela i bez točke povjerenja. Kada želite dijeliti bazu podataka, ali nemate puno povjerenja u druge ljude koji bi mogli koristiti tu bazu podataka, blockchain vam može biti od velike pomoći. U tom kontekstu, "povjerenje" može značiti mnogo stvari. Povjerenje bi moglo značiti vjerovanje drugima da će s bazom podataka postupati ispravno. Povjerenje bi moglo značiti da jedna strana drugoj ne pokušava doći do privatnih informacija. Ili povjerenje može značiti ne ponižavanje tuđeg učinka radi stjecanja konkurentske prednosti.
 
@@ -92,10 +92,10 @@ Rasprava o povjerenju otvara dvije glavne vrste blockchaina. Većina kriptovalut
 
 U bazi podataka koju dijele dvije različite stranke postavlja se pitanje, što se događa ako obe stranke žele pristupiti podatcima u isto vrijeme? Ako bi se tom bazom podataka upravljalo s blockchainom, ovaj bi se problem mogao riješiti kroz proces koji se naziva konsenzus. Blockchaini koriste konsenzusne sustave kako bi bili sigurni da su podaci u bazi podataka uvijek ispravni. Primjerice, konsenzusni sustav koristio bi unaprijed utvrđena pravila za određivanje koja stranka prva dobiva pristup podatcima. Konsenzusni sustavi imaju mnogo različitih oblika s različitim imenima. Na primjer, Bitcoin koristi dokaz izvršenog rada (eng. proof of work, skr. PoW) konsenzus, gdje računala sudionika rješavaju teške matematičke zadatke. Najbitnije svojstvo koje takvi sustavi moraju zadovoljavati naziva se \textit{Byzantine Fault Tolerance} ili skraćeno BFT. 
 
-Zašto je blockchain važan poslovnim ljudima? Pomoću blockchaina mogu se usmjeriti mnogi postojeći poslovni procesi u mnogim industrijama kako bi uštedjeli vrijeme, uštedjeli novac i smanjili rizik. Mnogi potpuno novi procesi - možda čak i potpuno nove industrije mogu biti izumljeni. Prva generacija interneta bila je izvrsna za dijeljenje informacija: stvari poput e-pošte, dokumenata, fotografija, web stranica, pjesama i videozapisa, ali postojao je problem. Bilo je teško nekome dokazati da su oni koji su rekli da jesu. Svaka transakcija koja je uključčivala bilo koju vrijednost zahtijevala je posrednika, poput banke, da potvrdi kupca i prodavača i potvrdi transakciju. To je stvorilo trenje, kašnjenje i trošak - i središnja točka neuspjeha koju bi napadači mogli napasti. Blockchain otvara vrata drugoj generaciji interneta za koju je mnogo prikladnija razmjena vrijednosti, uključčujući vrijedne informacije. Pomoću blockchaina ljudi mogu utvrditi tko su i zatim mijenjati stavke poput novca, dionica i obveznica, intelektualno vlasništvo, djela, glasove, bodove lojalnosti i sve ostalo što ima vrijednost. Čak i ako se stranke ne znaju ili ne vjeruju jedni drugima, mogu vjerovati tehnologiji za bilježenje transakcija. A tehnologija uklanja potrebu za bilo kojim posrednikom, što štedi vrijeme i smanjuje troškove.
+Zašto je blockchain važan poslovnim ljudima? Pomoću blockchaina mogu se usmjeriti mnogi postojeći poslovni procesi u mnogim industrijama kako bi uštedjeli vrijeme, uštedjeli novac i smanjili rizik. Mnogi potpuno novi procesi - možda čak i potpuno nove industrije mogu biti izumljeni. Prva generacija interneta bila je izvrsna za dijeljenje informacija: stvari poput e-pošte, dokumenata, fotografija, web stranica, pjesama i videozapisa, ali postojao je problem. Bilo je teško nekome dokazati da su oni koji su rekli da jesu. Svaka transakcija koja je uključivala bilo koju vrijednost zahtijevala je posrednika, poput banke, da potvrdi kupca i prodavača i potvrdi transakciju. To je stvorilo trenje, kašnjenje i trošak - i središnja točka neuspjeha koju bi napadači mogli napasti. Blockchain otvara vrata drugoj generaciji interneta za koju je mnogo prikladnija razmjena vrijednosti, uključujući vrijedne informacije. Pomoću blockchaina ljudi mogu utvrditi tko su i zatim mijenjati stavke poput novca, dionica i obveznica, intelektualno vlasništvo, djela, glasove, bodove lojalnosti i sve ostalo što ima vrijednost. Čak i ako se stranke ne znaju ili ne vjeruju jedni drugima, mogu vjerovati tehnologiji za bilježenje transakcija. A tehnologija uklanja potrebu za bilo kojim posrednikom, što štedi vrijeme i smanjuje troškove.
 
 \chapter{Blockchain s ograničenim pravom pristupa}
-Postoje razne arhitekture blockchaina. S ograničenjem pristupa i bez ograničanja pristupa, javni i privatni. Nama su, u ovom radu, najzanimljivija arhitektura blockchaina koja ima ograničen pristup. Takvi blockchaini zahtijevaju posebna dopuštenja za čitanje, pristup i upisivanje podataka na njih. Suštinska konfiguracija takvih blockchaina kontrolira transakcije sudionika i definira njihove uloge u kojima svaki sudionik može pristupiti i doprinijeti blockchainu. To također uključuje i održavanje identiteta svakog sudionika blockchaina na mreži. Takvi se blockchaini nazivaju blockchaini s ograničenim pravom pristupa (eng. permissioned blockchains, skr. PBs). PB-i također se razlikuju od privatnih blockchaina, koji omogućuju sudjelovanje samo poznatim čvorovima. Na primjer, banka možda pokreće privatni blockchain koji posluje kroz određeni broj čvorova unutar banke. Suprotno tome, PB-i mogu dopustiti bilo kome da se pridruži mreži nakon što se definiraju njihov identitet i uloga.
+Postoje razne arhitekture blockchaina. S ograničenjem pristupa i bez ograničanja pristupa, javni i privatni. Nama je, u ovom radu, najzanimljivija arhitektura blockchaina koja ima ograničen pristup. Takvi blockchaini zahtijevaju posebna dopuštenja za čitanje, pristup i upisivanje podataka na njih. Suštinska konfiguracija takvih blockchaina kontrolira transakcije sudionika i definira njihove uloge u kojima svaki sudionik može pristupiti i doprinijeti blockchainu. To također uključuje i održavanje identiteta svakog sudionika blockchaina na mreži. Takvi se blockchaini nazivaju blockchaini s ograničenim pravom pristupa (eng. permissioned blockchains, skr. PBs). PB-i također se razlikuju od privatnih blockchaina, koji omogućuju sudjelovanje samo poznatim čvorovima. Na primjer, banka možda pokreće privatni blockchain koji posluje kroz određeni broj čvorova unutar banke. Suprotno tome, PB-i mogu dopustiti bilo kome da se pridruži mreži nakon što se definiraju njihov identitet i uloga.
 
 \textbf{Prednosti}. Brojne su prednosti blockchaina s ograničenim pravom pristupa, koje ga čine povoljnijim za upotrebu od javnih blockchaina. PB-e karakterizira učinkovitija izvedba. Kada bi uspoređivali PB-e i javne blockchaine, oni nude bolju izvedbu. Glavni i najočigledniji razlog tome je ograničen broj ččvorova koji sudjeluje u blockchainu, za razliku od javnih blockchaina gdje, u teoriji, može biti neograničeni broj ččvorova. Iz toga slijedi uklanjanje nepotrebnih proračuna potrebnih za postizanje konsenzusa, što svakako poboljšava izvedbu i performanse, a još i k tome imaju unaprijed određene čvorove koji validiraju transakcije. PB-i imaju pravilno organiziranu strukturu upravljanja, što rezultira tome da administratori trebaju manje vremena za ažuriranje pravila mreže, što je značajno brže u odnosu na javne blockchaine. Jedan od problema javnih blockchaina je taj što ne rade svi čvorovi zajedno kako bi implementirali ažuriranja mreže. Čvorovi mogu staviti svoje vlastite interese iznad interesa cijelog sustava, što rezultira usporavanjem ažuriranja mreže. Za usporedbu, PB-i nemaju taj problem jer čvorovi unutar takvog sustava rade zajedno kako bi brže ažurirali mrežu, i zato što si međusobno vjeruju i surađuju, u interesu im je da je mreža što bolja i funkcionalnija. Jedna od vrlo važnih karakteristika koja pridonosi korisnosti PB-a je decentralizirana pohrana. PB-i potpuno iskorištavaju tehnologiju, tako što osim samih transakcija koje se događaju na mreži, također spremaju i druge važne podatke koje svi (ili neki) ččvorovi u mreži koriste. Ti su podatci spremljeni između čvorova organizacija koje su sudionici PB-a, a održavaju se jednakima za sve konsezusnim algoritmima. Sve to dovodi do toga da PB-i zahtijevaju manje troškova od drugih modela poslovanja te možemo zaključiti da su isplativi, pogotovo u usporedbi s javnim blockchainima, gledajući iz perspektive poslovnih rješenja.
 
@@ -788,7 +788,7 @@ Klijentska aplikacija se sastoji od dva dijela,"prednji" (eng. \textit{frontend}
 "Prednji" dio aplikacije ili popularno nazvano \textit{frontend},  programirano je koristeći radni okvir Angular.  Angular je radni okvir otvorenog koda i napisan je u programskom jeziku TypeScript od strane Angular tima u Google-u. Ovaj radni okvir,  koji se koristi za izradu web aplikacija, uz korištenje Angular Material biblioteke čini programiranje sučelja relativno jednostavnim. 
 
 % ANGULAR
-\subsection{Backend}
+\subsection{Poslužitelj}
 
 "Stražnji" dio aplikacije ili \textit{Backend}, programirao sam koristeći TypeScript programski jezik i Node.js \textit{runtime} okruženje.  Ovaj dio aplikacije izveden je uz REST načela \cite{BATTLE200861} programiranja web poslužitelja. Uz Node.js koristio sam i radni okvir Express.js koji olakšava i poboljšava programiranje aplikacija na poslužiteljskoj strani.%citat rest
 
@@ -804,6 +804,49 @@ Tijek aplikacije na primjeru stvaranja bodova za menzu:
 \item nakon što server primi poruku od mreže da su bodovi uspješno stvoreni, vraća odgovor klijentu koji na svom ekranu vidi nove bodove.
 \end{enumerate}
 
+\section{Analiza}
+
+Analiza rješenja je provedena koristeći radni okvir Hyperledger Caliper.  Caliper je radni okvir za testiranje performansi raznih blockchain rješenja s unaprijed definiranim slučajevima uporabe.  Caliper omogućava da se blockchain testira s nekolicinom raznih parametara kao što su: propusnost transakcija,  latencija i konzumacija resursa poput procesora, memorije i slično.
+
+Primjer korišten za testiranje i analizu Fabric blockchain mreže je korištenje \textit{Transfer} funkcije ERC20 chaincode-a. Ovaj je test izveden tako da se prije početka inicijalizira neka količina (u ovom slučaju 100) tokena te se šalju transakcije koje pozivaju funkciju \textit{Transfer} koja prebacuje tokene s računa inicijatora transakcije na račun druge stranke - u ovom slučaju to se događa između FER-a i FSB-a.  Test je izveden uz \textit{linear-rate} kontrolu količine transakcija po sekundi - od 25 TPS do 125 TPS. Rezultati dobiveni su prikazani u tablici \ref{tbl:performance}.
+
+
+\begin{table}[htb]
+\centering
+\caption{Performanse}
+\label{tbl:performance}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+Funkcija & Usp  & Neusp & Poslano (TPS) & Maks. latencija (s) & Min. latencija (s) & Pros. latencija (s) & Propusnost (TPS) \\ \hline
+Transfer & 1306 & 0     & 43.6          & 3.99                & 0.03               & 1.02                & 39.3             \\ \hline
+\end{tabular}%
+}
+\end{table}
+
+\begin{table}[htb]
+\centering
+\caption{Utrošeni resursi}
+\label{tbl:resources}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+\rowcolor[HTML]{EFEFEF} 
+Čvor                     & CPU\% (max) & CPU\% (pros.) & Memorija (max) {[}MB{]} & Memorija (pros.) {[}MB{]} & Ulazni promet {[}MB{]} & Izlazni promet {[}MB{]} & Pisanje diska {[}KB{]} & Čitanje diska {[}KB{]} \\ \hline
+peer0.fer.unizg.hr-erc20 & 53.37       & 26.19         & 73.0                    & 72.3                      & 2.83                   & 2.02                    & 0.00                   & 0.00                   \\ \hline
+peer0.fsb.unizg.hr-erc20 & 0.02        & 0.00          & 67.6                    & 67.6                      & 0.00599                & 0.00377                 & 0.00                   & 0.00                   \\ \hline
+peer0.fer.unizg.hr       & 67.69       & 42.17         & 116                     & 116                       & 4.66                   & 5.91                    & 28.0                   & 24.0                   \\ \hline
+peer0.fsb.unizg.hr       & 15.07       & 10.08         & 106                     & 106                       & 0.0597                 & 0.0491                  & 28.0                   & 0.00                   \\ \hline
+orderer.unizg.hr         & 2.53        & 0.55          & 79.1                    & 79.1                      & 0.0153                 & 0.0263                  & 36.0                   & 0.00                   \\ \hline
+couchdb0                 & 39.60       & 24.86         & 44.0                    & 42.5                      & 0.450                  & 0.492                   & 52.0                   & 96.0                   \\ \hline
+couchdb1                 & 11.07       & 4.20          & 37.0                    & 37.0                      & 0.00204                & 0.00226                 & 52.0                   & 0.00                   \\ \hline
+ca\_orderer              & 0.00        & 0.00          & 9.35                    & 9.35                      & 0.00                   & 0.00                    & 0.00                   & 0.00                   \\ \hline
+ca\_fer                  & 0.28        & 0.04          & 3.50                    & 3.50                      & 0.00                   & 0.00                    & 0.00                   & 0.00                   \\ \hline
+ca\_fsb                  & 0.00        & 0.00          & 3.36                    & 3.36                      & 0.00                   & 0.00                    & 0.00                   & 0.00                   \\ \hline
+\end{tabular}%
+}
+\end{table}
 
 \chapter{Zaključak}
 Blockchain je tehnologija koja sasvim sigurno ostavlja veliki utjecaj u četvrtoj industrijskoj revoluciji. Predstavlja novi način na koji razmišljamo o djeljenju podataka. Donosi rješenja za probleme koje se dugo vremena nije moglo riješiti. To je naročito zainteresiralo poslovni svijet.  Stoga su nastale razne implementacije te tehnologije koje se natječu u rješavanju poslovnih problema, a u ovom radu smo spomenuli Quorum, Corda i Hyperledger Fabric. 
@@ -815,9 +858,8 @@ Na jednostavnom primjeru bodova u menzi i rekotorovih nagrada između FER-a i FS
 \bibliographystyle{fer}
 \bibliography{literatura}
 
-
 \begin{sazetak}
-Sažetak na hrvatskom jeziku.
+Ulančani blokovi (eng. \textit{blockchain}) jedna je od tehnologija s velikim značajem u četvrtoj industrijskoj revoluciji. Jednostavno, blockchain je zapis podataka o transakcijama između stranaka u mreži.  Blockchain se dijeli na dvije vrste: sa i bez ograničenog pristupa. U ovom radu analiziramo one s ograničenim pravom pristupa.  Hyperledger Fabric, Quorum i Corda. Implementacija je odrađena korištenjem Fabric-a na primjeru dijeljenja bodova za menzu koji predstavljaju zamjenjive tokene i rektorovih nagrada koje predstavljaju nezamjenjive tokene. Tokeni su implementiranu u obliku pametnih ugovora i razmjenjuju se između između FER-a i FSB-a i provedena je analiza korištenjem Hyperledger Caliper radnog okvira. 
 
 \kljucnerijeci{ključne riječi, odvojene zarezima.}
 \end{sazetak}
@@ -825,7 +867,7 @@ Sažetak na hrvatskom jeziku.
 % TODO: Navedite naslov na engleskom jeziku.
 \engtitle{Permissioned blockchain and distributed ledger technologies with smart contracts}
 \begin{abstract}
-Abstract.
+
 
 \keywords{Keywords.}
 \end{abstract}

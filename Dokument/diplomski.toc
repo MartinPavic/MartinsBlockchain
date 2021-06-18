@@ -30,6 +30,7 @@
 \contentsline {section}{\numberline {3.6}Kanal}{39}%
 \contentsline {section}{\numberline {3.7}Klijent}{39}%
 \contentsline {subsection}{\numberline {3.7.1}Sučelje}{39}%
-\contentsline {subsection}{\numberline {3.7.2}Backend}{40}%
-\contentsline {chapter}{\numberline {4}Zaključak}{41}%
-\contentsline {chapter}{Literatura}{42}%
+\contentsline {subsection}{\numberline {3.7.2}Poslužitelj}{40}%
+\contentsline {section}{\numberline {3.8}Analiza}{40}%
+\contentsline {chapter}{\numberline {4}Zaključak}{42}%
+\contentsline {chapter}{Literatura}{43}%
