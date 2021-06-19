@@ -3,65 +3,49 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: diplomski.aux
 The style file: fer.bst
 Database file #1: literatura.bib
-"#" immediately follows a field name---line 136 of file literatura.bib
- : https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc
- :                                                                                              #what-is-a-smart-contract}
-I'm skipping whatever remains of this entry
-I was expecting an "="---line 140 of file literatura.bib
- : 
- : Fabian Vogelsteller, Vitalik Buterin, "EIP-20: ERC-20 Token Standard," Ethereum Improvement Proposals, no. 20, November 2015. [Online serial]. Available: https://eips.ethereum.org/EIPS/eip-20.
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting an "="---line 147 of file literatura.bib
- : 
- : Fabian Vogelsteller, Vitalik Buterin, "EIP-20: ERC-20 Token Standard," Ethereum Improvement Proposals, no. 20, November 2015. [Online serial]. Available: https://eips.ethereum.org/EIPS/eip-20.
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--to sort, need author or key in ethereum
-Warning--empty author in ethereum
-Warning--empty title in ethereum
-Warning--empty journal in ethereum
-Warning--empty year in ethereum
-Warning--empty year in ethereum
-You've used 6 entries,
+Warning--I didn't find a database entry for "DBLP:journals/corr/abs-2004-07060"
+Warning--empty journal in ethereum-smart-contract
+Warning--empty journal in intro
+Warning--empty journal in lagarde2019security
+You've used 18 entries,
             2773 wiz_defined-function locations,
-            628 strings with 5910 characters,
-and the built_in function-call counts, 2894 in all, are:
-= -- 252
-> -- 166
-< -- 5
-+ -- 57
-- -- 51
-* -- 232
-:= -- 424
-add.period$ -- 20
-call.type$ -- 6
-change.case$ -- 33
-chr.to.int$ -- 6
-cite$ -- 19
-duplicate$ -- 143
-empty$ -- 231
-format.name$ -- 58
-if$ -- 618
+            714 strings with 8773 characters,
+and the built_in function-call counts, 9350 in all, are:
+= -- 810
+> -- 688
+< -- 11
++ -- 231
+- -- 213
+* -- 789
+:= -- 1499
+add.period$ -- 73
+call.type$ -- 18
+change.case$ -- 124
+chr.to.int$ -- 18
+cite$ -- 39
+duplicate$ -- 389
+empty$ -- 648
+format.name$ -- 242
+if$ -- 1930
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 40
-num.names$ -- 20
-pop$ -- 81
+missing$ -- 18
+newline$ -- 116
+num.names$ -- 72
+pop$ -- 230
 preamble$ -- 1
-purify$ -- 29
+purify$ -- 106
 quote$ -- 0
-skip$ -- 117
+skip$ -- 326
 stack$ -- 0
-substring$ -- 69
-swap$ -- 27
+substring$ -- 178
+swap$ -- 37
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
-warning$ -- 6
-while$ -- 22
+type$ -- 198
+warning$ -- 3
+while$ -- 68
 width$ -- 0
-write$ -- 85
-(There were 3 error messages)
+write$ -- 270
+(There were 4 warnings)

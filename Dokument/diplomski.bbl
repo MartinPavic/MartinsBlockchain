@@ -1,12 +1,62 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[eth()]{ethereum}
+\bibitem[Androulaki et~al.(2018)Androulaki, Barger, Bortnikov, Cachin,
+  Christidis, De~Caro, Enyeart, Ferris, Laventman, Manevich, Muralidharan,
+  Murthy, Nguyen, Sethi, Singh, Smith, Sorniotti, Stathakopoulou, Vukoli\'{c},
+  Cocco, i Yellick]{Fabric}
+Elli Androulaki, Artem Barger, Vita Bortnikov, Christian Cachin, Konstantinos
+  Christidis, Angelo De~Caro, David Enyeart, Christopher Ferris, Gennady
+  Laventman, Yacov Manevich, Srinivasan Muralidharan, Chet Murthy, Binh Nguyen,
+  Manish Sethi, Gari Singh, Keith Smith, Alessandro Sorniotti, Chrysoula
+  Stathakopoulou, Marko Vukoli\'{c}, Sharon~Weed Cocco, i Jason Yellick.
+\newblock Hyperledger fabric: A distributed operating system for permissioned
+  blockchains.
+\newblock U \emph{Proceedings of the Thirteenth EuroSys Conference}, EuroSys
+  '18, New York, NY, USA, 2018. Association for Computing Machinery.
+\newblock ISBN 9781450355841.
+\newblock \doi{10.1145/3190508.3190538}.
+\newblock URL \url{https://doi.org/10.1145/3190508.3190538}.
 
+\bibitem[Antonopoulos i Wood(2018)]{ethereum-smart-contract}
+Andreas~M. Antonopoulos i Gavin Wood.
+\newblock What is a smart contract?
+\newblock 2018.
+\newblock URL
+  \url{https://github.com/ethereumbook/ethereumbook/blob/develop/07smart-contracts-solidity.asciidoc#what-is-a-smart-contract}.
+
+\bibitem[Baliga et~al.(2018)Baliga, Subhod, Kamat, i Chatterjee]{Quorum}
+Arati Baliga, I~Subhod, Pandurang Kamat, i Siddhartha Chatterjee.
+\newblock Performance evaluation of the quorum blockchain platform.
+\newblock \emph{arXiv preprint arXiv:1809.03421}, 2018.
+
+\bibitem[Battle i Benson(2008)]{BATTLE200861}
+Robert Battle i Edward Benson.
+\newblock Bridging the semantic web and web 2.0 with representational state
+  transfer (rest).
+\newblock \emph{Journal of Web Semantics}, 6\penalty0 (1):\penalty0 61--69,
+  2008.
+\newblock ISSN 1570-8268.
+\newblock \doi{https://doi.org/10.1016/j.websem.2007.11.002}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S1570826807000510}.
+\newblock Semantic Web and Web 2.0.
+
+\bibitem[Blummer et~al.(2018.)Blummer, Bohan, Bowman, i et. al.]{intro}
+Tamas Blummer, Sean Bohan, Mic Bowman, i et. al.
+\newblock An introduction to hyperledger.
+\newblock 2018.
+\newblock URL
+  \url{https://www.hyperledger.org/wp-content/uploads/2018/08/HL_Whitepaper_IntroductiontoHyperledger.pdf}.
+
+\bibitem[Brown et~al.(2016)Brown, Carlyle, Grigg, i Hearn]{Corda}
+Richard~Gendal Brown, James Carlyle, Ian Grigg, i Mike Hearn.
+\newblock Corda: an introduction.
+\newblock \emph{R3 CEV, August}, 1:\penalty0 15, 2016.
 
 \bibitem[Clack et~al.(2016)Clack, Bakshi, i Braine]{scTemplates}
 Christopher~D. Clack, Vikram~A. Bakshi, i Lee Braine.
@@ -15,11 +65,43 @@ Christopher~D. Clack, Vikram~A. Bakshi, i Lee Braine.
 \newblock \emph{CoRR}, abs/1608.00771, 2016.
 \newblock URL \url{http://arxiv.org/abs/1608.00771}.
 
-\bibitem[Downes(2002)]{downes2002shortams}
-Michael Downes.
-\newblock \emph{{Short Math Guide for \LaTeX{}}}.
-\newblock American Mathematical Society, 2002.
-\newblock URL \url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}.
+\bibitem[Entriken et~al.(2018)Entriken, Shirley, Evans, i Sachs]{erc721}
+William Entriken, Dieter Shirley, Jacob Evans, i Nastassia Sachs.
+\newblock Eip-721: Erc-721 non-fungible token standard.
+\newblock \emph{Ethereum Improvement Proposals}, 2018.
+\newblock URL
+  \url{https://ethereum.org/en/developers/docs/standards/tokens/erc-721/}.
+
+\bibitem[Fischer et~al.(1985)Fischer, Lynch, i Paterson]{impossibility}
+Michael~J. Fischer, Nancy~A. Lynch, i Michael~S. Paterson.
+\newblock Impossibility of distributed consensus with one faulty process.
+\newblock \emph{J. ACM}, 32\penalty0 (2):\penalty0 374–382, Travanj 1985.
+\newblock ISSN 0004-5411.
+\newblock \doi{10.1145/3149.214121}.
+\newblock URL \url{https://doi.org/10.1145/3149.214121}.
+
+\bibitem[Johnson et~al.(2001)Johnson, Menezes, i Vanstone]{johnson2001elliptic}
+Don Johnson, Alfred Menezes, i Scott Vanstone.
+\newblock The elliptic curve digital signature algorithm (ecdsa).
+\newblock \emph{International journal of information security}, 1\penalty0
+  (1):\penalty0 36--63, 2001.
+
+\bibitem[LAGARDE(2019)]{lagarde2019security}
+Marie-Jeanne LAGARDE.
+\newblock Security assessment of authentication and authorization mechanisms in
+  ethereum, quorum, hyperledger fabric and corda.
+\newblock 2019.
+
+\bibitem[Lamport et~al.(2001)]{lamport2001paxos}
+Leslie Lamport et~al.
+\newblock Paxos made simple.
+\newblock \emph{ACM Sigact News}, 32\penalty0 (4):\penalty0 18--25, 2001.
+
+\bibitem[Moniz(2020)]{IBFT}
+Henrique Moniz.
+\newblock The istanbul {BFT} consensus algorithm.
+\newblock \emph{CoRR}, abs/2002.03613, 2020.
+\newblock URL \url{https://arxiv.org/abs/2002.03613}.
 
 \bibitem[Monrat et~al.(2020)Monrat, Schelén, i Andersson]{9411380}
 Ahmed~Afif Monrat, Olov Schelén, i Karl Andersson.
@@ -34,8 +116,19 @@ Diego Ongaro i John Ousterhout.
 \newblock U \emph{2014 $\{$USENIX$\}$ Annual Technical Conference
   ($\{$USENIX$\}$$\{$ATC$\}$ 14)}, stranice 305--319, 2014.
 
+\bibitem[Valenta i Sandner(2017)]{valenta2017comparison}
+Martin Valenta i Philipp Sandner.
+\newblock Comparison of ethereum, hyperledger fabric and corda.
+\newblock \emph{Frankfurt School Blockchain Center}, 8, 2017.
+
+\bibitem[Vogelsteller i Buterin(2015)]{erc20}
+Fabian Vogelsteller i Vitalik Buterin.
+\newblock Eip-20: Erc-20 token standard.
+\newblock \emph{Ethereum Improvement Proposals}, 2015.
+\newblock URL \url{https://eips.ethereum.org/EIPS/eip-20}.
+
 \bibitem[Zou et~al.(2019)Zou, Lo, Kochhar, Le, Xia, Feng, Chen, i
-  Xu]{smartcontranct}
+  Xu]{smartcontract}
 Weiqin Zou, David Lo, Pavneet~Singh Kochhar, Xuan-Bach~D. Le, Xin Xia, Yang
   Feng, Zhenyu Chen, i Baowen Xu.
 \newblock Smart contract development: Challenges and opportunities.

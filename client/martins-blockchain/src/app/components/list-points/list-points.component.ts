@@ -2,11 +2,14 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { Organization } from 'src/app/models/organization';
 import { User } from 'src/app/models/user';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-list-points',
@@ -15,19 +18,25 @@ import { User } from 'src/app/models/user';
 })
 export class ListPointsComponent implements OnInit {
   @Input() users: User[];
-  @Input() organization: Organization;
-
-  constructor(private cd: ChangeDetectorRef) {}
+  @Output() studentPoints = new EventEmitter();
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {}
 
   assignToUser(userAndPoints: any): void {
-    const index = this.users.findIndex((value) => value === userAndPoints.user);
-    const newUserBalance = { id: userAndPoints.user.id, balance: userAndPoints.points };
-    this.users = [
-      ...this.users.slice(0, index),
-      newUserBalance,
-      ...this.users.slice(index + 1),
-    ];
+    this.apiService.assignPointsToStudent(userAndPoints.user, userAndPoints.points).subscribe(
+      res => {
+        if (res) {
+          const index = this.users.findIndex((value) => value === userAndPoints.user);
+          const newUserBalance = { id: userAndPoints.user.id, balance: userAndPoints.user.balance + userAndPoints.points };
+          this.users = [
+            ...this.users.slice(0, index),
+            newUserBalance,
+            ...this.users.slice(index + 1),
+          ];
+          this.studentPoints.emit(userAndPoints)
+        }
+      }
+    )
   }
 }

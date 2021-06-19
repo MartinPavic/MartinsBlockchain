@@ -32,8 +32,12 @@ app.route("/points/:userId")
     const walletPath = path.join(process.cwd(), "wallet");
     const wallet = await Wallets.newFileSystemWallet(walletPath);
     const userIdentity = await wallet.get(req.params.userId);
-    const response = await network.TransferPointsToStudent(req.body.numOfPoints, userIdentity);
-    response.success ? res.status(200).json(response.data[0]) : res.status(404).send();
+    if (userIdentity) {
+      const response = await network.TransferPointsToStudent(req.body.numOfPoints, req.params.userId);
+      res.status(200).json(response.data)
+    } else {
+      res.status(404).send();
+    }
   })
 
 app.route("/organization").get(async (req, res) => {
@@ -42,7 +46,7 @@ app.route("/organization").get(async (req, res) => {
   if (!balance.success) {
     const config = getConfig(); 
     res.json({
-      id: config.organization + 'unizg.hr',
+      id: config.organization + '.unizg.hr',
       name: config.organization,
       balance: 0
     })
@@ -66,15 +70,19 @@ const extractOrganizationName = (value: string) => {
 app.route("/users").get(async (req, res) => {
   const walletPath = path.join(process.cwd(), "wallet");
   const wallet = await Wallets.newFileSystemWallet(walletPath);
-  const userIdentities = (await wallet.list()).filter(value => !value.includes('admin'));
+  
+  const users = 
+    (await wallet.list())
+      .filter(value => !value.includes('admin'))
   const balances = await Promise.all(
-    userIdentities.map((user) => network.GetUserBalance(user))
+    users.map((user) => network.GetUserBalance(user))
   );
+  
   let usersAndBalances = [];
-  for (let i = 0; i < userIdentities.length; i++) {
+  for (let i = 0; i < users.length; i++) {
     usersAndBalances.push({
-      id: userIdentities[i],
-      balance: balances[i].data ? Number(balances[i].data[0]) : 0,
+      id: users[i],
+      balance: balances[i].data ? Number(balances[i].data) : 0,
     });
   }
   usersAndBalances
@@ -87,6 +95,8 @@ app.route("/users/:id")
     const walletPath = path.join(process.cwd(), "wallet");
     const wallet = await Wallets.newFileSystemWallet(walletPath);
     const userIdentity = await wallet.get(req.params.id);
+    const userBalance = await network.GetUserBalance(req.params.id);
+    console.log(userBalance);
     userIdentity ? res.status(200).json(userIdentity) : res.status(404).send();
   })
   
@@ -119,9 +129,9 @@ app.route("/awards/:studentId")
     const studentId = await network.GetUserID(req.params.studentId);
     const response = await network.ApproveAwardForStudent(studentId.data, req.body.awardId);
     if (response.success) {
-      const token = { id: req.body.awardId, holder: req.params.studentId }
-      const tokenPath = path.join(process.cwd(), "nfts", `${token.id}.json`);
-      fs.writeFileSync(tokenPath, JSON.stringify(token));
+      const tokenPath = path.join(process.cwd(), "nfts", `${req.body.awardId}.json`);
+      const token = JSON.parse(fs.readFileSync(tokenPath, 'utf-8'))
+      fs.writeFileSync(tokenPath, JSON.stringify({ ...token, holder: req.params.studentId }));
       res.status(200).json(response.data)
     } else {
       res.status(404).send(response.error.message)

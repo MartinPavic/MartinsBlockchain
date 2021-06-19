@@ -16,7 +16,7 @@ export class BodyComponent implements OnInit {
   users$: Observable<User[]>;
   @Input() organization: Organization;
   totalSupply: number;
-  awards$: Observable<RectorAward[]>;
+  awards: RectorAward[];
   numOfPoints: number;
 
   constructor(private apiService: ApiService) {}
@@ -24,21 +24,46 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getPointsSupply().pipe(first()).subscribe(res => this.totalSupply = res);
     this.users$ = this.apiService.getUsers();
+    this.apiService.getAwards().pipe(first()).subscribe(res => this.awards = res);
+    this.apiService.awards$.subscribe(newAward => this.awards.concat(newAward))
   }
 
   createAward() {
     const id = Math.floor(Math.random() * 100).toString();
-    this.apiService.createNewAward(id).subscribe(newAward => this.apiService.awards$.next(newAward));
+    this.apiService.createNewAward(id).subscribe(newAward => this.apiService.awards$.next([newAward]));
   }
 
   addPoints() {
     this.apiService
       .createNewPoints(this.numOfPoints)
       .pipe(first())
-      .subscribe(res => {
+      .subscribe((res: number) => {
         this.totalSupply += res;
-        this.apiService.organization$.next({ ...this.organization, balance: this.organization.balance + this.numOfPoints })
+        this.organization = { ...this.organization, balance: this.organization.balance + this.numOfPoints };
+        this.apiService.organization$.next(this.organization);
+        this.numOfPoints = null;
       });
-  }  
+  } 
+
+  assignPointsToStudent(userAndPoints: any) {
+    this.organization = { ...this.organization, balance: this.organization.balance - userAndPoints.points }
+    this.apiService.organization$.next(this.organization)
+  }
+
+  assignAwardToStudent(award: RectorAward, student: User) {
+    this.apiService.assignAwardToStudent(award.tokenId.toString(), student.id)
+    .subscribe(res => {
+      if (res) {
+        const index = this.awards.findIndex(a => a === award);
+        const newAward = { ...award, holder: student.id }
+        this.awards = [
+          ...this.awards.slice(0, index),
+          newAward,
+          ...this.awards.slice(index + 1),
+        ];
+        this.apiService.awards$.next(this.awards);
+      }
+    })
+  }
 
 }

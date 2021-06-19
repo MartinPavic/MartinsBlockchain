@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.5)  17 JUN 2021 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.5)  19 JUN 2021 21:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -310,29 +310,70 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count277
+\calc@Bcount=\count278
+\calc@Adimen=\dimen183
+\calc@Bdimen=\dimen184
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count279
+\calc@Cskip=\skip60
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)))
+\AM@pagewidth=\dimen185
+\AM@pageheight=\dimen186
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box52
+\AM@global@opts=\toks29
+\AM@pagecnt=\count280
+\AM@toc@title=\toks30
+\c@AM@survey=\count281
+\AM@templatesizebox=\box53
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count277
-\l__pdf_internal_box=\box52
+\l__kernel_color_stack_int=\count282
+\l__pdf_internal_box=\box54
 )
 (./diplomski.aux)
 \openout1 = `diplomski.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 39
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 40
 .
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -373,17 +414,17 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
-\scratchdimen=\dimen183
-\scratchbox=\box53
-\nofMPsegments=\count279
-\nofMParguments=\count280
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count281
-\MPscratchDim=\dimen184
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count283
+\scratchdimen=\dimen187
+\scratchbox=\box55
+\nofMPsegments=\count284
+\nofMParguments=\count285
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count286
+\MPscratchDim=\dimen188
+\MPnumerator=\count287
+\makeMPintoPDFobject=\count288
+\everyMPtoPDFconversion=\toks32
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -396,8 +437,18 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count284
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 50
+\c@lstlisting=\count289
+\AtBeginShipoutBox=\box56
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 51
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1phv.fd
@@ -424,12 +475,12 @@ LaTeX Warning: Font shape declaration has incorrect series value `mc'.
                Found on input line 46.
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 51.
 
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -437,13 +488,38 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 53
-.
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-) [1] [3]
-(./diplomski.toc [4
+<tema.pdf, id=8, 597.23125pt x 845.1575pt>
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf>
+Package pdftex.def Info: tema.pdf  used on input line 54.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf>
+Package pdftex.def Info: tema.pdf  used on input line 54.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<tema.pdf, id=11, page=1, 597.23125pt x 845.1575pt>
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf, page 1>
+Package pdftex.def Info: tema.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf, page 1>
+Package pdftex.def Info: tema.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf, page 1>
+Package pdftex.def Info: tema.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf, page 1>
+Package pdftex.def Info: tema.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: tema.pdf Graphic file (type pdf)
+<use tema.pdf, page 1>
+Package pdftex.def Info: tema.pdf , page1 used on input line 54.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [1 <./tema.pdf>]
+[3] (./diplomski.toc [4
 
 ])
 \tf@toc=\write3
@@ -455,12 +531,18 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 
  [6
 
+] (./diplomski.lot)
+\tf@lot=\write5
+\openout5 = `diplomski.lot'.
+
+ [7
+
 ]
 Poglavlje 1.
-<imgs/Blockchain.png, id=28, 563.10374pt x 221.82875pt>
+<imgs/Blockchain.png, id=49, 563.10374pt x 221.82875pt>
 File: imgs/Blockchain.png Graphic file (type png)
 <use imgs/Blockchain.png>
-Package pdftex.def Info: imgs/Blockchain.png  used on input line 82.
+Package pdftex.def Info: imgs/Blockchain.png  used on input line 84.
 (pdftex.def)             Requested size: 341.43306pt x 134.50296pt.
 [1
 
@@ -469,188 +551,193 @@ Poglavlje 2.
 [4
 
 ] [5]
-<imgs/PoW.png, id=47, 522.95375pt x 683.55376pt>
+<imgs/PoW.png, id=67, 522.95375pt x 683.55376pt>
 File: imgs/PoW.png Graphic file (type png)
 <use imgs/PoW.png>
-Package pdftex.def Info: imgs/PoW.png  used on input line 113.
+Package pdftex.def Info: imgs/PoW.png  used on input line 114.
 (pdftex.def)             Requested size: 341.43306pt x 446.29684pt.
  [6 <./imgs/PoW.png>]
-<imgs/PoS.png, id=52, 894.34125pt x 282.05376pt>
+<imgs/PoS.png, id=73, 894.34125pt x 282.05376pt>
 File: imgs/PoS.png Graphic file (type png)
 <use imgs/PoS.png>
-Package pdftex.def Info: imgs/PoS.png  used on input line 122.
+Package pdftex.def Info: imgs/PoS.png  used on input line 123.
 (pdftex.def)             Requested size: 341.43306pt x 107.68077pt.
  [7 <./imgs/PoS.png>]
-<imgs/Raft.png, id=58, 772.8875pt x 252.945pt>
+<imgs/Raft.png, id=78, 772.8875pt x 252.945pt>
 File: imgs/Raft.png Graphic file (type png)
 <use imgs/Raft.png>
 Package pdftex.def Info: imgs/Raft.png  used on input line 140.
 (pdftex.def)             Requested size: 341.43306pt x 111.73999pt.
  [8 <./imgs/Raft.png>]
-[9] [10] [11] [12]
-
-Package natbib Warning: Citation `Corda' on page 13 undefined on input line 265
-.
-
-[13] [14] [15] [16] [17] [18]
-<imgs/Kafka.png, id=96, 406.51875pt x 388.45125pt>
+[9] [10] [11]
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 22
+2.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+[12] [13] [14] [15] [16] [17] [18]
+<imgs/Kafka.png, id=117, 406.51875pt x 388.45125pt>
 File: imgs/Kafka.png Graphic file (type png)
 <use imgs/Kafka.png>
-Package pdftex.def Info: imgs/Kafka.png  used on input line 389.
+Package pdftex.def Info: imgs/Kafka.png  used on input line 387.
 (pdftex.def)             Requested size: 341.43306pt x 326.26718pt.
  [19 <./imgs/Kafka.png>]
-<imgs/IBFT.png, id=102, 693.59125pt x 392.46625pt>
+<imgs/IBFT.png, id=122, 693.59125pt x 392.46625pt>
 File: imgs/IBFT.png Graphic file (type png)
 <use imgs/IBFT.png>
-Package pdftex.def Info: imgs/IBFT.png  used on input line 398.
+Package pdftex.def Info: imgs/IBFT.png  used on input line 396.
 (pdftex.def)             Requested size: 341.43306pt x 193.20242pt.
-<imgs/Validity consensus.png, id=103, 763.85374pt x 208.78pt>
+<imgs/Validity consensus.png, id=123, 763.85374pt x 208.78pt>
 File: imgs/Validity consensus.png Graphic file (type png)
 <use imgs/Validity consensus.png>
-Package pdftex.def Info: imgs/Validity consensus.png  used on input line 407.
+Package pdftex.def Info: imgs/Validity consensus.png  used on input line 405.
 (pdftex.def)             Requested size: 341.43306pt x 93.32253pt.
  [20 <./imgs/IBFT.png>]
-<imgs/Uniqueness consensus.png, id=108, 432.61626pt x 332.24126pt>
+<imgs/Uniqueness consensus.png, id=128, 432.61626pt x 332.24126pt>
 File: imgs/Uniqueness consensus.png Graphic file (type png)
 <use imgs/Uniqueness consensus.png>
-Package pdftex.def Info: imgs/Uniqueness consensus.png  used on input line 416.
+Package pdftex.def Info: imgs/Uniqueness consensus.png  used on input line 414.
 
 (pdftex.def)             Requested size: 341.43306pt x 262.22437pt.
-
-[21 <./imgs/Validity consensus.png> <./imgs/Uniqueness consensus.png>]
-
-Package natbib Warning: Citation `johnson2001elliptic' on page 22 undefined on 
-input line 431.
-
-[22] [23]
-
-Package natbib Warning: Citation `lagarde2019security' on page 24 undefined on 
-input line 466.
-
-[24]
-<imgs/Tx Flow.png, id=123, 1044.90375pt x 302.12875pt>
+ [21 <./imgs/Validity consensus.png> <./imgs/Uniqueness consensus.png>]
+[22] [23] [24]
+<imgs/Tx Flow.png, id=144, 1044.90375pt x 302.12875pt>
 File: imgs/Tx Flow.png Graphic file (type png)
 <use imgs/Tx Flow.png>
-Package pdftex.def Info: imgs/Tx Flow.png  used on input line 502.
+Package pdftex.def Info: imgs/Tx Flow.png  used on input line 500.
 (pdftex.def)             Requested size: 426.78703pt x 170.71689pt.
 
-Overfull \hbox (14.22206pt too wide) in paragraph at lines 502--503
+Overfull \hbox (14.22206pt too wide) in paragraph at lines 500--501
  [][] 
  []
 
 [25 <./imgs/Tx Flow.png>]
-<imgs/Corda flow.png, id=129, 1086.0575pt x 243.91125pt>
+<imgs/Corda flow.png, id=149, 1086.0575pt x 243.91125pt>
 File: imgs/Corda flow.png Graphic file (type png)
 <use imgs/Corda flow.png>
-Package pdftex.def Info: imgs/Corda flow.png  used on input line 537.
+Package pdftex.def Info: imgs/Corda flow.png  used on input line 535.
 (pdftex.def)             Requested size: 426.79134pt x 95.85074pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 537--538
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 535--536
  [][] 
  []
 
 [26 <./imgs/Corda flow.png>]
-<imgs/monra10-CSDE92-large.png, id=134, 823.075pt x 531.9875pt>
+<imgs/monra10-CSDE92-large.png, id=154, 823.075pt x 531.9875pt>
 File: imgs/monra10-CSDE92-large.png Graphic file (type png)
 <use imgs/monra10-CSDE92-large.png>
-Package pdftex.def Info: imgs/monra10-CSDE92-large.png  used on input line 571.
+Package pdftex.def Info: imgs/monra10-CSDE92-large.png  used on input line 569.
 
 (pdftex.def)             Requested size: 369.89052pt x 199.162pt.
  [27 <./imgs/monra10-CSDE92-large.png>] [28]
 Poglavlje 3.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 5
-89.
-(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [29
-
-]
-Overfull \hbox (8.96426pt too wide) in paragraph at lines 599--600
-[]\T1/ptm/m/it/12 fabric-ca-client \T1/ptm/m/n/12 - na-redba omo-gu-¢uje uprav-
-lja-nje iden-ti-te-tima (uklju-£u-ju¢i uprav-
- []
-
-<imgs/Arhitektura.png, id=145, 975.645pt x 463.7325pt>
+<imgs/Arhitektura.png, id=162, 975.645pt x 463.7325pt>
 File: imgs/Arhitektura.png Graphic file (type png)
 <use imgs/Arhitektura.png>
-Package pdftex.def Info: imgs/Arhitektura.png  used on input line 610.
+Package pdftex.def Info: imgs/Arhitektura.png  used on input line 584.
 (pdftex.def)             Requested size: 321.96385pt x 153.03218pt.
-[30 <./imgs/Arhitektura.png>] [31]
-<imgs/msp-folder.png, id=154, 226.8475pt x 204.765pt>
+[29
+
+ <./imgs/Arhitektura.png>] [30] [31]
+<imgs/msp-folder.png, id=174, 226.8475pt x 204.765pt>
 File: imgs/msp-folder.png Graphic file (type png)
 <use imgs/msp-folder.png>
-Package pdftex.def Info: imgs/msp-folder.png  used on input line 661.
+Package pdftex.def Info: imgs/msp-folder.png  used on input line 637.
 (pdftex.def)             Requested size: 226.84694pt x 204.76448pt.
- [32] [33 <./imgs/msp-folder.png>]
+ [32 <./imgs/msp-folder.png>]
 
-Package natbib Warning: Citation `DBLP:journals/corr/abs-2004-07060' on page 34
- undefined on input line 695.
+Package natbib Warning: Citation `DBLP:journals/corr/abs-2004-07060' on page 33
+ undefined on input line 666.
 
-[34] [35]
-<imgs/Block.png, id=168, 332.24126pt x 256.96pt>
+[33]
+Overfull \hbox (2.67645pt too wide) in paragraph at lines 677--678
+[]\T1/ptm/m/n/12 U mom pri-mjeru ko-ris-tio sam Co-uc-hDB ($\T1/pcr/m/n/12 http
+s : / / couchdb . apache . org/$\T1/ptm/m/n/12 ).
+ []
+
+
+Overfull \hbox (2.61964pt too wide) in paragraph at lines 677--678
+\T1/ptm/m/n/12 JSON ($\T1/pcr/m/n/12 https : / / www . json . org/$\T1/ptm/m/n/
+12 ) do-ku-menti jer Co-uc-hDB po-dr-ºava bo-gate upite
+ []
+
+[34]
+<imgs/Block.png, id=185, 332.24126pt x 256.96pt>
 File: imgs/Block.png Graphic file (type png)
 <use imgs/Block.png>
-Package pdftex.def Info: imgs/Block.png  used on input line 712.
+Package pdftex.def Info: imgs/Block.png  used on input line 683.
 (pdftex.def)             Requested size: 166.12021pt x 128.47968pt.
-<imgs/Transakcija.png, id=169, 161.60374pt x 292.09125pt>
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
+92.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+<imgs/Transakcija.png, id=186, 161.60374pt x 292.09125pt>
 File: imgs/Transakcija.png Graphic file (type png)
 <use imgs/Transakcija.png>
-Package pdftex.def Info: imgs/Transakcija.png  used on input line 732.
+Package pdftex.def Info: imgs/Transakcija.png  used on input line 703.
 (pdftex.def)             Requested size: 80.80167pt x 146.04526pt.
- [36 <./imgs/Block.png>] [37 <./imgs/Transakcija.png>] [38]
+ [35 <./imgs/Block.png>] [36 <./imgs/Transakcija.png>] [37] [38] [39] [40] [41]
 
-Package natbib Warning: Citation `BATTLE200861' on page 39 undefined on input l
-ine 793.
-
-[39] [40] [41]
 Poglavlje 4.
 (./diplomski.bbl [42
 
 ]
-Underfull \hbox (badness 3118) in paragraph at lines 19--23
-[]\T1/ptm/m/n/12 Michael Downes.  \T1/ptm/m/it/12 Short Math Gu-ide for L[]T[]X
-\T1/ptm/m/n/12 .  Ame-ri-can Mat-he-ma-ti-cal
+Underfull \hbox (badness 10000) in paragraph at lines 26--31
+\T1/ptm/m/n/12 URL $\T1/pcr/m/n/12 https : / / github . com / ethereumbook / et
+hereumbook /
  []
 
 
-Underfull \hbox (badness 2245) in paragraph at lines 19--23
-\T1/ptm/m/n/12 So-ci-ety, 2002.  URL $\T1/pcr/m/n/12 ftp : / / ftp . ams . org 
-/ pub / tex / doc / amsmath /
+Underfull \hbox (badness 10000) in paragraph at lines 26--31
+\T1/pcr/m/n/12 blob / develop / 07smart-[]contracts-[]solidity . asciidoc #
  []
 
-) [43
 
-]
+Underfull \hbox (badness 2495) in paragraph at lines 50--55
+[]\T1/ptm/m/n/12 Tamas Blum-mer, Sean Bo-han, Mic Bowman, i et. al.  An in-tro-
+duc-
+ []
+
+
+Underfull \hbox (badness 3954) in paragraph at lines 50--55
+\T1/ptm/m/n/12 tion to hyper-led-ger.  2018.  URL $\T1/pcr/m/n/12 https : / / w
+ww . hyperledger .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--55
+\T1/pcr/m/n/12 org / wp-[]content / uploads / 2018 / 08 / HL _ Whitepaper _
+ []
+
+[43
+
+] [44]) [45]
 
 Package natbib Warning: There were undefined citations.
 
-[44] (./diplomski.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[46] (./diplomski.aux) ) 
 Here is how much of TeX's memory you used:
- 8507 strings out of 480608
- 117552 string characters out of 5903631
- 442819 words of memory out of 5000000
- 24237 multiletter control sequences out of 15000+600000
- 598084 words of font info for 100 fonts, out of 8000000 for 9000
+ 9512 strings out of 480608
+ 134215 string characters out of 5903631
+ 460956 words of memory out of 5000000
+ 25208 multiletter control sequences out of 15000+600000
+ 591712 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,10n,46p,2010b,1350s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/20
-20/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf
--dist/fonts/type1/urw/courier/ucrro8a.pfb></usr/local/texlive/2020/texmf-dist/f
-onts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
-pe1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw
-/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utm
-r8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></
-usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on diplomski.pdf (50 pages, 505172 bytes).
+ 49i,18n,46p,2005b,1350s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/
+type1/urw/times/utmri8a.pfb>
+Output written on diplomski.pdf (53 pages, 513014 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
+ 259 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

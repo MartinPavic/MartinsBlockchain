@@ -1,5 +1,6 @@
 \babel@toc {croatian}{}
 \contentsline {chapter}{Popis slika}{vi}%
+\contentsline {chapter}{Popis tablica}{vii}%
 \contentsline {chapter}{\numberline {1}Uvod}{1}%
 \contentsline {chapter}{\numberline {2}Blockchain s ograničenim pravom pristupa}{4}%
 \contentsline {section}{\numberline {2.1}Konsenzus}{5}%
@@ -22,15 +23,15 @@
 \contentsline {subsubsection}{Autentifikacija i autorizacija}{22}%
 \contentsline {subsubsection}{Propusnost transakcija}{27}%
 \contentsline {chapter}{\numberline {3}Implementacija}{29}%
-\contentsline {section}{\numberline {3.1}Servis članstva}{31}%
-\contentsline {section}{\numberline {3.2}Peer}{33}%
-\contentsline {section}{\numberline {3.3}Glavna knjiga}{35}%
-\contentsline {section}{\numberline {3.4}Poravnavanje transakcija}{37}%
-\contentsline {section}{\numberline {3.5}Chaincode}{38}%
-\contentsline {section}{\numberline {3.6}Kanal}{39}%
+\contentsline {section}{\numberline {3.1}Servis članstva}{30}%
+\contentsline {section}{\numberline {3.2}Peer}{32}%
+\contentsline {section}{\numberline {3.3}Glavna knjiga}{34}%
+\contentsline {section}{\numberline {3.4}Poravnavanje transakcija}{36}%
+\contentsline {section}{\numberline {3.5}Chaincode}{37}%
+\contentsline {section}{\numberline {3.6}Kanal}{38}%
 \contentsline {section}{\numberline {3.7}Klijent}{39}%
 \contentsline {subsection}{\numberline {3.7.1}Sučelje}{39}%
-\contentsline {subsection}{\numberline {3.7.2}Poslužitelj}{40}%
+\contentsline {subsection}{\numberline {3.7.2}Poslužitelj}{39}%
 \contentsline {section}{\numberline {3.8}Analiza}{40}%
 \contentsline {chapter}{\numberline {4}Zaključak}{42}%
 \contentsline {chapter}{Literatura}{43}%

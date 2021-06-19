@@ -1,6 +1,6 @@
 import { Config, saveConfig } from "./config";
 import { enrollUser } from "./enrollUser";
-import { registerUser } from "./registerUser";
+import { MintPoints } from "./network";
 import { Response } from "./response";
 
 async function bootstrap(organization: string) {
@@ -39,11 +39,14 @@ async function bootstrap(organization: string) {
     throw errors[0].error;
   }
   console.log('Students successfully enrolled');
+
+  const mintResponse = await MintPoints(20);
+  if (!mintResponse.success) {
+    throw mintResponse.error;
+  }
+
+  console.log('Successfully created 20 points for initialization')
+
 }
 
 bootstrap(process.argv[2])
-
-
-// SHEMA DA NE MOZE FER DODJELIVAT FSBU I OBRNUTO
-
-// RAZLICITI SERVERI ZA FER I FSB ALI ISTI NETWORK

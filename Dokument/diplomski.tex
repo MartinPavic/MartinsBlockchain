@@ -2,6 +2,7 @@
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage[table,xcdraw]{xcolor}
+\usepackage{pdfpages}
 
 \definecolor{verylightgray}{rgb}{.97,.97,.97}
 \lstdefinelanguage{Solidity}{
@@ -50,18 +51,19 @@
 \maketitle
 
 % Ispis stranice s napomenom o umetanju izvornika rada. Uklonite naredbu \izvornik ako želite izbaciti tu stranicu.
-\izvornik
+\includepdf{tema.pdf}
 
 % Dodavanje zahvale ili prazne stranice. Ako ne želite dodati zahvalu, naredbu ostavite radi prazne stranice.
 \zahvala{}
 
 \tableofcontents
 \listoffigures
+\listoftables
 
 \chapter{Uvod}
 Baze podataka su posvuda.  Koristimo ih svaki dan. Na primjer, popis kontakata u mobitelu je jednostavna baza podataka - elektronička verzija papirnatog adresara. Detaljnije baze podataka uključuju popise kupaca, zaposlenika, pacijenata ili glasača i njihove svojstva i odnose. Složenije baze podataka mogu sadržavati čak i programe koji mogu međusobno komunicirati. Zapravo, o bazi podataka možemo razmišljati kao o bilo kojem organiziranom skupu informacija koje možete pronaći i eventualno ažurirati stavke. Otkako je računalna revolucija započela pedesetih godina prošlog stoljeća, baze podataka igrale su važnu ulogu u poslu i društvu.
 
-Mnoge su baze podataka danas dijeljene. Do sada je svijet toliko povezan da različiti ljudi često trebaju pristupiti istim podacima. Da bi se udovoljilo ovoj potrebi, pojavile su se distribuirane baze podataka, u kojima određenim dijelovima podataka može pristupiti više osoba odjednom. Primjerice, radi pojednostavljenja postavlja- nja ili ponovnog zakazivanja sastanaka, svi članovi radne skupine mogu dijeliti svoje sastanke na internetskom kalendaru. To se ne može učiniti s papirnatim kalendarom. Naravno, u poslu se koriste složenije zajedničke baze podataka. Neka od pitanja koja možemo postaviti pri radu s dijeljenim bazama podataka.
+Mnoge su baze podataka danas dijeljene. Do sada je svijet toliko povezan da različiti ljudi često trebaju pristupiti istim podacima. Da bi se udovoljilo ovoj potrebi, pojavile su se distribuirane baze podataka, u kojima određenim dijelovima podataka može pristupiti više osoba odjednom. Primjerice, radi pojednostavljenja postavljanja ili ponovnog zakazivanja sastanaka, svi članovi radne skupine mogu dijeliti svoje sastanke na internetskom kalendaru. To se ne može učiniti s papirnatim kalendarom. Naravno, u poslu se koriste složenije zajedničke baze podataka. Neka od pitanja koja možemo postaviti pri radu s dijeljenim bazama podataka.
 
 \begin{itemize}
 
@@ -90,20 +92,19 @@ Blockchain je novi oblik zajedničke baze podataka.  Blockchain je distribuirana
 
 Rasprava o povjerenju otvara dvije glavne vrste blockchaina. Većina kriptovaluta koristi blockchain bez dozvola gdje se svatko može pridružiti i imati puno prava na njegovo korištenje. Na primjer, svatko može kupiti Bitcoin ili Ether jer oni koriste širom otvorene, blockchaine bez ograničenja pristupa. S druge strane, poslovni blockchaini imaju tendenciju da im se ne može pristupiti bez dozvole. To znači da osoba treba ispuniti određene zahtjeve za izvođenje određenih radnji na blockchainu. Neki blockchaini ograničavaju pristup čak i prethodno provjerenim korisnicima koji su već dokazali da su oni za koje kažu da jesu, što se može dogoditi kada postoje podatci na blockchainu kojima mogu pristupiti samo određeni sudionici. Drugi dopuštaju bilo kome da se pridruži, ali dopuštaju samo provjernim identitetima da verificiraju transakcije na blockchainu.
 
-U bazi podataka koju dijele dvije različite stranke postavlja se pitanje, što se događa ako obe stranke žele pristupiti podatcima u isto vrijeme? Ako bi se tom bazom podataka upravljalo s blockchainom, ovaj bi se problem mogao riješiti kroz proces koji se naziva konsenzus. Blockchaini koriste konsenzusne sustave kako bi bili sigurni da su podaci u bazi podataka uvijek ispravni. Primjerice, konsenzusni sustav koristio bi unaprijed utvrđena pravila za određivanje koja stranka prva dobiva pristup podatcima. Konsenzusni sustavi imaju mnogo različitih oblika s različitim imenima. Na primjer, Bitcoin koristi dokaz izvršenog rada (eng. proof of work, skr. PoW) konsenzus, gdje računala sudionika rješavaju teške matematičke zadatke. Najbitnije svojstvo koje takvi sustavi moraju zadovoljavati naziva se \textit{Byzantine Fault Tolerance} ili skraćeno BFT. 
+U bazi podataka koju dijele dvije različite stranke postavlja se pitanje, što se događa ako obje stranke žele pristupiti podatcima u isto vrijeme? Ako bi se tom bazom podataka upravljalo s blockchainom, ovaj bi se problem mogao riješiti kroz proces koji se naziva konsenzus. Blockchaini koriste konsenzusne sustave kako bi bili sigurni da su podaci u bazi podataka uvijek ispravni. Primjerice, konsenzusni sustav koristio bi unaprijed utvrđena pravila za određivanje koja stranka prva dobiva pristup podatcima. Konsenzusni sustavi imaju mnogo različitih oblika s različitim imenima. Na primjer, Bitcoin koristi dokaz izvršenog rada (eng. proof-of-work, skr. PoW) konsenzus, gdje računala sudionika rješavaju teške matematičke zadatke. Najbitnije svojstvo koje takvi sustavi moraju zadovoljavati naziva se \textit{Byzantine Fault Tolerance} ili skraćeno BFT. 
 
-Zašto je blockchain važan poslovnim ljudima? Pomoću blockchaina mogu se usmjeriti mnogi postojeći poslovni procesi u mnogim industrijama kako bi uštedjeli vrijeme, uštedjeli novac i smanjili rizik. Mnogi potpuno novi procesi - možda čak i potpuno nove industrije mogu biti izumljeni. Prva generacija interneta bila je izvrsna za dijeljenje informacija: stvari poput e-pošte, dokumenata, fotografija, web stranica, pjesama i videozapisa, ali postojao je problem. Bilo je teško nekome dokazati da su oni koji su rekli da jesu. Svaka transakcija koja je uključivala bilo koju vrijednost zahtijevala je posrednika, poput banke, da potvrdi kupca i prodavača i potvrdi transakciju. To je stvorilo trenje, kašnjenje i trošak - i središnja točka neuspjeha koju bi napadači mogli napasti. Blockchain otvara vrata drugoj generaciji interneta za koju je mnogo prikladnija razmjena vrijednosti, uključujući vrijedne informacije. Pomoću blockchaina ljudi mogu utvrditi tko su i zatim mijenjati stavke poput novca, dionica i obveznica, intelektualno vlasništvo, djela, glasove, bodove lojalnosti i sve ostalo što ima vrijednost. Čak i ako se stranke ne znaju ili ne vjeruju jedni drugima, mogu vjerovati tehnologiji za bilježenje transakcija. A tehnologija uklanja potrebu za bilo kojim posrednikom, što štedi vrijeme i smanjuje troškove.
+Zašto je blockchain važan poslovnim ljudima? Pomoću blockchaina mogu se usmjeriti mnogi postojeći poslovni procesi u mnogim industrijama kako bi uštedjeli vrijeme, uštedjeli novac i smanjili rizik. Mnogi potpuno novi procesi - možda čak i potpuno nove industrije mogu biti izumljeni. Prva generacija interneta bila je izvrsna za dijeljenje informacija: stvari poput e-pošte, dokumenata, fotografija, web stranica, pjesama i videozapisa, ali postojao je problem. Bilo je teško nekome dokazati da su oni koji su rekli da jesu. Svaka transakcija koja je uključivala bilo koju vrijednost zahtijevala je posrednika, poput banke, da potvrdi kupca i prodavača i potvrdi transakciju. To je stvorilo trenje, kašnjenje i trošak - i središnja točka neuspjeha koju bi napadači mogli napasti. Blockchain otvara vrata drugoj generaciji interneta za koju je mnogo prikladnija razmjena vrijednosti, uključujući vrijedne informacije. Pomoću blockchaina ljudi mogu utvrditi tko su i zatim mijenjati stavke poput novca, dionica i obveznica, intelektualno vlasništvo, djela, glasove, bodove lojalnosti i sve ostalo što ima vrijednost. Čak i ako se stranke ne znaju ili ne vjeruju jedni drugima, mogu vjerovati tehnologiji za bilježenje transakcija. A tehnologija uklanja potrebu za bilo kojim posrednikom, što štedi vrijeme i smanjuje troškove \cite{intro}.
 
 \chapter{Blockchain s ograničenim pravom pristupa}
-Postoje razne arhitekture blockchaina. S ograničenjem pristupa i bez ograničanja pristupa, javni i privatni. Nama je, u ovom radu, najzanimljivija arhitektura blockchaina koja ima ograničen pristup. Takvi blockchaini zahtijevaju posebna dopuštenja za čitanje, pristup i upisivanje podataka na njih. Suštinska konfiguracija takvih blockchaina kontrolira transakcije sudionika i definira njihove uloge u kojima svaki sudionik može pristupiti i doprinijeti blockchainu. To također uključuje i održavanje identiteta svakog sudionika blockchaina na mreži. Takvi se blockchaini nazivaju blockchaini s ograničenim pravom pristupa (eng. permissioned blockchains, skr. PBs). PB-i također se razlikuju od privatnih blockchaina, koji omogućuju sudjelovanje samo poznatim čvorovima. Na primjer, banka možda pokreće privatni blockchain koji posluje kroz određeni broj čvorova unutar banke. Suprotno tome, PB-i mogu dopustiti bilo kome da se pridruži mreži nakon što se definiraju njihov identitet i uloga.
+Postoje razne arhitekture blockchaina. S ograničenjem pristupa i bez ograničenja pristupa, javni i privatni. Nama je, u ovom radu, najzanimljivija arhitektura blockchaina koja ima ograničen pristup. Takvi blockchaini zahtijevaju posebna dopuštenja za čitanje, pristup i upisivanje podataka na njih. Suštinska konfiguracija takvih blockchaina kontrolira transakcije sudionika i definira njihove uloge u kojima svaki sudionik može pristupiti i doprinijeti blockchainu. To također uključuje i održavanje identiteta svakog sudionika blockchaina na mreži. Takvi se blockchaini nazivaju blockchaini s ograničenim pravom pristupa (eng. \textit{permissioned blockchains}, skr. PBs). PB-i također se razlikuju od privatnih blockchaina, koji omogućuju sudjelovanje samo poznatim čvorovima. Na primjer, banka može pokrenuti privatni blockchain koji posluje kroz određeni broj čvorova unutar banke. Suprotno tome, PB-i mogu dopustiti bilo kome da se pridruži mreži nakon što se definiraju njihov identitet i uloga.
 
-\textbf{Prednosti}. Brojne su prednosti blockchaina s ograničenim pravom pristupa, koje ga čine povoljnijim za upotrebu od javnih blockchaina. PB-e karakterizira učinkovitija izvedba. Kada bi uspoređivali PB-e i javne blockchaine, oni nude bolju izvedbu. Glavni i najočigledniji razlog tome je ograničen broj ččvorova koji sudjeluje u blockchainu, za razliku od javnih blockchaina gdje, u teoriji, može biti neograničeni broj ččvorova. Iz toga slijedi uklanjanje nepotrebnih proračuna potrebnih za postizanje konsenzusa, što svakako poboljšava izvedbu i performanse, a još i k tome imaju unaprijed određene čvorove koji validiraju transakcije. PB-i imaju pravilno organiziranu strukturu upravljanja, što rezultira tome da administratori trebaju manje vremena za ažuriranje pravila mreže, što je značajno brže u odnosu na javne blockchaine. Jedan od problema javnih blockchaina je taj što ne rade svi čvorovi zajedno kako bi implementirali ažuriranja mreže. Čvorovi mogu staviti svoje vlastite interese iznad interesa cijelog sustava, što rezultira usporavanjem ažuriranja mreže. Za usporedbu, PB-i nemaju taj problem jer čvorovi unutar takvog sustava rade zajedno kako bi brže ažurirali mrežu, i zato što si međusobno vjeruju i surađuju, u interesu im je da je mreža što bolja i funkcionalnija. Jedna od vrlo važnih karakteristika koja pridonosi korisnosti PB-a je decentralizirana pohrana. PB-i potpuno iskorištavaju tehnologiju, tako što osim samih transakcija koje se događaju na mreži, također spremaju i druge važne podatke koje svi (ili neki) ččvorovi u mreži koriste. Ti su podatci spremljeni između čvorova organizacija koje su sudionici PB-a, a održavaju se jednakima za sve konsezusnim algoritmima. Sve to dovodi do toga da PB-i zahtijevaju manje troškova od drugih modela poslovanja te možemo zaključiti da su isplativi, pogotovo u usporedbi s javnim blockchainima, gledajući iz perspektive poslovnih rješenja.
+\textbf{Prednosti}. Brojne su prednosti blockchaina s ograničenim pravom pristupa, koje ga čine povoljnijim za upotrebu od javnih blockchaina. PB-e karakterizira učinkovitija izvedba. Kada bi uspoređivali PB-e i javne blockchaine, oni nude bolju izvedbu. Glavni i najočigledniji razlog tome je ograničen broj čvorova koji sudjeluje u blockchainu, za razliku od javnih blockchaina gdje, u teoriji, može biti neograničeni broj čvorova. Iz toga slijedi uklanjanje nepotrebnih proračuna potrebnih za postizanje konsenzusa, što svakako poboljšava izvedbu i performanse, a još i k tome imaju unaprijed određene čvorove koji validiraju transakcije. PB-i imaju pravilno organiziranu strukturu upravljanja, što rezultira tome da administratori trebaju manje vremena za ažuriranje pravila mreže, što je značajno brže u odnosu na javne blockchaine. Jedan od problema javnih blockchaina je taj što ne rade svi čvorovi zajedno kako bi implementirali ažuriranja mreže. Čvorovi mogu staviti svoje vlastite interese iznad interesa cijelog sustava, što rezultira usporavanjem ažuriranja mreže. Za usporedbu, PB-i nemaju taj problem jer čvorovi unutar takvog sustava rade zajedno kako bi brže ažurirali mrežu, i zato što si međusobno vjeruju i surađuju, u interesu im je da je mreža što bolja i funkcionalnija. Jedna od vrlo važnih karakteristika koja pridonosi korisnosti PB-a je decentralizirana pohrana. PB-i potpuno iskorištavaju tehnologiju, tako što osim samih transakcija koje se događaju na mreži, također spremaju i druge važne podatke koje svi (ili neki) čvorovi u mreži koriste. Ti su podatci spremljeni između čvorova organizacija koje su sudionici PB-a, a održavaju se jednakima za sve konsenzusnim algoritmima. Sve to dovodi do toga da PB-i zahtijevaju manje troškova od drugih modela poslovanja te možemo zaključiti da su isplativi, pogotovo u usporedbi s javnim blockchainima, gledajući iz perspektive poslovnih rješenja.
 
-\textbf{Nedostaci}. Naravno, PB-i nisu oslobođeni nedostataka. Sigurnost PB-a dobra je koliko i integritet člana. Maliciozni dio PB-a može promjeniti i ugroziti podatake pohranjene u mreži. Na taj se način može ugroziti integritet mreže. Da bi ga riješio, sustav treba imati odgovarajuća dopuštenja, tako da se loši čvorovi ne mogu udružiti i kompromitirati mrežu. Kontrola, cenzura i regulacija - u idealnom svijetu PB-i bi trebali funkcionirati kao javni blockchain, ali s propisima. Međutim, propisi uvode cenzuru u mrežu, gdje tijelo može ograničiti transakciju ili kontrolirati da se ona dogodi. To je prijetnja bilo kojoj tvrtki ili organizaciji koja koristi PB. Ovaj pristup također onemogućuje PB da maksimalno iskoristi cijeli blockchain ekosustav.
+\textbf{Nedostaci}. Naravno, PB-i nisu oslobođeni nedostataka. Sigurnost PB-a dobra je koliko i integritet člana. Maliciozni dio PB-a može promijeniti i ugroziti podatke pohranjene u mreži. Na taj se način može ugroziti integritet mreže. Da bi ga riješio, sustav treba imati odgovarajuća dopuštenja, tako da se loši čvorovi ne mogu udružiti i kompromitirati mrežu. Kontrola, cenzura i regulacija - u idealnom svijetu PB-i bi trebali funkcionirati kao javni blockchain, ali s propisima. Međutim, propisi uvode cenzuru u mrežu, gdje tijelo može ograničiti transakciju ili kontrolirati da se ona dogodi. To je prijetnja bilo kojoj tvrtki ili organizaciji koja koristi PB. Ovaj pristup također onemogućuje PB da maksimalno iskoristi cijeli blockchain ekosustav.
 
 \section{Konsenzus}
-Svi čvorovi koji sudjeluju u mreži moraju se složiti oko svake poruke koja se prenosi između čvorova. Ako je grupa čvorova oštećena ili je poruka koju oni prenose oštećena, ona ipak ne bi trebala utjecati na mrežu kao cjelinu i trebala bi se oduprijeti ovom "napadu". Ukratko, mreža se u cijelosti mora složiti oko svake poruke prenesene u mreži. Ovaj se sporazum naziva konsenzusom. Konsenzus je temeljni problem distribuiranih sustava otpornih na kvarove. Konsenzus pokušava riješiti problem Bizantskih generala
-(eng.  \textit{Byzantine Generals Problem}). Analogija korištena za problem Bizantskih generala u osnovi ide ovako: Nekoliko divizija bizantske vojske smješteno je neposredno ispred neprijateljskog grada i priprema se za bitku. Razni generali mogu međusobno komunicirati samo putem glasnika. Moraju se dogovoriti oko zajednikog djelovanja. Međutim, moramo pretpostaviti da su neki generali izdajice koji žele spriječiti lojalne generale da se dogovore oko zajednikog postupka. Potreban je algoritam kako bi se osiguralo da mala skupina izdajica ne može poremetiti komunikaciju. Da bi riješili problem bizantskih generala, lojalni generali trebaju siguran način da se dogovore o planu - konsenzus - i izvrše svoj odabrani plan.
+Svi čvorovi koji sudjeluju u mreži moraju se složiti oko svake poruke koja se prenosi između čvorova. Ako je grupa čvorova oštećena ili je poruka koju oni prenose oštećena, ona ipak ne bi trebala utjecati na mrežu kao cjelinu i trebala bi se oduprijeti ovom "napadu". Ukratko, mreža se u cijelosti mora složiti oko svake poruke prenesene u mreži. Ovaj se sporazum naziva konsenzusom. Konsenzus je temeljni problem distribuiranih sustava otpornih na kvarove. Konsenzus pokušava riješiti problem Bizantskih generala(eng.  \textit{Byzantine Generals Problem}).  Analogija korištena za problem Bizantskih generala u osnovi ide ovako: Nekoliko divizija bizantske vojske smješteno je neposredno ispred neprijateljskog grada i priprema se za bitku. Razni generali mogu međusobno komunicirati samo putem glasnika. Moraju se dogovoriti oko zajedničkog djelovanja. Međutim, moramo pretpostaviti da su neki generali izdajice koji žele spriječiti lojalne generale da se dogovore oko zajedničkog postupka. Potreban je algoritam kako bi se osiguralo da mala skupina izdajica ne može poremetiti komunikaciju. Da bi riješili problem bizantskih generala, lojalni generali trebaju siguran način da se dogovore o planu - konsenzus - i izvrše svoj odabrani plan \cite{impossibility}.
 
 \subsection{Dokaz izvršenog rada i dokaz uloga}
 Dokaz izvršenog rada i dokaz uloga su dva najpoznatija konsenzusna algoritma koja se koriste unutar javnih blockchain sustava. Iako se u ovom radu nećemo baviti njima, važno ih je spomenuti jer su oni, posebno PoW, glavni čimbenici koji su pridonijeli razvoju današnjih blockchain sustava.
@@ -115,7 +116,7 @@ Dokaz izvršenog rada i dokaz uloga su dva najpoznatija konsenzusna algoritma ko
 \label{fig:pow}
 \end{figure}
 
-Dokaz izvršenog rada radi tako da rudari pokušavaju generirati hash koji je manji od zadanog praga koji se zove težina rudarenja. Do toga hasha dolaze tako da mjenjaju ulaz u kriptografsku hash funkciju dodavajući jedan cijeli broj koji se zove \textit{nonce}.  Dokaz izvršenog rada funkcionira na način da je vjerojatnost rudarenja bloka proporcionalna količini računalnih resursa rudara. Isplate za blokove vremenom postaju sve manje, kako bi se smanjila mogućnost većinskog napada na mrežu. PoW sustavi vremenom postaju centralizirani, jer se rudari udružuju u takozvane "bazene rudara".
+Dokaz izvršenog rada radi tako da rudari pokušavaju generirati hash koji je manji od zadanog praga koji se zove težina rudarenja. Do toga hasha dolaze tako da mijenjaju ulaz u kriptografsku hash funkciju dodajući jedan cijeli broj koji se zove \textit{nonce}.  Dokaz izvršenog rada funkcionira tako da je vjerojatnost rudarenja bloka proporcionalna količini računalnih resursa rudara. Isplate za blokove vremenom postaju sve manje, kako bi se smanjila mogućnost većinskog napada na mrežu. PoW sustavi vremenom postaju centralizirani, jer se rudari udružuju u takozvane "bazene rudara".
 
 \begin{figure}[htb]
 \centering
@@ -128,12 +129,11 @@ Dokaz uloga funkcionira tako da rudar može rudariti blok ovisno o količini res
 
 \subsection{Paxos}
 
-Paxos je obitelj konsenzusnih protokola koji osiguravaju dosljednost replika u distribuiranom sustavu nepouzdanih procesora, odnosno sustavu u kojem poslužitelji mogu zakazati. Protokol Paxos uveo je 1989. Leslie Lamport, nazvan po izmišljenom zakonodavnom sustavu konsenzusa koji se koristio na otoku Paxos u Grčkoj. Cilj Paxos algoritma je održavanje istog redoslijeda naredbi među više replika, tako da sve replike na kraju konvergiraju u istu vrijednost. To je slično slučaju kada više automobila slijedeći iste upute stiže na isto konačno odredište.
+Paxos je obitelj konsenzusnih protokola koji osiguravaju dosljednost replika u distribuiranom sustavu nepouzdanih procesora, odnosno sustavu u kojem poslužitelji mogu zakazati. Protokol Paxos uveo je 1989. Leslie Lamport, nazvan po izmišljenom zakonodavnom sustavu konsenzusa koji se koristio na otoku Paxos u Grčkoj. Cilj Paxos algoritma je održavanje istog redoslijeda naredbi među više replika, tako da sve replike na kraju konvergiraju u istu vrijednost. To je slično slučaju kada više automobila slijedeći iste upute stiže na isto konačno odredište. \cite{lamport2001paxos}
 
 \subsection{Raft}
 \label{sec:raft}
-Raft je konsenzusni algoritam koji je dizajniran tako da ga je lako razumjeti. Jednak je Paxosu u toleranciji kvarova i performansama. Razlika je u tome što je razložen na relativno neovisne podprobleme i bavi se svim glavnim dijelovima potrebnim za praktične sustave na uredniji način. Kako bi se poboljšala razumljivost, Raft razdvaja ključne elemente konsenzusa, kao što su izbor vođe, replikacija zapisnika i sigurnost te provodi snažniji stupanj konherentnosti kako bi se smanjio broj stanja koja se moraju uzeti u obzir. Raft također uključuje novi mehanizam za promjenu članstva klastera,
-koji koristi preklapajuće većine kako bi se zajamčila sigurnost. \cite{raft}
+Raft je konsenzusni algoritam koji je dizajniran tako da ga je lako razumjeti. Jednak je Paxosu u toleranciji kvarova i performansama. Razlika je u tome što je razložen na relativno neovisne podprobleme i bavi se svim glavnim dijelovima potrebnim za praktične sustave na uredniji način. Kako bi se poboljšala razumljivost, Raft razdvaja ključne elemente konsenzusa, kao što su izbor vođe, replikacija zapisnika i sigurnost te provodi snažniji stupanj konherentnosti kako bi se smanjio broj stanja koja se moraju uzeti u obzir. Raft također uključuje novi mehanizam za promjenu članstva klastera (skupine čvorova), koji koristi preklapajuće većine kako bi se zajamčila sigurnost. \cite{raft}
 
 \begin{figure}[htb]
 \centering
@@ -166,14 +166,14 @@ koji koristi preklapajuće većine kako bi se zajamčila sigurnost. \cite{raft}
 
 \item izbor vođe - Raft koristi nasumične tajmere za biranje vođe. To dodaje samo malu količinu dodatnog mehanizma već otprije potrebnim mehanizmima za bilo koji algoritam konsenzusa, dok sukobe rješava jednostavno i brzo;
 
-\item promjene članstva - Raftov mehanizam za promjene skupa čvorova u klasteru koristi novi zajedniki konsenzusni pristup gdje se većina dvije različite konfiguracije preklapa tijekom prijelaza. To omogućuje klasteru da nastavi raditi normalno tijekom promjena konfiguracije.
+\item promjene članstva - Raftov mehanizam za promjene skupa čvorova u klasteru koristi novi zajednički konsenzusni pristup gdje se većina dvije različite konfiguracije preklapa tijekom prijelaza. To omogućuje klasteru da nastavi raditi normalno tijekom promjena konfiguracije.
 
 \end{itemize}
 
 \section{Pametni ugovori}
 
 Pojam pametni ugovor korišten je tijekom godina za opisivanje širokog spektra različitih stvari. Devedesetih je kriptograf Nick Szabo skovao taj pojam i definirao ga kao "skup obećanja, specificiranih u digitalnom obliku, uključujući protokole unutar kojih stranke izvršavaju ostala obećanja". Od tada se koncept pametnih ugovora razvijao,  posebno nakon uvođenja decentraliziranih blockchain platformi s izumom Bitcoina 2009. Taj pojam najčešće je povezan s Ethereum blockchainom, no kontekstu Ethereuma, taj je izraz zapravo pomalo pogrešan naziv, s obzirom na to da pametni ugovori Ethereum nisu ni jedno ni drugo. Nisu pametni niti pravni ugovori, ali termin je zapeo.
-Što su onda zapravo pametni ugovori? Ethereum definira pametne ugovore u sljedećih nekoliko stavki:
+Što su onda zapravo pametni ugovori? Ethereum definira pametne ugovore u sljedećih nekoliko stavki \cite{ethereum-smart-contract}:
 
 \begin{itemize}
 
@@ -181,7 +181,7 @@ Pojam pametni ugovor korišten je tijekom godina za opisivanje širokog spektra 
 
 \item \textbf{nepromjenjiv} - Jednom postavljen, kôd pametnog ugovora ne može se mijenjati. Za razliku od tradicionalnog softvera, jedini način izmjene pametnog ugovora je postavljanje nove instance;
 
-\item \textbf{deterministiki} - Ishod izvršenja pametnog ugovora jednak je za sve koji ga izvode, s obzirom na kontekst transakcije koja je pokrenula njegovo izvršenje i stanje blockchaina u trenutku izvršenja;
+\item \textbf{deterministički} - Ishod izvršenja pametnog ugovora jednak je za sve koji ga izvode, s obzirom na kontekst transakcije koja je pokrenula njegovo izvršenje i stanje blockchaina u trenutku izvršenja;
 
 \item \textbf{kontekst Ethereumovog virtualnog stroja} - Pametni ugovori rade s vrlo ograničenim kontekstom izvršenja. Mogu pristupiti vlastitom stanju, kontekstu transakcije koja ih je pozvala i nekim informacijama o najnovijim blokovima;
 
@@ -191,13 +191,13 @@ Pojam pametni ugovor korišten je tijekom godina za opisivanje širokog spektra 
 
 Pametni ugovori obično su napisani u programskom jeziku visoke razine, kao što je Solidity. Ali da bi se izvodili, moraju se prevesti u bajtni kod niske razine koji se izvodi u Ethereum virtualnom stroju. Jednom sastavljeni, oni se raspoređuju na Ethereum platformi pomoću posebne transakcije stvaranja ugovora, koja se identificira kao takva slanjem na adresu za stvaranje posebnog ugovora 0x0. Svaki ugovor identificiran je Ethereum adresom koja je izvedena iz transakcije stvaranja ugovora kao funkcija izvornog računa i nonce-a. Ethereum adresa ugovora može se koristiti u transakciji kao primatelj, šaljući sredstva na ugovor ili pozivajući jednu od funkcija ugovora. Za razliku od vanjskih računa, ne postoje ključevi povezani s računom stvorenim za novi
 pametni ugovor. Stvaratelj ugovora, ne dobiva nikakve posebne povlastice na razini protokola (iako ih se može izričito kodirati u pametni ugovor).
-Važno je da se ugovori izvršavaju samo ako ih transakcija pozove. Svi pametni ugovori u Ethereumu izvršavaju se u konačnici zbog transakcije pokrenute od vanjskog računa. Ugovor može pozvati drugi ugovor koji može pozvati treći ugovor, i tako dalje, ali prvi ugovor u takvom lancu izvršenja uvijek će biti pozvan transakcijom od vanjskog računa. Ugovori se nikad ne izvršavaju sami ili u pozadini. Ugovori učinkovito miruju sve dok transakcija ne pokrene izvršenje, bilo izravno ili neizravno kao dio lanca ugovora.  Transakcije su atomske,  ili se uspješno izvršavaju ili poništavaju.
+Važno je da se ugovori izvršavaju samo ako ih transakcija pozove. Svi pametni ugovori u Ethereumu izvršavaju se u konačnici zbog transakcije pokrenute od vanjskog računa. Ugovor može pozvati drugi ugovor koji može pozvati treći ugovor, i tako dalje, ali prvi ugovor u takvom lancu izvršenja uvijek će biti pozvan transakcijom od vanjskog računa. Ugovori se nikad ne izvršavaju sami ili u pozadini. Ugovori učinkovito miruju sve dok transakcija ne pokrene izvršenje, bilo izravno ili neizravno kao dio lanca ugovora.  Transakcije su atomske,  ili se uspješno izvršavaju ili poništavaju. \cite{scTemplates}
 
 \begin{enumerate}
 
 \item ako se transakcija pošalje iz vanjskog računa na drugi vanjski račun, tada se bilježe sve promjene u globalnom stanju (npr. stanja računa) izvršene transakcijom;
 
-\item ako se transakcija pošalje iz vanjskog računa na ugovor koji se ne poziva na bilo koji drugi ugovor, tada se bilježe sve promjene globalnog stanja (npr. stanja na raćunima, varijable stanja ugovora);
+\item ako se transakcija pošalje iz vanjskog računa na ugovor koji se ne poziva na bilo koji drugi ugovor, tada se bilježe sve promjene globalnog stanja (npr. stanja na računima, varijable stanja ugovora);
 
 \item ako se pošalje transakcija iz vanjskog računa do ugovora koji samo poziva druge ugovore na način koji propagira pogreške, tada se bilježe sve promjene globalnog stanja (npr. stanja na računima, varijable stanja ugovora);
 
@@ -206,19 +206,18 @@ Važno je da se ugovori izvršavaju samo ako ih transakcija pozove. Svi pametni 
 \end{enumerate}
 
 Kao što je prethodno spomenuto, važno je zapamtiti da se kod ugovora ne može mijenjati. Međutim, ugovor se može "izbrisati", uklanjajući kod i njegovo unutarnje stanje (pohranu) s adrese, ostavljajući prazan račun. Sve transakcije poslane na tu adresu računa nakon brisanja ugovora ne rezultiraju izvršenjem koda, jer tamo više nema koda za izvršavanje. Brisanje ugovora ne uklanja povijest transakcija ugovora,  jer je sam blockchain nepromjenjiv. Također je važno napomenuti da će mogućnost biti dostupna samo ako je autor ugovora programirao pametni ugovor da ima tu funkcionalnost.
-Pametni ugovori s ograničenim pristupom postavljeni na blockchainu s ograničenim pristupom, postaju sve popularniji u poslovnom svijetu. U usporedbi s neučinkovitim i skupim procesima provjere valjanosti javnih blockchaina, blockchaini s ograničenim pristupom prikladniji su za poticanje poslovne suradnje. Javni pametni ugovori nameću neizbježne opasnosti za privatnost korisnika. Stoga se u poslovnom svijetu više koriste pametni ugovori s ograničenim pristupom, a to uključuje banke, lanac opskrbe, glasanje, IoT, osiguranje, itd.
+Pametni ugovori s ograničenim pristupom postavljeni na blockchainu s ograničenim pristupom, postaju sve popularniji u poslovnom svijetu. U usporedbi s neučinkovitim i skupim procesima provjere valjanosti javnih blockchaina, blockchaini s ograničenim pristupom prikladniji su za poticanje poslovne suradnje. Javni pametni ugovori nameću neizbježne opasnosti za privatnost korisnika. Stoga se u poslovnom svijetu više koriste pametni ugovori s ograničenim pristupom, a to uključuje banke, lanac opskrbe, glasanje, IoT, osiguranje, itd. \cite{ethereum-smart-contract}
 
 \subsection{Tokeni}
 
 U Blockchain ekosustavu bilo koja imovina koja je digitalno prenosiva između dvije stranke naziva se "token". Tokeni na blockchainu (kriptografski tokeni) predstavljaju skup pravila, kodiranih u pametnom ugovoru - ugovoru tokena. Svaki token pripada blockchain adresi. Ti su tokeni dostupni preko virtualnog novčanika, onog koji komunicira s blockchainom i upravlja parom javno-privatnih ključeva povezanim s adresom blockchaina. Samo osoba koja ima privatni ključ za tu adresu može pristupiti odgovarajućim tokenima. Token može predstavljati na primjer imovinu, pravo pristupa ili pak glas na izborima, a vlasnik ga može prenijeti (odobriti) tako da to potpiše svojim privatnim ključem, stvarajući digitalni potpis. Valjanost i sigurnost kriptografskih tokena kontrolira pametni ugovor koji ga je stvorio zajedno s osnovnom distribuiranom glavnom knjigom i većinskim konsenzusom.
-Ethereum je razvio standardizirani pametni ugovor, standard ERC-20, koji definira zajedniki popis pravila za Ethereum tokene, uključujući način na koji se tokeni prenose s jedne Ethereum adrese na drugu i kako se pristupa podacima unutar svakog tokena. Ovi relativno jednostavni pametni ugovori upravljaju logikom i održavaju popis svih izdanih tokena i mogu predstavljati bilo koju imovinu koja ima značajke zamjenjive robe.
-Besplatni i otvoreni ERC-721 standard opisuje kako napraviti takozvane nezamjenjive tokene na Ethereum blockchainu. Ovo je uvelo doba složenijih obilježja tokena.  Ovaj je standard olakšao stvaranje tokena koji predstavlja bilo koju vrstu kolekcionarskih predmeta, umjetnina, vlasništva ili personaliziranih prava pristupa. Ovi nezamjenjivi tokeni imaju posebna svojstva koja token čine jedinstvenim i povezani su s identitetom određene osobe.
+Ethereum je razvio standardizirani pametni ugovor, standard ERC-20, koji definira zajednički popis pravila za Ethereum tokene, uključujući način na koji se tokeni prenose s jedne Ethereum adrese na drugu i kako se pristupa podacima unutar svakog tokena. Ovi relativno jednostavni pametni ugovori upravljaju logikom i održavaju popis svih izdanih tokena i mogu predstavljati bilo koju imovinu koja ima značajke zamjenjive robe. \cite{erc20}
+Besplatni i otvoreni ERC-721 standard opisuje kako napraviti takozvane nezamjenjive tokene na Ethereum blockchainu. Ovo je uvelo doba složenijih obilježja tokena.  Ovaj je standard olakšao stvaranje tokena koji predstavlja bilo koju vrstu kolekcionarskih predmeta, umjetnina, vlasništva ili personaliziranih prava pristupa. Ovi nezamjenjivi tokeni imaju posebna svojstva koja token čine jedinstvenim i povezani su s identitetom određene osobe.\cite{erc721}
 
-Tokene trenutno nije moguće prebacivati između različitih mreža, jer se izdaju pametnim ugovorima specifinim za blockchain koji njima upravljaju. Ti različiti blockchaini imaju različite standarde i nisu interoperabilni. Rješavanje tih problema moglo bi dovesti do masovnog usvajanja tokena širom tehnološkog svijeta.
+Tokene trenutno nije moguće prebacivati između različitih mreža, jer se izdaju pametnim ugovorima specifičnim za blockchain koji njima upravljaju. Ti različiti blockchaini imaju različite standarde i nisu interoperabilni. Rješavanje tih problema moglo bi dovesti do masovnog usvajanja tokena širom tehnološkog svijeta.
 \subsubsection{ERC-20}
 
-Standard ERC-20 (Ethereum zahtjev za komentare 20,  eng.  \textit{Ethereum Request for Comments} 20), predložen od  Fabiana Vogelstellera u studenom 2015. godine, je standard tokena koji predstavlja sučelje po kojem se programiraju pametni ugovori. Pruža funkcionalnosti poput prijenosa tokena s jednog računa na drugi, dohvaćanja trenutnog stanja tokena na računu, kao i ukupne zalihe tokena dostupnih na mreži. Osim njih, ima i neke druge funkcije poput odobrenja da iznos tokena s jednog računa može potrošiti račun treće strane. Ako pametni ugovor implementira sljedeće metode i događaje, može se nazvati ERC-20 token ugovorom, a nakon primjene bit će odgovoran za praćenje stvorenih
-tokena na Ethereumu:
+Standard ERC-20 (Ethereum zahtjev za komentare 20,  eng.  \textit{Ethereum Request for Comments} 20), predložen od  Fabiana Vogelstellera u studenom 2015. godine \cite{erc20}, je standard tokena koji predstavlja sučelje po kojem se programiraju pametni ugovori. Pruža funkcionalnosti poput prijenosa tokena s jednog računa na drugi, dohvaćanja trenutnog stanja tokena na računu, kao i ukupne zalihe tokena dostupnih na mreži. Osim njih, ima i neke druge funkcije poput odobrenja da iznos tokena s jednog računa može potrošiti račun treće strane. Ako pametni ugovor implementira sljedeće metode i događaje, može se nazvati ERC-20 token ugovorom, a nakon primjene bit će odgovoran za praćenje stvorenih tokena na Ethereumu:
 
 \begin{lstlisting}
 function name() public view returns (string)
@@ -238,7 +237,7 @@ event Approval(address indexed _owner, address indexed _spender,  uint256 _value
 
 \subsubsection{ERC-721}
 
-Standard ERC-721 (Ethereum zahtjev za komentare 721, eng. \textit{Ethereum Request for Comments} 721), koji su u siječnju 2018. predložili William Entriken, Dieter Shirley, Jacob Evans, Nastassia Sachs, standard je nezamjenjivog tokena koji predstavlja sučelje po kojem se programiraju pametni ugovori. Pruža funkcionalnosti poput prijenosa tokena s jednog računa na drugi, dobivanjatrenutnog stanja tokena na računu, dobivanja vlasnika određenog tokena, kao i ukupne zalihe tokena dostupnih na mreži. Osim njih, on ima i neke druge funkcije poput odobrenja da iznos tokena s računa može premjestiti račun treće strane.
+Standard ERC-721 (Ethereum zahtjev za komentare 721, eng. \textit{Ethereum Request for Comments} 721), koji su u siječnju 2018. predložili William Entriken, Dieter Shirley, Jacob Evans, Nastassia Sachs, standard je nezamjenjivog tokena koji predstavlja sučelje po kojem se programiraju pametni ugovori \cite{erc721}. Pruža funkcionalnosti poput prijenosa tokena s jednog računa na drugi, dobivanja trenutnog stanja tokena na računu, dobivanja vlasnika određenog tokena, kao i ukupne zalihe tokena dostupnih na mreži. Osim njih, on ima i neke druge funkcije poput odobrenja da iznos tokena s računa može premjestiti račun treće strane.
 Ako pametni ugovor implementira sljedeće metode i događaje, može se nazvati ERC-721 ugovorom o nezamjenjivom tokenu i nakon što se jednom primijeni, bit će odgovoran za praćenje stvorenih tokena na Ethereumu.
 
 \begin{lstlisting}
@@ -262,12 +261,12 @@ event ApprovalForAll(address indexed _owner, address indexed _operator, bool _ap
 
 \subsection{Corda}
 
-Corda je platforma za distribuirane glavne knjige koje se koriste za evidentiranje i obradu financijskih sporazuma. Platforma Corda podržava pametne ugovore koji odgovaraju definiciji \cite{Corda}. Corda pametni ugovor je ugovor čije je izvršenje automatizirano pomoću računalnog koda koji radi s ljudskim unosom i kontrolom, i čija su prava i obveze pravno izvršni. Pametni ugovor povezuje poslovnu logiku i poslovne podatke s povezanim pravnim osobama kako bi se osiguralo da financijski sporazumi na platformi budu ukorijenjeni vrsto u zakonu i da se mogu provoditi te da postoji jasan put u slučaju dvosmislenosti, neizvjesnosti ili spora.
+Corda je platforma za distribuirane glavne knjige koje se koriste za evidentiranje i obradu financijskih sporazuma. Platforma Corda podržava pametne ugovore koji odgovaraju definiciji \cite{Corda}. Corda pametni ugovor je ugovor čije je izvršenje automatizirano pomoću računalnog koda koji radi s ljudskim unosom i kontrolom, i čija su prava i obveze pravno izvršni. Pametni ugovor povezuje poslovnu logiku i poslovne podatke s povezanim pravnim osobama kako bi se osiguralo da financijski sporazumi na platformi budu ukorijenjeni čvrsto u zakonu i da se mogu provoditi te da postoji jasan put u slučaju dvosmislenosti, neizvjesnosti ili spora.
 Corda je specijalizirana za uporabu u reguliranim financijskim institucijama. Inspiriran je blockchain sustavima, ali bez dizajna koji čini tradicionalne blockchaine neprikladnim za mnoge financijske scenarije. Corda pruža radni okvir za izvođenje pametnih ugovora sa sljedećim ključnim aktivnostima i značajke:
 
 \begin{itemize}
 
-\item zapisivanje i upravljanje evolucijom financijskih sporazuma i drugih dijeljnih podataka između dvije stranke na način koji je utemeljen na postojećim pravnim konstrukcijama i kompatibilan sa postojećim i novim regulacijama;
+\item zapisivanje i upravljanje evolucijom financijskih sporazuma i drugih dijeljenih podataka između dvije stranke na način koji je utemeljen na postojećim pravnim konstrukcijama i kompatibilan s postojećim i novim regulacijama;
 
 \item koreografiranje tijeka rada između tvrtki bez središnjeg tijela;
 
@@ -293,35 +292,35 @@ Postoje dva aspekta konsenzusa:
 
 \begin{enumerate}
 
-\item \textbf{valjanost transakcije}: stranke mogu biti sigurne da je predložena transakcija valjana tako da izvrši kod ugovora uspješno i da ima sve valjane potpise. Ovo također mora vrijediti i za sve transkacije na koje se ova transakcija referira;
+\item \textbf{valjanost transakcije}: stranke mogu biti sigurne da je predložena transakcija valjana tako da izvrši kod ugovora uspješno i da ima sve valjane potpise. Ovo također mora vrijediti i za sve transakcije na koje se ova transakcija referira;
 
-\item \textbf{jedinstvenost transakcije}: stranke mogu biti sigurne da je transakcija u pitanju jedinstveni potrošač svih njenih ulaznih stanja. Odnosno, ne postoji nijedna druga transakcija za koju je prethodno postignut konsenzus (valjanost i jedinstvenost), koja troši bilo koje od istih stanja. Stranke se mogu dogovoriti o valjanosti transakcija samostalnim pokretanjem istog koda ugovora i logike validacije. Međutim, konsenzus oko jedinstvenosti zahtijeva unaprijed određenog promatrača,  koji će u mnogim sluajevima morati biti neovisan.
+\item \textbf{jedinstvenost transakcije}: stranke mogu biti sigurne da je transakcija u pitanju jedinstveni potrošač svih njenih ulaznih stanja. Odnosno, ne postoji nijedna druga transakcija za koju je prethodno postignut konsenzus (valjanost i jedinstvenost), koja troši bilo koje od istih stanja. Stranke se mogu dogovoriti o valjanosti transakcija samostalnim pokretanjem istog koda ugovora i logike validacije. Međutim, konsenzus oko jedinstvenosti zahtijeva unaprijed određenog promatrača,  koji će u mnogim slučajevima morati biti neovisan.
 
 \end{enumerate}
 
 \subsection{Quorum}
 
-Quorum je razvila tvrtka J.P. Morgan kao inaicu Ethereum blockchaina s ograničenim pristupom. Ethereum je javni blockchain bez ograničenog pristupa koji se koristi za izradu decentraliziranih aplikacija unutar različitih domena. Ima podršku za Turing-potpune pametne ugovore i stoga se može koristit za izradu aplikacija opće namjene.  Iako je javan i bez ograničenja pristupa, sigurnost Ethereuma proizlazi iz Dokaz izvršenog rada konsenzusnog algoritma i interne kriptovalute Ether. Quorum uključuje sljedeće ključne promjene u odnosu na Ethereum:
+Quorum je razvila tvrtka J.P. Morgan kao inačicu Ethereum blockchaina s ograničenim pristupom \cite{Quorum}. Ethereum je javni blockchain bez ograničenog pristupa koji se koristi za izradu decentraliziranih aplikacija unutar različitih domena. Ima podršku za Turing-potpune pametne ugovore i stoga se može koristiti za izradu aplikacija opće namjene.  Iako je javan i bez ograničenja pristupa, sigurnost Ethereuma proizlazi iz Dokaz izvršenog rada konsenzusnog algoritma i interne kriptovalute Ether. Quorum uključuje sljedeće ključne promjene u odnosu na Ethereum:
 
 \begin{itemize}
 
-\item ograničeno sudjelovanje - stavlja restrikciju na sudjelovanje u blockchain mreži samo onim ččvorovima kojima je to dopušteno. Samo je njima dopušteno povezivanje na Quorum blockchain, provjeravanje transakcija, pokretanje pametnih ugovora i održavanje glavne knjige;
+\item ograničeno sudjelovanje - stavlja restrikciju na sudjelovanje u blockchain mreži samo onim čvorovima kojima je to dopušteno. Samo je njima dopušteno povezivanje na Quorum blockchain, provjeravanje transakcija, pokretanje pametnih ugovora i održavanje glavne knjige;
 
 \item konsenzusni algoritmi - Quorum prema zadanim postavkama koristi Raft i Istanbulski BFT konsenzus. Ova dva algoritma pružaju zamjenu za Ethereumov PoW. Dok PoW štiti javni blockchain postepeno uvodeći težinu u kriptografsku slagalicu, potpuno je nepotrebno i rastrošno (velika potrošnja energije) za sustav ograničenog pristupa gdje si stranke međusobno vjeruju. Raft i IBFT algoritmi dovode do bržeg konsenzusa i pružaju trenutnu konačnost transakcije, čineći ih prikladan izbor za PB. Quorum također podržava lako promjenjivu arhitekturu u koju se po potrebi može uključiti drugačija implementacija konsenzusa;
 
 \item privatnost - jedan od ciljeva dizajna Quoruma. Dozvoljava manjem dijelu konzorcija da vrše transakcije između sebe bez da ih javno iznose ostatku konzorcija. Privatnost u Quorum je omogućena podjelom veće javne glavne knjige na javnu i privatnu. Javna glavna knjiga je vidljiva svim čvorovima u mreži, a privatna samo onima koji vrše transkacije međusobno. Samo hash privatne transakcije je vidljiv na javnoj glavnoj knjizi, ali samo stranke između kojih je izvršena transakcija imaju ključ s kojim mogu pregledati transakciju. Također se i pametni ugovori mogu dijeliti na privatan način, između stranaka koje međusobno vrše transakcije;
 
-\item ukidanje cijena transakcija - Quorum je eliminirao dodavanje troškova transakcijama pomoću \textit{gas}-a. Stoga, Quorum nema troškova povezanih s izvođenjem transakcija na Quorum mreži. S obzirom da je Quorum kod "forkan" od Ethereuma, korištenje gas-a postoji ali je namješteno na 0. Gas je korišten u Ethereum mreži za plaćanje izvođenja transakcija (koristi se ether kriptovaluta) kako bi se incentivizirali rudari i kako bi se Ethereum mreža zaštitila od spam-a i DDoS napada.
+\item ukidanje cijena transakcija - Quorum je eliminirao dodavanje troškova transakcijama pomoću \textit{gas}-a. Stoga, Quorum nema troškova povezanih s izvođenjem transakcija na Quorum mreži. S obzirom da je Quorum kod \textit{fork} od Ethereuma, korištenje gas-a postoji ali je namješteno na 0. Gas je korišten u Ethereum mreži za plaćanje izvođenja transakcija (koristi se ether kriptovaluta) kako bi se incentivizirali rudari i kako bi se Ethereum mreža zaštitila od spam-a i DDoS napada.
 
 \end{itemize}
 
 \subsection{Hyperledger Fabric}
 
-Mnogi PB-i trpe zbog mnogih ogranienja, koji esto proizlaze iz njihovih predaka - javnih blockchaina, ili iz upotrebe arhitekture "poredaj-izvrši" (eng. order-execute):
+Mnogi PB-i trpe zbog mnogih ograničenja, koji često proizlaze iz njihovih predaka - javnih blockchaina, ili iz upotrebe arhitekture "poredaj-izvrši" (eng. order-execute):
 
 \begin{itemize}
 
-\item konsenzus je vrsto kodiran unutar platforme, što je u suprotnosti s ustaljenim shvaćanjem da ne postoji jednoznačni (BFT) konsenzus protokol;
+\item konsenzus je čvrsto kodiran unutar platforme, što je u suprotnosti s ustaljenim shvaćanjem da ne postoji jednoznačni (BFT) konsenzus protokol;
 
 \item model povjerenja validacije transakcija je određen konsenzusnim protokolom i ne može se prilagoditi zahtjevima pametnog ugovora;
 
@@ -329,9 +328,9 @@ Mnogi PB-i trpe zbog mnogih ogranienja, koji esto proizlaze iz njihovih predaka 
 
 \item slijedna izvedba svih transakcija od svih čvorova ograničava performanse, te su potrebne komplicirane mjere kako bi se spriječio DDoS napad;
 
-\item transakcije moraju biti deterministike, što je teško ostvariti programski;
+\item transakcije moraju biti determinističke, što je teško ostvariti programski;
 
-\item svaki pametni ugovor se izvršava na svim čvorovima, što je u suprotnosti povjerljivosti i zabranjuje širenje koda ugovora i stanje podskupu čvorova.
+\item svaki pametni ugovor se izvršava na svim čvorovima, što je u suprotnosti povjerljivosti i zabranjuje širenje koda ugovora i stanje podskupu čvorova. \cite{Fabric}
 
 \end{itemize}
 
@@ -340,7 +339,7 @@ platformu otvorenog koda koja prevladava ta ograničenja. Fabric je jedan od pro
 
 Fabric uvodi novu blockchain arhitekturu s ciljem elastičnosti, fleksibilnosti, skalabilnosti i povjerljivosti. Dizajniran kao modularni i proširivi PB, Fabric je prvi blockchain sustav koji podržava izvršavanje distribuiranih aplikacija napisanih u standardnim programskim jezicima, na način koji omogućuje njihovo dosljedno izvršavanje preko mnogih čvorova, ostavljajući dojam izvršenja na jednom globalno distribuiranom blockchain
 računalu. To Fabric čini prvim distribuiranim operativnim sustavom za PB.
-Hyperledger Fabric uvodi i još jedan imbenik modularnosti i fleksibilnosti, a to su takozvani kanali. Kanali omogućavaju sudionicima stvarnje virtualnih grupa i održavanje neovisnih glavnih knjiga koje su nevidljive drugim kanalima u mreži. Kanali pružaju fleksibilnost poslovnom konzorciju da sigurno dijeli informacije samo s relevantim strankama.
+Hyperledger Fabric uvodi i još jedan čimbenik modularnosti i fleksibilnosti, a to su takozvani kanali. Kanali omogućavaju sudionicima stvaranje virtualnih grupa i održavanje neovisnih glavnih knjiga koje su nevidljive drugim kanalima u mreži. Kanali pružaju fleksibilnost poslovnom konzorciju da sigurno dijeli informacije samo s relevantnim strankama.
 Arhitektura Fabric slijedi novu "izvrši-poredaj-validiraj" paradigmu za distribuirano izvršavanje nepovjerljivog koda u nepouzdanom okruženju. Tok transakcije razdvaja na tri koraka koji se mogu izvoditi na različitim entitetima u sustavu:
 
 \begin{enumerate}
@@ -354,11 +353,11 @@ Arhitektura Fabric slijedi novu "izvrši-poredaj-validiraj" paradigmu za distrib
 \end{enumerate}
 
 Ovaj dizajn radikalno odstupa od paradigme \textit{order-execute} tako da Fabric obično izvršava transakcije prije postizanja konačnog dogovora o njihovom redoslijedu. Kombinira dva pristupa repliciranju, pasivni i aktivni.
-Prvo, Fabric koristi pasivnu ili primarno-sigurnosnu replikaciju kao što se čestonalazi u distribuiranim bazama podataka, ali s posredničkim softverom koji procesuira ažuriranja asimetrično i u nepouzdanoj okolini s Bizantskim pogreškama. U Fabricu svaka transakcija se izvršava (odobrava) samo na podskupu čvorova (eng. peer), što dopušta paralelno izvršavanje i rješava potencijalni nedeterminizam, oslanjajući se na BFT replikaciju "izvrši-provjeri" (eng. execute-verify). Fleksibilna politika odobravanja transakcija određuje koji peer-ovi ili koliko njih treba jamčiti za ispravno izvršenje zadanog pametnog ugovora.
+Prvo, Fabric koristi pasivnu ili primarno-sigurnosnu replikaciju kao što se često nalazi u distribuiranim bazama podataka, ali s posredničkim softverom koji procesuira ažuriranja asimetrično i u nepouzdanoj okolini s Bizantskim pogreškama. U Fabricu svaka transakcija se izvršava (odobrava) samo na podskupu čvorova (eng. peer), što dopušta paralelno izvršavanje i rješava potencijalni nedeterminizam, oslanjajući se na BFT replikaciju "izvrši-provjeri" (eng. execute-verify). Fleksibilna politika odobravanja transakcija određuje koji peer-ovi ili koliko njih treba jamčiti za ispravno izvršenje zadanog pametnog ugovora.
 Drugo, Fabric uključuje aktivnu replikaciju u smislu da učinci transakcije na stanje glavne knjige pišu se tek nakon postizanja konsenzusa o ukupnom redoslijedu među njima, u koraku determinističke validacije koji izvršava svaki peer pojedinačno. Ovo omogućava Fabricu da se prilagodi pretpostavkama povjerenja specifičnih za aplikaciju.
 Štoviše, ordering ažuriranja stanja delegirana je modularnoj komponenti radi konsenzusa, koja je bez stanja i logički odvojena od peerova koji izvršavaju transakcije i održavaju glavnu knjigu. Zbog konsenzusa koji je modularan, njegova se primjena može prilagoditi pretpostavkama o povjerenju određenog razvoja. Iako je moguće koristiti blockchain peer-ove i za provođenje konsenzusa, razdvajanje dviju uloga dodaje fleksibilnost i omogućuje osloniti se na dobro uspostavljene alate za otpornost na kvarove
-(eng. Crash Fault Tolerance, skr. CFT).
-Sve u svemu, ovaj hibridni replikacijski dizajn koji miješa pasivnu i aktivnu replikaciju u bizantskom modelu i paradigma \textit{execute-order-validate} predstavljaju glavnu inovaciju u arhitekturi Fabrica. Oni rješavaju prethodno spomenute probleme i omugu ćuju da Fabric bude skalabilni sustav za PB koji podržava fleksibilne pretpostavke povjerenja. Da bi implementirao ovu arhitekturu, Fabric sadrži modularne građevne blokove za svaku od sljedećih komponenata:
+(eng. Crash Fault Tolerance, skr. CFT). \cite{Fabric}
+Sve u svemu, ovaj hibridni replikacijski dizajn koji miješa pasivnu i aktivnu replikaciju u bizantskom modelu i paradigma \textit{execute-order-validate} predstavljaju glavnu inovaciju u arhitekturi Fabrica. Oni rješavaju prethodno spomenute probleme i omogućuju da Fabric bude skalabilni sustav za PB koji podržava fleksibilne pretpostavke povjerenja. Da bi implementirao ovu arhitekturu, Fabric sadrži modularne građevne blokove za svaku od sljedećih komponenata:
 
 \begin{itemize}
 
@@ -380,9 +379,8 @@ U ovoj sekciji usporedit ću tri prethodno navedene izvedbe blockchaina s ograni
 
 \subsubsection{Konsenzus}
 
-U blockchain mreži, tijekom obrade bloka, čvorovi obavljaju određene aktivnosti, kao što su sudjelovanje u provjeri autentičnosti i provjeri transakcija, komunikacija preko mreže i izgradnja povjerenja unutar blockchain sustava bez uplitanja središnjeg autoriteta. Uvijek postoji rizik da se pojedini čvorovi mogu ponašati zlonamjerno ili djelovati protiv osnovnog cilja i pokušati srušiti komunikaciju u mreži. Da bi se osigurala kontinuirana usluga koja pruža dostupnost, povjerljivost, integritet, i pristupačnost potreban je siguran mehanizam da bi svi čvorovi sudionici postigli globalni dogovor koje
-informacije trebaju biti dodane blockchainu. Ovaj postupak je poznat kao konsenzus.
-Hyperledger Fabric u prvoj verziji koristi konsenzus protokol Apache Kafka. Kafka nije tradicionalni konsenzusni protokol, nego je "\textit{publish-subscribe}" rješenje. Kafka koristi isti "vođa i sljedbenik" koncept kao i Raft kao što je vidljivo na slici 2.4, u kojem su transakcije (Kafka koristi pojam "poruka") replicirane od čvora vođe do čvorova sljebenika. Od verzije 2.0 Fabric koristi Raft konsenzus prethodno opisan u poglavlju \ref{sec:raft}.
+U blockchain mreži, tijekom obrade bloka, čvorovi obavljaju određene aktivnosti, kao što su sudjelovanje u provjeri autentičnosti i provjeri transakcija, komunikacija preko mreže i izgradnja povjerenja unutar blockchain sustava bez uplitanja središnjeg autoriteta. Uvijek postoji rizik da se pojedini čvorovi mogu ponašati zlonamjerno ili djelovati protiv osnovnog cilja i pokušati srušiti komunikaciju u mreži. Da bi se osigurala kontinuirana usluga koja pruža dostupnost, povjerljivost, integritet, i pristupačnost potreban je siguran mehanizam da bi svi čvorovi sudionici postigli globalni dogovor koje informacije trebaju biti dodane blockchainu. Ovaj postupak je poznat kao konsenzus.
+Hyperledger Fabric u prvoj verziji koristi konsenzus protokol Apache Kafka. Kafka nije tradicionalni konsenzusni protokol, nego je "\textit{publish-subscribe}" rješenje. Kafka koristi isti "vođa i sljedbenik" koncept kao i Raft kao što je vidljivo na slici 2.4, u kojem su transakcije (Kafka koristi pojam "poruka") replicirane od čvora vođe do čvorova sljedbenika. Od verzije 2.0 Fabric koristi Raft konsenzus prethodno opisan u poglavlju \ref{sec:raft}. 
 
 \begin{figure}[htb]
 \centering
@@ -391,7 +389,7 @@ Hyperledger Fabric u prvoj verziji koristi konsenzus protokol Apache Kafka. Kafk
 \label{fig:kafka}
 \end{figure}
 
-Quorum po zadanim postavkama koristi Raft za toleranciju pada sustava i Istanbulski BFT za toleranciju Bizantske pogreške. Istanbulski BFT konsenzus je konsenzus u 3 faze: pred-priprema, priprema i izvršenje. Ovaj konsenzus sustav može tolerirati da jedna trećina svih čvorova u mreži bude neispravan, a opet osigurava konačnost transakcije. Čvorovi koji su izabrani kao "validatori" bloka odabiru "predlagača" za predlaganje novog bloka u konsenzusnom krugu. Predlagatelj će tada predložiti novi blok i emitirati ga zajedno s porukom "pred-priprema". Po primitku "pred-priprema" poruke predlagatelja, validatori ulaze u stanje "pred-pripremljeno", a zatim emitiraju "priprema" poruku. Ovaj korak želi osigurati da svi validatori rade u istom slijedu i istom krugu. Nakon primanja poruke "priprema" od dvije trećine mrežnih čvorova, validator ulazi u stanje "pripremljeno", a zatim emitira "izvrši" poruku. Ovaj korak služi tome da se obavijeste peer-ovi da validator prihvaća predloženi blok i da će ga dodati u lanac. Na kraju, validatori čekaju da dvije trećine poruka "izvrši" uđu u stanje "izvršeno" i zatim umetnu blok u lanac.
+Quorum po zadanim postavkama koristi Raft za toleranciju pada sustava i Istanbulski BFT za toleranciju Bizantske pogreške. Istanbulski BFT konsenzus je konsenzus u 3 faze: pred-priprema, priprema i izvršenje. Ovaj konsenzus sustav može tolerirati da jedna trećina svih čvorova u mreži bude neispravan, a opet osigurava konačnost transakcije. Čvorovi koji su izabrani kao "validatori" bloka odabiru "predlagača" za predlaganje novog bloka u konsenzusnom krugu. Predlagatelj će tada predložiti novi blok i emitirati ga zajedno s porukom "pred-priprema". Po primitku "pred-priprema" poruke predlagatelja, validatori ulaze u stanje "pred-pripremljeno", a zatim emitiraju "priprema" poruku. Ovaj korak želi osigurati da svi validatori rade u istom slijedu i istom krugu. Nakon primanja poruke "priprema" od dvije trećine mrežnih čvorova, validator ulazi u stanje "pripremljeno", a zatim emitira "izvrši" poruku. Ovaj korak služi tome da se obavijeste peer-ovi da validator prihvaća predloženi blok i da će ga dodati u lanac. Na kraju, validatori čekaju da dvije trećine poruka "izvrši" uđu u stanje "izvršeno" i zatim umetnu blok u lanac. \cite{IBFT}
 
 \begin{figure}[htb]
 \centering
@@ -400,7 +398,7 @@ Quorum po zadanim postavkama koristi Raft za toleranciju pada sustava i Istanbul
 \label{fig:ibft}
 \end{figure}
 
-Corda ima zamjenjivu uslugu jedinstvenosti. To služi tome da se poboljša privatnost, skalabilnost, kompatibilnost pravnog sustava i algoritamska agilnost. Jedna usluga može biti sastavljena od mnogih međusobno nepovjerljivih čvorova koji se koordiniraju preko BFT algoritma ili može biti vrlo jednostavna, poput jednog stroja. U nekim slučajevima, kada ažuriranje stanja zahtijeva potpise svih relevantnih strana, možda uopće ne treba usluga jedinstvenosti. Konsenzus oko valjanosti transakcije provodi se samo između stranaka između kojih obavljena ta transakcija. Stoga se podaci dijele samo s tim stranama. Ostale platforme uglavnom postižu konsenzus na razini glavne knjige. Dakle, bilo koji akter u sustavu Corda vidi samo podskup ukupnih podataka kojima upravlja sustav u cjelini. Dio podataka zapisan je u glavnu knjigu ako su barem dva aktera u sustavu konsenzusni o njegovom postojanju i pojedinostima i dopuštaju se proizvoljne kombinacije aktera da sudjeluju u postupku konsenzusa za bilo koji podatak.
+Corda ima zamjenjivu uslugu jedinstvenosti. To služi tome da se poboljša privatnost, skalabilnost, kompatibilnost pravnog sustava i algoritamska agilnost. Jedna usluga može biti sastavljena od mnogih međusobno nepovjerljivih čvorova koji se koordiniraju preko BFT algoritma ili može biti vrlo jednostavna, poput jednog stroja. U nekim slučajevima, kada ažuriranje stanja zahtijeva potpise svih relevantnih strana, možda uopće ne treba usluga jedinstvenosti. Konsenzus oko valjanosti transakcije provodi se samo između stranaka između kojih obavljena ta transakcija. Stoga se podaci dijele samo s tim stranama. Ostale platforme uglavnom postižu konsenzus na razini glavne knjige. Dakle, bilo koji akter u sustavu Corda vidi samo podskup ukupnih podataka kojima upravlja sustav u cjelini. Dio podataka zapisan je u glavnu knjigu ako su barem dva aktera u sustavu konsenzusni o njegovom postojanju i pojedinostima i dopuštaju se proizvoljne kombinacije aktera da sudjeluju u postupku konsenzusa za bilo koji podatak \cite{Corda}.
 
 \begin{figure}[htb]
 \centering
@@ -418,17 +416,17 @@ Prilikom provjere predložene transakcije, određena stranka ne mora imati svaku
 \label{fig:uniqueness}
 \end{figure}
 
-Valjani prijedlog transakcije također mora postići konsenzus jedinstvenosti. Konsenzus jedinstvenosti je uvjet da ni jedno od ulaznih stanja predložene transakciju nije već konzumirano u drugoj transakciji. Ako je jedan ili više ulaza već konzumirano u drugojvtransakciji, to je poznato kao dvostruka potrošnja, a prijedlog transakcije smatra se nevažećim. Konsenzus jedinstvenosti omogućuju bilježnici (eng. \textit{Notaries}) koji vrše provjeru dvostruke potrošnje.
+Valjani prijedlog transakcije također mora postići konsenzus jedinstvenosti. Konsenzus jedinstvenosti je uvjet da ni jedno od ulaznih stanja predložene transakciju nije već konzumirano u drugoj transakciji. Ako je jedan ili više ulaza već konzumirano u drugoj transakciji, to je poznato kao dvostruka potrošnja, a prijedlog transakcije smatra se nevažećim. Konsenzus jedinstvenosti omogućuju bilježnici (eng. \textit{Notaries}) koji vrše provjeru dvostruke potrošnje.
 
 \subsubsection{Pametni ugovori}
-Pametni ugovor u Corda sustavu je sporazum čiju je izvedbu moguće automatizirati računalnim kodom i čija prava i obveze, navedene u takozvanoj legalnoj prozi (eng. legal prose), su legalno provedive. Pametan ugovor u Cordi ima tri ključna elementa, a to je izvršni kod, objekte stanja i naredbe. Izvršni kod uglavnom provjerava promjene objekata stanja u transakcijama. Objekti stanja su podaci koji bilježe postojanje, sadržaj i trenutno stanje sporazuma između dvije ili više strana i rade kao ulaz ili izlaz transakcije. Naredbe su dodatni podaci koji su uključeni u transakcije. Oni uglavnom opisuju što se događa i govore izvršnom kodu na koji način verificirati transakcije. 
+Pametni ugovor u Corda sustavu je sporazum čiju je izvedbu moguće automatizirati računalnim kodom i čija prava i obveze, navedene u takozvanoj legalnoj prozi (eng. legal prose), su legalno provedive. Pametan ugovor u Cordi ima tri ključna elementa, a to je izvršni kod, objekte stanja i naredbe. Izvršni kod uglavnom provjerava promjene objekata stanja u transakcijama. Objekti stanja su podaci koji bilježe postojanje, sadržaj i trenutno stanje sporazuma između dvije ili više strana i rade kao ulaz ili izlaz transakcije. Naredbe su dodatni podaci koji su uključeni u transakcije. Oni uglavnom opisuju što se događa i govore izvršnom kodu na koji način verificirati transakcije.  \cite{smartcontract} 
 
-Quorum je blockchain s ograničenim pravom pristupa implementiran na Ethereum protokolu. Osnovna ideja koja stoji iza Quoruma je korištenje kriptografije kako bi se spriječili svi osim onih koji sudjeluju u transakcijama od gledanja osjetljivih podataka. Rješenje uključuje jedan zajedniki blockchain i kombinaciju softverske arhitekture pametnih ugovora i modifikacija Ethereuma. Arhitektura pametnih omogućuje segmentaciju privatnih podataka. Izmjene Ethereum izvornog koda uključuju modifikacije u procesu prijedlaganja bloka i procesu validacije. Proces validacije je modificiran tako da svi čvorovi potvrđuju javne transakcije i bilo koje privatne transakcije u kojima sudjeluju izvršenjem koda pametnog ugovora povezanog s transakcijama. Za ostale privatne transakcije, čvor će jednostavno preskoiti postupak izvršavanja koda ugovora.
+Quorum je blockchain s ograničenim pravom pristupa implementiran na Ethereum protokolu. Osnovna ideja koja stoji iza Quoruma je korištenje kriptografije kako bi se spriječili svi osim onih koji sudjeluju u transakcijama od gledanja osjetljivih podataka. Rješenje uključuje jedan zajednički blockchain i kombinaciju softverske arhitekture pametnih ugovora i modifikacija Ethereuma. Arhitektura pametnih omogućuje segmentaciju privatnih podataka. Izmjene Ethereum izvornog koda uključuju modifikacije u procesu predlaganja bloka i procesu validacije. Proces validacije je modificiran tako da svi čvorovi potvrđuju javne transakcije i bilo koje privatne transakcije u kojima sudjeluju izvršenjem koda pametnog ugovora povezanog s transakcijama. Za ostale privatne transakcije, čvor će jednostavno preskočiti postupak izvršavanja koda ugovora. \cite{Quorum}
 
-Hyperledger Fabric često izmjenjuje izraze pametni ugovor i lančani kod (eng. \textit{Chaincode}). Općenito, pametni ugovor definira transakcijsku logiku koja kontrolira životni ciklus poslovnog objekta koji se nalazi u globalnom stanju. Zatim se pakira u lančani kod koji se zatim raspoređuje u blockchain mrežu. Pametni ugovor može opisati gotovo beskonačan niz slučajeva poslovne upotrebe koji se odnose na nepromjenjivost podataka u višeorganizacijskom donošenju odluka. Posao programera pametnih ugovora je preuzeti postojeći poslovni proces koji može regulirati financijske cijene ili uvjete isporuke i izraziti ga kao pametni ugovor u programskom jeziku kao što su JavaScript, Go ili Java.
+Hyperledger Fabric često izmjenjuje izraze pametni ugovor i lančani kod (eng. \textit{Chaincode}). Općenito, pametni ugovor definira transakcijsku logiku koja kontrolira životni ciklus poslovnog objekta koji se nalazi u globalnom stanju. Zatim se pakira u lančani kod koji se zatim raspoređuje u blockchain mrežu. Pametni ugovor može opisati gotovo beskonačan niz slučajeva poslovne upotrebe koji se odnose na nepromjenjivost podataka u višeorganizacijskom donošenju odluka. Posao programera pametnih ugovora je preuzeti postojeći poslovni proces koji može regulirati financijske cijene ili uvjete isporuke i izraziti ga kao pametni ugovor u programskom jeziku kao što su JavaScript, Go ili Java. \cite{Fabric}
 
 \subsubsection{Autentifikacija i autorizacija}
-Ethereum razlikuje dvije vrste računa koji se koriste za transakcije, a to su računi ugovora i vanjski računi. Svaki račun ima svoje stanje, a globalno stanje mreže je skup svih stanja računa. računi u Quorumu, koji je izveden iz Ethereuma, imaju potpuno istu strukturu. Quorum je blockchain s ograničenim pravom pristupa, a osigurava da u razmjeni poruka mogu sudjelovati samo ovjereni čvorovi. Autentifikacija čvora pošiljatelja oslanja se na autentifikaciju na temelju ključa koristeći ECDSA (eng. Elliptic Curve Digital Signature Algorithm) potpis - svakom je korisniku dodijeljen par asimetričnih ključeva generiranih pomoću eliptine krivulje secp256k1 i sadrže popis drugih javnih ključeva čvorova u mreži.  \cite{johnson2001elliptic} ECDSA omogućava primatelju izvlačenje javnog ključa pošiljatelja iz potpisa poruke koji uspoređuje s listom javnih ključeva drugih čvorova u mreži. Ako se ključ podudara, čvor je autentificiran, u protivnom se odbija veza. Opcionalno se može omogućiti TLS koji zahtijeva uzajamnu provjeru autentičnosti klijenta ili poslužitelja. Dostupno je nekoliko načina rada: TOFU, CA i bijela lista (eng. whitelist) (TOFU i CA kombinirano). Ključevi za identitet i TLS mogu sem ponovno iskoristiti.
+Ethereum razlikuje dvije vrste računa koji se koriste za transakcije, a to su računi ugovora i vanjski računi. Svaki račun ima svoje stanje, a globalno stanje mreže je skup svih stanja računa. računi u Quorumu, koji je izveden iz Ethereuma, imaju potpuno istu strukturu. Quorum je blockchain s ograničenim pravom pristupa, a osigurava da u razmjeni poruka mogu sudjelovati samo ovjereni čvorovi. Autentifikacija čvora pošiljatelja oslanja se na autentifikaciju na temelju ključa koristeći ECDSA (eng. Elliptic Curve Digital Signature Algorithm) potpis - svakom je korisniku dodijeljen par asimetričnih ključeva generiranih pomoću eliptične krivulje secp256k1 i sadrže popis drugih javnih ključeva čvorova u mreži.  \cite{johnson2001elliptic} ECDSA omogućava primatelju izvlačenje javnog ključa pošiljatelja iz potpisa poruke koji uspoređuje s listom javnih ključeva drugih čvorova u mreži. Ako se ključ podudara, čvor je autentificiran, u protivnom se odbija veza. Opcionalno se može omogućiti TLS koji zahtijeva uzajamnu provjeru autentičnosti klijenta ili poslužitelja. Dostupno je nekoliko načina rada: TOFU, CA i bijela lista (eng. whitelist) (TOFU i CA kombinirano). Ključevi za identitet i TLS mogu sem ponovno iskoristiti. \cite{lagarde2019security}
 
 \begin{itemize}
 
@@ -436,22 +434,22 @@ Ethereum razlikuje dvije vrste računa koji se koriste za transakcije, a to su r
 
 \item CA (eng.  \textit{certificate authority}) - samo čvorovi s ispravnim certifikatom i lancom povjerenja se mogu povezati. Oslanja se na provjeru autentičnosti na temelju certifikata;
 
-\item WHITELIST - samo čvorovi koji su se prethodno povezali s tim čvorom i dodani su u datoteku "poznati klijenti" (eng.  \textit{knownclient}) moći će se povezati.  Oslanja se na provjeru autentičnosti na temelju ključa.
+\item WHITELIST - samo čvorovi koji su se prethodno povezali s tim čvorom i dodani su u datoteku "poznati klijenti" (eng.  \textit{knownclient}) moći će se povezati.  Oslanja se na provjeru autentičnosti na temelju ključa. \cite{valenta2017comparison}
 
 \end{itemize}
 
-Autentifikacija incijatora transakcije, slično Ethereumu, oslanja se na autentifikaciju na temelju ključa pomoću ECDSA potpisa koji se koriste za potvrdu da je pošiljatelj vlasnik računa s kojeg transakcija proizlazi. Quorum uvodi koncept privatnosti transakcija i razlikuje javne transakcije od privatnih transakcija. Javne transakcije su identične Ethereum transakcijama i dostupna svima u mreži, dok je privatna transakcija dostupna ograničenom broju čvorova koje definira pošiljatelj. Uz svaku transakciju povezana je lista kontrole pristupa koja sadrži javne ključeve autoriziranih čvorova.
-U Hyperledger Fabric-u postoje dvije vrste transakcija opisane u nastavku:
+Autentifikacija inicijatora transakcije, slično Ethereumu, oslanja se na autentifikaciju na temelju ključa pomoću ECDSA potpisa koji se koriste za potvrdu da je pošiljatelj vlasnik računa s kojeg transakcija proizlazi. Quorum uvodi koncept privatnosti transakcija i razlikuje javne transakcije od privatnih transakcija. Javne transakcije su identične Ethereum transakcijama i dostupna svima u mreži, dok je privatna transakcija dostupna ograničenom broju čvorova koje definira pošiljatelj. Uz svaku transakciju povezana je lista kontrole pristupa koja sadrži javne ključeve autoriziranih čvorova.
+U Hyperledger Fabric-u postoje dvije vrste transakcija opisane u nastavku \cite{lagarde2019security}:
 
 \begin{itemize}
 
 \item transakcija postavljanja (eng. \textit{deploy transaction}) - stvara novi chaincode i prima program kao parametar. Kada se ta transakcija uspješno izvrši, chaincode je instaliran na blockchain;
 
-\item transakcija pobude (eng. \textit{invoke transaction}) - izvodi operaciju u kontekstu prethodno postavljnog chaincode-a. Ta transakcija odnosi se na chaincode i na jednu od funkcija koju chaincode nudi.
+\item transakcija pobude (eng. \textit{invoke transaction}) - izvodi operaciju u kontekstu prethodno postavljenog chaincode-a. Ta transakcija odnosi se na chaincode i na jednu od funkcija koju chaincode nudi.
 
 \end{itemize}
 
-Servis članstva (eng. Membership service provider, skr. MSP) nudi apstrakciju arhitekture lanstva. Upravlja provjerom autentičnosti i autorizacijom u mreži, a podijeljen je na različite razine:
+Servis članstva (eng. Membership service provider, skr. MSP) nudi apstrakciju arhitekture članstva. Upravlja provjerom autentičnosti i autorizacijom u mreži, a podijeljen je na različite razine:
 
 \begin{itemize}
 
@@ -463,7 +461,7 @@ Servis članstva (eng. Membership service provider, skr. MSP) nudi apstrakciju a
 
 \end{itemize}
 
-Hyperledger Fabric pruža opciju korištenja predefiniranog tijela za izdavanje certifikata koje se može koristiti za generiranje certifikata i ključeva. Međutim može se zamijeniti za bilo koji CA koji može generirati ECDSA certifikate. Protokol za provjeru izvornosti poruke koristi certifikat X.509 na temelju ECC-a \cite{lagarde2019security} i opcionalne TLS certifikate. Za provjeru autentičnosti pošiljatelja poruke od strane kanala, mora predstaviti certifikat s provjerljivim putem do točno jednog od korijena povjerljivog certifikata.  Da bi se pridružio kanalu, novi čvor mora poslati zahtjev za potpisivanje certifikata na jedan od kanalovih korijenskih ili posredničkih CA-ova. Nadalje, mora konfigurirati svoj lokalni MSP sa sljedećim informacijama:
+Hyperledger Fabric pruža opciju korištenja predefiniranog tijela za izdavanje certifikata koje se može koristiti za generiranje certifikata i ključeva. Međutim može se zamijeniti za bilo koji CA koji može generirati ECDSA certifikate. Protokol za provjeru izvornosti poruke koristi certifikat X.509 na temelju ECC-a \cite{lagarde2019security} i opcionalne TLS certifikate. Za provjeru autentičnosti pošiljatelja poruke od strane kanala, mora predstaviti certifikat s provjerljivim putem do točno jednog od korijena povjerljivog certifikata.  Da bi se pridružio kanalu, novi čvor mora poslati zahtjev za potpisivanje certifikata na jedan od kanalovih korijenskih ili posredničkih CA-ova. Nadalje, mora konfigurirati svoj lokalni MSP sa sljedećim informacijama \cite{lagarde2019security}:
 
 \begin{itemize}
 
@@ -483,7 +481,7 @@ Hyperledger Fabric pruža opciju korištenja predefiniranog tijela za izdavanje 
 
 \end{itemize}
 
-Kanal u Fabric-u po želji definira određene uloge unutar kanala pomoću kontrole pristupa zasnovane na atributima (eng. \textit{Attribute-Based Access Control}, skr. ABAC) koja se temelji na atributima identiteta sadržanih u certifikatima. Transakcije postavljanja ne zahtijevaju posebno odobrenje. Unutar kanala svi imaju pristup transakcijama i ne postoje sheme autorizacije za pristup određenoj transakciji, transakcije se tretiraju kao uobičajene poruke i stoga se provjera autentičnosti pošiljatelja transakcija obrađuje slično autentifikaciji pošiljatelja poruke. Autorizacijska shema odobrenja transakcija oslanja se na liste kotrole pristupa: da bi transakcija bila odobrena, mora se odobriti prema politici odobrenja pozvanog chaincode-a. Tok operacije odobrenja prikazan na slici \ref{fig:fabrictxflow} je sljedeći:
+Kanal u Fabric-u po želji definira određene uloge unutar kanala pomoću kontrole pristupa zasnovane na atributima (eng. \textit{Attribute-Based Access Control}, skr. ABAC) koja se temelji na atributima identiteta sadržanih u certifikatima. Transakcije postavljanja ne zahtijevaju posebno odobrenje. Unutar kanala svi imaju pristup transakcijama i ne postoje sheme autorizacije za pristup određenoj transakciji, transakcije se tretiraju kao uobičajene poruke i stoga se provjera autentičnosti pošiljatelja transakcija obrađuje slično autentifikaciji pošiljatelja poruke. Autorizacijska shema odobrenja transakcija oslanja se na liste kontrole pristupa: da bi transakcija bila odobrena, mora se odobriti prema politici odobrenja pozvanog chaincode-a. Tok operacije odobrenja prikazan na slici \ref{fig:fabrictxflow} je sljedeći:
 
 \begin{enumerate}
 
@@ -518,7 +516,7 @@ U Cordi, zona kompatibilnosti označava mrežu koja ima ograničen pristup. Cord
 
 \end{itemize}
 
-Cordin dizajn integrira provjeru autentičnosti temeljenu na certifikatima koristeći digitalne potipse kako bi se provjerila autentičnost pošiljatelja poruke. Čvorovi posjeduju TLS certifikate i certifikate identiteta. Kada čvor primi zahtjev za povezivanjem, provjerava lanac povjerenja TLS certifikata i certifikata identiteta. Potpisi oba certifikata u lancu moraju biti valjani skroz do korijenskog CA. Da bi se čvor priključio mreži potrebno je proći kroz sljedeće korake:
+Cordin dizajn integrira provjeru autentičnosti temeljenu na certifikatima koristeći digitalne potpise kako bi se provjerila autentičnost pošiljatelja poruke. Čvorovi posjeduju TLS certifikate i certifikate identiteta. Kada čvor primi zahtjev za povezivanjem, provjerava lanac povjerenja TLS certifikata i certifikata identiteta. Potpisi oba certifikata u lancu moraju biti valjani skroz do korijenskog CA. Da bi se čvor priključio mreži potrebno je proći kroz sljedeće korake \cite{lagarde2019security}:
 
 \begin{enumerate}
 
@@ -559,51 +557,27 @@ Corda specificira akcije koje je čvoru dopušteno poduzeti koristeći ABAC - ti
 
 \end{itemize}
 
-U suprotnosti s mnogim blockchain platformama s ograničenim pravom pristupa, u Cordi sve transakcije su privatne što znači da su djeljene samo između dionika, i autorizaciju za pozivanje transakcije daje bilježnik. Da bi transakcija bila valjana, sva ulazna stanja moraju se prvo prebaciti na istog bilježnika. To se radi pomoću posebne transkacije za promjenu bilježnika koja proizvodi izlazno stanje slično ulaznom stanju,  ali prebačeno na novog bilježnika. 
-Udaljena autentifikacija korisnika podržana je autentifikacijom putem lozinke kojom se upravlja na razini čvora. Opcionalno se može postaviti provjera autentičnosti klijenta temeljem certifikata pomoću TLS-a. Programski sučelje čvora potupuno je izloženo udaljenim pozivima. Ovlaštenje za upotrebu Corda udaljenog programskog sučelja koristi popise sposobnosti. Udaljeni korisnik posjeduje popis sposobnosti po udaljenom čvoru kojem pristupa. Dakle, metode koje udaljeni korisnik smije pozivati, ovise o autorizaciji koja mu je odobrena.
+U suprotnosti s mnogim blockchain platformama s ograničenim pravom pristupa, u Cordi sve transakcije su privatne što znači da su dijeljene samo između dionika, i autorizaciju za pozivanje transakcije daje bilježnik. Da bi transakcija bila valjana, sva ulazna stanja moraju se prvo prebaciti na istog bilježnika. To se radi pomoću posebne transakcije za promjenu bilježnika koja proizvodi izlazno stanje slično ulaznom stanju,  ali prebačeno na novog bilježnika. 
+Udaljena autentifikacija korisnika podržana je autentifikacijom putem lozinke kojom se upravlja na razini čvora. Opcionalno se može postaviti provjera autentičnosti klijenta temeljem certifikata pomoću TLS-a. Programski sučelje čvora potpuno je izloženo udaljenim pozivima. Ovlaštenje za upotrebu Corda udaljenog programskog sučelja koristi popise sposobnosti. Udaljeni korisnik posjeduje popis sposobnosti po udaljenom čvoru kojem pristupa. Dakle, metode koje udaljeni korisnik smije pozivati, ovise o autorizaciji koja mu je odobrena.
 
 \subsubsection{Propusnost transakcija}
 
-Propusnost transakcija je brzina kojom su valjane transakcije postavljene na blockchain u definiranom vremenskom periodu. Kao što se vidi na slici \ref{fig:usporedba} koja prikazuje mjerenja od \citep{9411380}, Hyperledger Fabric je najbolji izbor za izgradnju blockchaina koji treba podnijeti veliki broj transakcija. Doduše, ove analize napravljene su pomoću alata za testiranje koje su razvile tvrtke koje stoje iza samih platformi te bi se to moglo smatrati nedostakom ove analize. Analiza bi bila efikasnije i više "fer" da postoji univerzalni alat kojim je moguće provesti analizu nad svim navedenim blockchain platformama.
+Propusnost transakcija je brzina kojom su valjane transakcije postavljene na blockchain u definiranom vremenskom periodu. Kao što se vidi na slici \ref{fig:usporedba} koja prikazuje mjerenja od \citep{9411380}, Hyperledger Fabric je najbolji izbor za izgradnju blockchaina koji treba podnijeti veliki broj transakcija. Doduše, ove analize napravljene su pomoću alata za testiranje koje su razvile tvrtke koje stoje iza samih platformi te bi se to moglo smatrati nedostatkom ove analize. Analiza bi bila efikasnije i više "fer" da postoji univerzalni alat kojim je moguće provesti analizu nad svim navedenim blockchain platformama.
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=13cm, height=7cm]{imgs/monra10-CSDE92-large.png}
-\caption{Usporedba propusnosti transakcija}
+\caption{Usporedba propusnosti transakcija,  preuzeto iz: \cite{9411380}}
 \label{fig:usporedba}
 \end{figure}
 
 
-
-Fabric, razvijen od strane Linux fundacije u sklopu multi-projekta otvorenog koda je radni okvir koji sam odlučio koristiti za implementacijski dio ovoga rada. Analiza propusnosti transakcija odrađena je od strane \citep{9411380} između Ethereum, Quorum, Corda i Hyperledger Fabric platforme. Možemo primjetiti da Fabric nadmašuje Quorum i Ethereum s velikom razlikom, ali samo nešto bolje od Corde. Fabric ima nisku latenciju obrade transakcija u usporedbi s ostalim blockchainima s ograničenim pravom pristupa. Stoga je ova platforma sposobna također pružiti i bolju propusnost transakcija. Njihova eksperimentalna opažanja otkrivaju da Hyperledger Fabric ima bolje rezultate od ostalih platformi zbog svog jednostavnog i uinkovitog modularnog pristupa konsenzusu.
+Fabric, razvijen od strane Linux fundacije u sklopu multi-projekta otvorenog koda je radni okvir koji sam odlučio koristiti za implementacijski dio ovoga rada. Analiza propusnosti transakcija odrađena je od strane \citep{9411380} između Ethereum, Quorum, Corda i Hyperledger Fabric platforme. Možemo primijetiti da Fabric nadmašuje Quorum i Ethereum s velikom razlikom, ali samo nešto bolje od Corde. Fabric ima nisku latenciju obrade transakcija u usporedbi s ostalim blockchainima s ograničenim pravom pristupa. Stoga je ova platforma sposobna također pružiti i bolju propusnost transakcija. Njihova eksperimentalna opažanja otkrivaju da Hyperledger Fabric ima bolje rezultate od ostalih platformi zbog svog jednostavnog i učinkovitog modularnog pristupa konsenzusu.
 
 \chapter{Implementacija}
-Implementacijski dio ovog rada odradio sam koristeći Hyperledger Fabric radni okvir.  Ovaj radni okvir omogućava da sustav koji želimo napraviti prilagodimo potrebi aplikacije vrlo detaljno. Od određivanja uloga korisnika sustava do same poslovne logike. U Fabricu svaki čvor je pokrenut kao Docker kontejner (eng. \textit{container}). Docker je set "platforma kao servis" (eng. \textit{Platform as a Service,} skr. PaaS) proizvoda koji koriste virtualizaciju na razini operativnog sustava kako bi dostavili softver u pakiranjima koji se zovu kontejneri (eng. container). Kontejneri su odvojeni jedni od drugih, ali skupa rade na istoj mreži. Datoteka koja služi za definiranje konfiguracije Docker-a je \textit{docker-compose.yaml}. U ovoj datoteci definirani su kontejneri i mreža kojoj su pridruženi i njihove varijable okruženja. Pokreće se naredbom \textit{docker-compose} kojoj se pridodaje putanja do \textit{docker-compose.yaml}datoteke.
-Implementirao sam primjer dodjeljivanja hipotetskih bodova za menzu studentima i dodjeljivanje rektorovih nagrada u obliku virtualnih tokena. Bodovi za menzu predstavljeni su tokenom koji slijedi ERC-20 standard, što znači da je token "zamjenjiv" (eng. \textit{fungible}), a tokenom koji slijedi ERC-721 standard predstavljene su rektorove nagrade, a takav token je "nezamjenjiv" (eng. \textit{non-fungible}).
+Implementacijski dio ovog rada odradio sam koristeći Hyperledger Fabric radni okvir.  Ovaj radni okvir omogućava da sustav koji želimo napraviti prilagodimo potrebi aplikacije vrlo detaljno. Od određivanja uloga korisnika sustava do same poslovne logike. U Fabricu svaki čvor je pokrenut kao Docker kontejner (eng. \textit{container}). Docker je set "platforma kao servis" (eng. \textit{Platform as a Service,} skr. PaaS) proizvoda koji koriste virtualizaciju na razini operativnog sustava kako bi dostavili softver u pakiranjima koji se zovu kontejneri (\url{https://www.docker.com/}).  Kontejneri su odvojeni jedni od drugih, ali skupa rade na istoj mreži. Datoteka koja služi za definiranje konfiguracije Docker-a je \textit{docker-compose.yaml}. U ovoj datoteci definirani su kontejneri i mreža kojoj su pridruženi i njihove varijable okruženja. Pokreće se naredbom \textit{docker-compose} kojoj se pridodaje putanja do \textit{docker-compose.yaml} datoteke.
 
-Direktorij u kojem se nalaze izvršne datoteke potrebne za pokretanje Fabric mreže je "bin" direktorij unutar "network" direktorija. U "bin" direktoriju nalaze se sljedeće datoteke:
-
-\begin{itemize}
-\item \textit{peer} - ova datoteka služi kao naredba preko komandne linije i dijeli se na više podnaredbi:
-	\begin{itemize}
-	\item \textit{peer node} - naredba omogućuje administratoru da pokrene peer čvor, resetira sve kanale kojima je peer član do genesis (nultog) bloka ili vrati kanal na zadani broj bloka.
-	\item \textit{peer channel} - naredba omogućuje administratorima 			izvođenje operacija povezanih s kanalom na peer-u, poput pridruživanja peer-a kanalu ili popisa kanala kojima je peer pridružen.
-	\item \textit{peer chaincode} - naredba omogućuje administratorima izvođenje operacija povezanih s lančanim kodom, poput instaliranja, instanciranja, pozivanja, pakiranja, postavljanja upita i nadogradnje lančanog koda.
-	\item \textit{peer lifecycle chaincode} - podnaredba omogućuje administratorima da koriste životni ciklus lančanog koda za pakiranje lančanog koda, njegovo instaliranje na peer-ove, odobravanje definicije lančanog koda za organizaciju i potom definiranje na kanalu. Lančani kôd spreman je za upotrebu nakon što je uspješno definiran na kanalu.
-	\end{itemize}
-	
-\item \textit{configtxgen} - naredba omogućuje korisnicima stvaranje i pregled artefakata povezanih s konfiguracijom kanala. Sadržaj generiranih artefakata diktira sadržaj datoteke configtx.yaml. Ta datoteka nalazi se u korijenskom "network" direktoriju i služi za definiranje konfiguracije kanala i politike u kanalu.
-
-\item \textit{configtxlator} - naredba omogućuje korisnicima prevođenje između protobuf i JSON inačica struktura podataka i stvaranje ažuriranja konfiguracije. Naredba može pokrenuti REST poslužitelj da izloži svoje funkcije preko HTTP-a ili se može koristiti izravno kao alat naredbenog retka.
-
-\item \textit{fabric-ca-client} - naredba omogućuje upravljanje identitetima (uključujući upravljanje atributima) i certifikatima (uključujući obnavljanje i opoziv). 
-
-\item \textit{fabric-ca-server} - naredba omogućuje inicijalizaciju i pokretanje procesa poslužitelja koji može poslužiti jedno ili više tijela za izdavanje certifikata. Konfiguracija se nalazi u fabric-ca-server-config.yaml datoteci.
-
-\item \textit{orderer} - naredba omogućuje pokretanje orderer čvora. Konfiguracija za taj čvor nalazi se u orderer.yaml datoteci.
-
-\end{itemize}
-
+Implementiran je primjer dodjeljivanja hipotetskih bodova za menzu studentima i dodjeljivanje rektorovih nagrada u obliku virtualnih tokena. Bodovi za menzu predstavljeni su tokenom koji slijedi ERC-20 standard, što znači da je token "zamjenjiv" (eng. \textit{fungible}), a tokenom koji slijedi ERC-721 standard predstavljene su rektorove nagrade, a takav token je "nezamjenjiv" (eng. \textit{non-fungible}).
 
 \begin{figure}[htb]
 \centering
@@ -612,24 +586,26 @@ Direktorij u kojem se nalaze izvršne datoteke potrebne za pokretanje Fabric mre
 \label{fig:arhitektura}
 \end{figure}
 
-Mreža se sastoji od sveukupno tri organizacije. FER, FSB i ordering organizacija. FER i FSB imaju svaka po jedan glavni čvor koji je zadužen za održavanje raspodijeljene glavne knjige, blockchaina i pametnih ugovora. Taj čvor se naziva peer.  Ti peer-ovi, skupa s orderer čvorom, povezani su u jednom kanalu.  Uz peer-ove ključni su i poslužitelji autoriteta za izdavanje certifikata.
+Arhitektura rješenja je prikazana na slici \ref{fig:arhitektura},  a podijeljena je u dvije cjeline,  mreža i klijent. Mreža se sastoji od sveukupno tri organizacije. FER, FSB i ordering organizacija. FER i FSB imaju svaka po jedan glavni čvor koji je zadužen za održavanje raspodijeljene glavne knjige, blockchaina i pametnih ugovora. Taj čvor se naziva peer.  Ti peer-ovi, skupa s orderer čvorom, povezani su u jednom kanalu.  Uz peer-ove ključni su i poslužitelji autoriteta za izdavanje certifikata.
+
+Klijentska strana rješenja se sastoji od korisničkog sučelja i poslužitelja koji direktno preko Fabric-ovog kompleta za razvoj softvera (eng. \textit{software development kit}, skr. SDK) komunicira s mrežom. Klijent može biti isti za sve organizacije u mreži, ali može biti i potpuno različit dok god se na jednak način koriste sučelja implementirana pametnim ugovorima. 
 
 \section{Servis članstva}
-Autoriteti za izdavanje certifikata izdaju identitete generiranjem javnog i privatnog ključa koji oblikuje par ključeva koji se može koristiti za dokazivanje identiteta. Budući da se privatni ključ nikada ne može javno dijeliti, potreban je mehanizam kako bi se omogućilo dokazivanje identiteta,  i tu dolazi "servis članstva" (eng. Membership Service Provider, skr. MSP). Na primjer, peer koristi svoj privatni ključ za digitalno potpisivanje, ili odobravanje,  transakcije. MSP na ordering usluzi sadrži javni ključ peer-a koji se tada koristi za provjeru da je potpis transakcije validan. Privatni ključ se koristi za proizvodnju potpisa na transakciji koju samo odgovarajući javni ključ, koji je dio MSP-a,  može otključati.  Dakle, MSP je mehanizam koji omogućuje da se identitetu može vjerovati i prepoznati od strane ostatka mreže bez otkrivanja privatnog ključa člana.
+Autoriteti za izdavanje certifikata izdaju identitete generiranjem javnog i privatnog ključa koji oblikuje par ključeva koji se može koristiti za dokazivanje identiteta. Budući da se privatni ključ nikada ne može javno dijeliti, potreban je mehanizam kako bi se omogućilo dokazivanje identiteta,  i tu dolazi "servis članstva" (eng. Membership Service Provider, skr. MSP). Na primjer, peer koristi svoj privatni ključ za digitalno potpisivanje, ili odobravanje,  transakcije. MSP na servisu poravnavanja transakcija sadrži javni ključ peer-a koji se tada koristi za provjeru da je potpis transakcije validan. Privatni ključ se koristi za proizvodnju potpisa u transakciji koju samo odgovarajući javni ključ, koji je dio MSP-a,  može otključati.  Dakle, MSP je mehanizam koji omogućuje da se identitetu može vjerovati i prepoznati od strane ostatka mreže bez otkrivanja privatnog ključa člana. \cite{Fabric}
 
 Implementacija MSP-a je skup direktorija koje se dodaju konfiguraciji mreže i koristi se za definiranje organizacije iznutra (organizacije odlučuju tko su njeni administratori) i izvana (dopuštajući drugim organizacijama da potvrde da subjekti imaju ovlasti za činjenje onoga što pokušavaju učiniti). Autoriteti za izdavanje certifikata generiraju potvrde koje predstavljaju identitete,  MSP sadrži popis odobrenih identiteta.
 
 MSP se pojavljuje u dvije domene:
 \begin{itemize}
 \item Lokalna - definirani su za klijente i čvorove (peer i orderer). Svaki čvor mora imati lokalni MSP.
-\item Kanalska - definiraju administrativna prava i prava sudjelovanja na razini kanala.  Identificira tko ima vlasti na razini kanala.  Svaka organizacija koja sudjeluje u kanalu mora imati MSP definiran za to.  MSP sustava uključuje MSP svih organizacija koje sudjeluju u ordering servise.  Lokalni MSP-ovi su definirani samo na datotečnom sustavu čvora ili korisnika.  Kanalni MSP je također instanciran na datotečnom sustavu svakog čvora u kanalu i čuva se sinkroniziranim konsenzusnim protokolom.
+\item Kanalska - definiraju administrativna prava i prava sudjelovanja na razini kanala.  Identificira tko ima vlasti na razini kanala.  Svaka organizacija koja sudjeluje u kanalu mora imati MSP definiran za to.  MSP sustava uključuje MSP svih organizacija koje sudjeluju u sustavu.  Lokalni MSP-ovi su definirani samo na datotečnom sustavu čvora ili korisnika.  Kanalni MSP je također instanciran na datotečnom sustavu svakog čvora u kanalu i čuva se sinkroniziranim konsenzusnim protokolom.
 \end{itemize}
 
-Organizacija se također može podijeliti u više organizacijskih jedinica (eng. Organizational Unit, skr. OU), od kojih svaka ima određeni skup odgovornosti, koje se nazivaju i afilijacije.   Navođenje OU-a nije obavezno. Ako se OU ne koriste, svi identiteti koji su dio MSP-a - kako su identificirani u korijenskim i posredničkim CA direktorijima - smatrat će se članovima organizacije.
+Organizacija se također može podijeliti u više organizacijskih jedinica (eng. \textit{organizational unit}, skr. OU), od kojih svaka ima određeni skup odgovornosti, koje se nazivaju i afilijacije.   Navođenje OU-a nije obavezno. Ako se OU ne koriste, svi identiteti koji su dio MSP-a - kako su identificirani u korijenskim i posredničkim CA direktorijima - smatrat će se ravnopravnim članovima organizacije.
 
-Uz to, postoji posebna vrsta OU, koja se ponekad naziva OU čvora, a koja se može koristiti za dodjeljivanje uloge identitetu. Ove uloge OU čvora definirane su u datoteci "/msp/config.yaml" i sadrže popis organizacijskih jedinica čiji se članovi smatraju dijelom organizacije koju predstavlja ovaj MSP. To je osobito korisno kada želite ograničiti članove organizacije na one koji imaju identitet (potpisan od jednog od MSP-a određenih CA-a) s određenom ulogom OU čvora. 
+Uz to, postoji posebna vrsta OU, koja se ponekad naziva OU čvora, a koja se može koristiti za dodjeljivanje uloge identitetu. Ove uloge OU čvora definirane su u datoteci \textit{config.yaml} pod \textit{msp} direktorijem i sadrže popis organizacijskih jedinica čiji se članovi smatraju dijelom organizacije koju predstavlja ovaj MSP. To je osobito korisno kada želimo ograničiti članove organizacije na one koji imaju identitet (potpisan od jednog od MSP-a određenih CA-a) s određenom ulogom OU čvora. 
 
-Da bi se koristile uloge OU čvora, mora biti omogućena značajka "klasifikacija identiteta" za mrežu. Kada se koristi struktura MSP-a koja se temelji na mapi, to se postiže omogućavanjem "Node OU" u datoteci config.yaml koja se nalazi u korijenu mape MSP:
+Da bi se koristile uloge OU čvora, mora biti omogućena značajka "klasifikacija identiteta" za mrežu. Kada se koristi struktura MSP-a koja se temelji na mapi, to se postiže omogućavanjem "Node OU" u datoteci \textit{config.yaml} koja se nalazi u korijenu direktorija \textit{msp}:
 
 \begin{verbatim}
 NodeOUs:
@@ -670,42 +646,37 @@ Struktura MSP direktorija prikazana na slici \ref{fig:msp}:
 \item \textit{cacerts} - ovaj direktorij sadrži popis samopotpisanih X.509 certifikata korijenskih CA-a kojima vjeruje organizacija koju predstavlja ovaj MSP;
 \item \textit{signcerts} - za peer ili orderer (ili u lokalnom MSP-u klijenta) ovaj direktorij sadrži certifikat čvora koji je izdao CA;
 \item \textit{keystore} - ovaj direktorij sadrži privatni ključ;
-\item \textit{tlscacerts} - ovaj direktorij sadrži popis samopotpisanih X.509 certifikata korijenskia CA-a kojima ova organizacija vjeruje za sigurnu komunikaciju između čvorova pomoću TLS-a.
+\item \textit{tlscacerts} - ovaj direktorij sadrži popis samopotpisanih X.509 certifikata korijenskih CA-a kojima ova organizacija vjeruje za sigurnu komunikaciju između čvorova pomoću TLS-a.
 \item itd.
 \end{itemize}
 
 \section{Peer}
 Blockchain mreža se sastoji uglavnom od skupa peer-ova. Peer-ovi su temeljni element mreže jer su poslužitelji glavnih knjiga i pametnih ugovora. Podsjetimo da glavna knjiga nepromjenjivo bilježi sve transakcije generirane pametnim ugovorima (koji su u Fabric-u sadržani u chaincode-u). Pametni ugovori i glavne knjige koriste se za enkapsuliranje zajedničkih procesa i zajedničkih informacija u mreži.
 Peer poslužuje instance glavnih knjiga i instance chaincode-ova.
-Budući da je peer poslužitelj za glavne knjige i chaincode-ove,  aplikacije i administratori moraju komunicirati s peer-om ako žele pristupiti tim resursima. Zato se peer-ovi smatraju temljnim građevnim blokovima Fabric mreže. 
+Budući da je peer poslužitelj za glavne knjige i chaincode-ove,  aplikacije i administratori moraju komunicirati s peer-om ako žele pristupiti tim resursima. Zato se peer-ovi smatraju temeljnim građevnim blokovima Fabric mreže \cite{Fabric}. 
 
-U ovoj implementaciji koristim 2 peer-a. Jedan FER-ov peer0.fer.unizg.hr i FSB-ov peer0.fsb.unizg.hr. Ova nula poslije peer znači broj peer-a, a u ovom primjeru imamo samo jednog peer-a po organizaciji.  
+U ovoj implementaciji koriste se 2 peer-a. Jedan FER-ov \textit{peer0.fer.unizg.hr }i FSB-ov \textit{peer0.fsb.unizg.hr}. Ova nula poslije \textit{peer} znači broj peer-a, a u ovom primjeru imamo samo jednog peer-a po organizaciji.  
 
-Transakcija ažuriranja prilično se razlikuje od transakcije upita jer pojedinačni peer ne može samostalno ažurirati glavnu knjigu - za ažuriranje je potreban pristanak ostalih peer-ova u mreži. Peer zahtijeva od ostalih peer-ova u mreži da odobre ažuriranje knjige prije nego što se može primijeniti na lokalnu glavnu knjigu peer-a. Taj se postupak naziva konsenzusom,  koji traje puno dulje od jednostavnog upita. Ali kada svi peer-ovi odobre transakciju,  peer-ovi će obavijestiti svoje povezane aplikacije da je glavna knjiga ažurirana.  Točnije, aplikacije koje žele ažurirati glavnu knjigu uključene su u 3-fazni postupak, koji osigurava da svi peer-ovi u blockchain mreži održavaju svoje glavne knjige međusobno dosljednima.
+Transakcija ažuriranja prilično se razlikuje od transakcije upita jer pojedinačni peer ne može samostalno ažurirati glavnu knjigu - za ažuriranje je potreban pristanak ostalih peer-ova u mreži. Peer zahtijeva od ostalih peer-ova u mreži da odobre ažuriranje knjige prije nego što se može primijeniti na lokalnu glavnu knjigu peer-a. Taj se postupak naziva konsenzusom,  koji traje puno dulje od jednostavnog upita. Kada svi peer-ovi odobre transakciju,  peer-ovi će obavijestiti svoje povezane aplikacije da je glavna knjiga ažurirana.  Točnije, aplikacije koje žele ažurirati glavnu knjigu uključene su u 3-fazni postupak, koji osigurava da svi peer-ovi u blockchain mreži održavaju svoje glavne knjige međusobno dosljednima.
 
-\begin{itemize}
-\item U prvoj fazi aplikacije rade s podskupom odobravajućih peer-ova, od kojih svaki šalje odobrenje predloženog ažuriranja glavne knjige aplikaciji, ali ne primjenjuje predloženo ažuriranje na svoju kopiju glavne knjige.
-\item U drugoj fazi,  ova odobrenja prikupljaju se zajedno kao transakcije i pakiraju u blokove.
-\end{itemize}
-
-Prva faza - prijedlog.  Faza 1 tijeka transakcije uključuje interakciju između aplikacije i skupa peer-ova - ne uključuje orderer-a. Faza 1 odnosi se samo na aplikaciju koja traži da odobravajući peer-ovi organizacija pristanu na rezultate predloženog pozivanja chaincode-a. Da bi započeli fazu 1, aplikacije generiraju prijedlog transakcije koji šalju svakom od potrebnih skupova peer-ova na odobrenje. Zatim, svaki od ovih odobravajućih peer-ova samostalno izvršava chaincode koristeći prijedlog transakcije za generiranje odgovora na prijedlog transakcije. Ne primjenjuje ovo ažuriranje na glavnu knjigu, već ga jednostavno potpisuje i vraća aplikaciji. Nakon što aplikacija dobije dovoljan broj potpisanih odgovora na prijedlog, prva faza tijeka transakcije je završena.
+Faza 1 - prijedlog.  Faza 1 tijeka transakcije uključuje interakciju između aplikacije i skupa peer-ova - ne uključuje orderer-a. Faza 1 odnosi se samo na aplikaciju koja traži da odobravajući peer-ovi organizacija pristanu na rezultate predloženog pozivanja chaincode-a. Da bi započeli fazu 1, aplikacije generiraju prijedlog transakcije koji šalju svakom od potrebnih skupova peer-ova na odobrenje. Zatim, svaki od ovih odobravajućih peer-ova samostalno izvršava chaincode koristeći prijedlog transakcije za generiranje odgovora na prijedlog transakcije. Ne primjenjuje ovo ažuriranje na glavnu knjigu, već ga jednostavno potpisuje i vraća aplikaciji. Nakon što aplikacija dobije dovoljan broj potpisanih odgovora na prijedlog, prva faza tijeka transakcije je završena.
 
 Faza 2 - redanje i pakiranje transakcija u blokove. Orderer je ključan za ovaj dio procesa, prima transakcije koje sadrže odobrene odgovore na prijedloge transakcija od aplikacija i reda transakcije u blokove.
 
-Faza 3 - validacija i postavljanje.  Posljednja faza tijeka transakcije uključuje distribuciju i provjeru valjanosti blokova od orderer-a do peer-ova, gdje mogu ažurirati glavnu knjigu. Točnije, kod svakog peer-a, svaka transakcija unutar bloka provjerava se kako bi se osiguralo da su je sve relevantne organizacije dosljedno odobrile prije nego što se ažurira glavna knjiga.  Neuspjele transakcije zadržavaju se za reviziju, ali ne mijenjaju glavne knjige.  Faza 3 započinje orderer-om koji distribuira blokove svim peer-ovima povezanim s njim.  Svim peer-ovima povezanim s orderer-om bit će poslana kopija novog bloka. Svaki će peer obrađivati ovaj blok neovisno, ali na potpuno isti način kao i svaki drugi peer na kanalu. Na taj ćemo način vidjeti da se glavna knjiga može održavati dosljednom. Također je vrijedno napomenuti da ne mora svaki peer biti povezan s naručiteljem - vršnjaci mogu kaskadno blokirati druge peer-ove koristeći \textit{gossip} protokol \cite{DBLP:journals/corr/abs-2004-07060},  koji ih također mogu samostalno obraditi.
+Faza 3 - validacija i postavljanje.  Posljednja faza tijeka transakcije uključuje distribuciju i provjeru valjanosti blokova od orderer-a do peer-ova, gdje mogu ažurirati glavnu knjigu. Točnije, kod svakog peer-a, svaka transakcija unutar bloka provjerava se kako bi se osiguralo da su je sve relevantne organizacije dosljedno odobrile prije nego što se ažurira glavna knjiga.  Neuspjele transakcije zadržavaju se za reviziju, ali ne mijenjaju glavne knjige.  Faza 3 započinje orderer-om koji distribuira blokove svim peer-ovima povezanim s njim.  Svim peer-ovima povezanim s orderer-om bit će poslana kopija novog bloka. Svaki će peer obrađivati ovaj blok neovisno, ali na potpuno isti način kao i svaki drugi peer na kanalu. Na taj ćemo način vidjeti da se glavna knjiga može održavati dosljednom. Također je vrijedno napomenuti da ne mora svaki peer biti povezan s orderer-om - peer-ovi mogu kaskadno slati blokove drugim peer-ovima koristeći \textit{gossip} protokol \cite{DBLP:journals/corr/abs-2004-07060},  koji ih također mogu samostalno obraditi.
 
 \section{Glavna knjiga}
-U Fabricu, glavna knjiga se sastoji od dva različita, iako povezana, dijela - globalno stanje i blockchain. Svaki od njih predstavlja skup činjenica o skupu poslovnih objekata.
+U Fabricu, glavna knjiga se sastoji od dva različita, iako povezana, dijela - globalno stanje i blockchain. Svaki od njih predstavlja skup činjenica o skupu poslovnih objekata. \cite{Fabric}
 
-Prvo, postoji globalno stanje - baza podataka koja ima trenutne vrijednosti skupa stanja glavne knjige. Globalno stanje olakšava programu za izravno pristup trenutnoj vrijednosti stanja,  bez da ga mora izračunavati prelaskom kroz dnevnik stanja.  Stanja glavne knjigu su, prema zadanim postavkama izražene kao parovi ključ-vrijednost. Globalno stanje se može često mijenjati, jer se stanja mogu stvoriti, ažurirati i izbrisati.
+Prvo, postoji globalno stanje - baza podataka koja ima trenutne vrijednosti skupa stanja glavne knjige. Globalno stanje olakšava programu za izravno pristup trenutnoj vrijednosti stanja,  bez da ga mora izračunavati prelaskom kroz dnevnik stanja.  Stanja glavne knjige su, prema zadanim postavkama izražene kao parovi ključ-vrijednost. Globalno stanje se može često mijenjati, jer se stanja mogu stvoriti, ažurirati i izbrisati.
 
-Drugo, tu je blockchain - dnevnik transakcija koji bilježi sve promjene koje su rezultirale trenutnim globalnim stanjem. Transakcije se prikupljaju unutar blokova koji se dodaju na blockchain - omogućujući pregled povijest promjena koje su rezultirale trenutnim globalnim stanjem. Blockchain struktura podataka je vrlo različita od globalnog stanja, jerjednom napisana, ne može se mijenjati.
+Drugo, tu je blockchain - zapisnik transakcija koji bilježi sve promjene koje su rezultirale trenutnim globalnim stanjem. Transakcije se prikupljaju unutar blokova koji se dodaju na blockchain - omogućujući pregled povijest promjena koje su rezultirale trenutnim globalnim stanjem. Blockchain struktura podataka je vrlo različita od globalnog stanja, jer jednom napisana, ne može se mijenjati.
 
 Globalno stanje fizički je implementirano kao baza podataka, kako bi se omogućilo jednostavno i učinkovito pohranjivanje i pronalaženje stanja glavne knjige. Stanja glavne knjige mogu imati jednostavne ili složene vrijednosti, a kako bi se to prilagodilo, implementacija baze podataka može se razlikovati,  što omogućuje učinkovitu implementaciju tih vrijednosti. Opcije za bazu podataka globalnog stanja trenutno uključuju LevelDB i CouchDB.
 
-U mom primjeru koristio sam CouchDB.  CouchDB je posebno prikladan izbor kada su stanja glavne knjige strukturirana kao JSON dokumenti jer CouchDB podržava bogate upite i ažuriranje bogatijih tipova podataka koji se često nalaze u poslovnim transakcijama.  Implementacijski,  CouchDB radi u odvojenom procesu operativnog sustava, ali postoji odnos 1:1 između peer-a i instance CouchDB baze podataka. Sve je to nevidljivo za pametni ugovor.
+U mom primjeru koristio sam CouchDB (\url{https://couchdb.apache.org/}).  CouchDB je posebno prikladan izbor kada su stanja glavne knjige strukturirana kao JSON (\url{https://www.json.org/}) dokumenti jer CouchDB podržava bogate upite i ažuriranje bogatijih tipova podataka koji se često nalaze u poslovnim transakcijama.  Implementacijski,  CouchDB radi u odvojenom procesu operativnog sustava, ali postoji odnos 1:1 između peer-a i instance CouchDB baze podataka. Sve je to nevidljivo za pametni ugovor.
 
-Da ponovimo, Blockchain u Fabricu strukturiran je kao sekvencijalni dnevnik međusobno povezanih blokova, gdje svaki blok sadrži slijed transakcija, a svaka transakcija predstavlja upit ili ažuriranje globalnog stanja.  Blockchain je implementiran kao datoteka. 
+Da ponovimo, Blockchain u Fabricu strukturiran je kao sekvencijalni zapisnik međusobno povezanih blokova, gdje svaki blok sadrži slijed transakcija, a svaka transakcija predstavlja upit ili ažuriranje globalnog stanja.  Blockchain je implementiran kao datoteka. 
 
 \begin{figure}[htb]
 \centering
@@ -716,15 +687,15 @@ Da ponovimo, Blockchain u Fabricu strukturiran je kao sekvencijalni dnevnik međ
 
 Struktura bloka prikazana na slici \ref{fig:blok}:
 \begin{itemize}
-\item Zaglavlje - sastoji se od tri polja:
+\item \textbf{zaglavlje} - sastoji se od tri polja:
 	\begin{itemize}
-		\item Redni broj bloka - počinje od 0 (genesis blok) i povećava se za 1 sa svakim dodanim blokom u lanac.
-		\item Hash trenutnog bloka - hash svih transakcija koje trenutni blok sadrži.
-		\item Hash prethodnog bloka
+		\item redni broj bloka - počinje od 0 (genesis blok) i povećava se za 1 sa svakim dodanim blokom u lanac;
+		\item hash trenutnog bloka - hash svih transakcija koje trenutni blok sadrži;
+		\item hash prethodnog bloka.
 	\end{itemize}
 
-\item Podaci o transakcijama - ovaj dio sadrži popis transakcija poredanih redom. Zapisuje se kada je blok kreiran od orderer servisa.
-\item Metapodaci o bloku - ovaj dio sadrži certifikat i potpis tvorca bloka koji se koristi za provjeru bloka na mrežnim čvorovima.  Postavljač bloka dodaje pokazatelj vrijedi/ne vrijedi za svaku transakciju u "bitmap"-u koja se također nalazi u metapodacima bloka,  kao i hash kumulativnih ažuriranja stanja do i uključujući taj blok,  kako bi se otkrilo račvanje (eng. fork) stanja.  Ovaj dio nije ulaz u funkciju za izračunavanje hash-a bloka.
+\item \textbf{podaci o transakcijama} - ovaj dio sadrži popis transakcija poredanih redom. Zapisuje se kada je blok kreiran od orderer servisa;
+\item \textbf{metapodaci o bloku} - ovaj dio sadrži certifikat i potpis tvorca bloka koji se koristi za provjeru bloka na mrežnim čvorovima.  Postavljač bloka dodaje pokazatelj "vrijedi" ili "ne vrijedi" za svaku transakciju u bitmapi koja se također nalazi u metapodacima bloka,  kao i hash kumulativnih ažuriranja stanja do i uključujući taj blok,  kako bi se otkrilo račvanje (eng. \textit{fork}) stanja.  Ovaj dio nije ulaz u funkciju za izračunavanje hash-a bloka.
 \end{itemize}
 
 \begin{figure}[htb]
@@ -740,44 +711,48 @@ Struktura transakcije prikazana na slici \ref{fig:transakcija}:
 \item \textbf{potpis} - kriptografski potpis,  stvoren od strane klijentske aplikacije. Ovo se polje koristi za provjeru da detalji transakcije nisu kompromitirani, jer za njegovo generiranje potreban je privatni ključ aplikacije;
 \item \textbf{prijedlog} - kodira ulazne parametre koje aplikacija šalje pametnom ugovoru koji kreira predloženo ažuriranje glavne knjige. Kada se izvrši pametni ugovor, ovaj prijedlog pruža skup ulaznih parametara koji, u kombinaciji s trenutnim globalnim stanjem, određuju novo globalno stanje;
 \item \textbf{odgovor} - bilježi globalno stanje prije i poslije, kao skup za čitanje i upisivanje (eng. Read-Write set, skr. RW-set). To je rezultat pametnog ugovora i ako se transakcija uspješno potvrdi, primijenit će se na glavnu knjigu i ažurirati globalno stanje;
-\item \textbf{odobrenja}- ovo je popis potpisanih odgovora na transakcije svake potrebne organizacije dovoljan da zadovolji politiku odobrenja.
+\item \textbf{odobrenja} - ovo je popis potpisanih odgovora na transakcije svake potrebne organizacije dovoljan da zadovolji politiku odobrenja.
 \end{itemize}
 \section{Poravnavanje transakcija}
-Mnogi distribuirani blockchaini, poput Ethereuma i Bitcoina, nemaju ograničen pristup, što znači da bilo koji čvor može sudjelovati u procesu konsenzusa, pri čemu se transakcije poredavaju i grupiraju u blokove. Zbog ove činjenice, ti se sustavi oslanjaju na algoritme vjerojatnog konsenzusa koji na kraju jamče dosljednost glavne knjige do visokog stupnja vjerojatnosti, ali koji su i dalje ranjivi na divergentne glavne knjige (poznati i kao "fork" glavne knjige), gdje različiti sudionici mreže imaju drugačiji pogled na prihvaćeni redoslijed transakcija.
+Mnogi distribuirani blockchaini, poput Ethereuma i Bitcoina, nemaju ograničen pristup, što znači da bilo koji čvor može sudjelovati u procesu konsenzusa, pri čemu se transakcije poravnavaju i grupiraju u blokove. Zbog ove činjenice, ti se sustavi oslanjaju na algoritme vjerojatnog konsenzusa koji na kraju jamče dosljednost glavne knjige do visokog stupnja vjerojatnosti, ali koji su i dalje ranjivi na divergentne glavne knjige (poznati i kao \textit{fork} glavne knjige), gdje različiti sudionici mreže imaju drugačiji pogled na prihvaćeni redoslijed transakcija. \cite{Fabric}
 
-U Hyperledger Fabric-u ima čvor pod nazivom \textit{orderer} koji radi poredavanje transakcija, koji zajedno s drugim čvorovima orderer-a čini uslugu poredavanja.  Budući da se Fabric dizajn oslanja na determinističke konsenzusne algoritme, bilo koji blok potvrđen od strane peer-a zasigurno će biti konačan i točan.  Glavne knjige ne mogu divergirati na način na koji mogu u mnogim drugim distribuiranim blockchain mrežama bez ograničenog pristupa.
+U Hyperledger Fabric-u servis pod nazivom \textit{orderer service} kojega čine orderer čvorovi radi poravnavanje transakcija.  Budući da se Fabric dizajn oslanja na determinističke konsenzusne algoritme, bilo koji blok potvrđen od strane peer-a zasigurno će biti konačan i točan.  Glavne knjige ne mogu divergirati na način na koji mogu u mnogim drugim distribuiranim blockchain mrežama bez ograničenog pristupa.
 
-Osim promicanja konačnosti,  odvajanje odobrenja izvođenja chaincodea (što se događa na peer-ovima) od poredavanja transakcija daje prednosti Fabric-u u performansama i skalabilnosti i uklanjanje uskih grla koje se mogu pojaviti kada izvršenje i poredavanje provode isti čvorovi.
+Trofazni tijek transakcija u Fabric-u dijelom je obrađen u poglavlju o peer-ovima.  Još je samo ostalo razjasniti drugu fazu tijeka transakcija u kojoj orderer ima glavnu ulogu.  Nakon završetka prve faze transakcije, klijentska aplikacija primila je odobrenje na prijedlog transakcije od niza ravnopravnih peer-ova. Sada je vrijeme za drugu fazu transakcije. U ovoj fazi klijentske aplikacije šalju transakcije koje sadrže odobrenja na prijedloge transakcija čvoru usluge poravnavanja. Usluga poravnavanja stvara blokove transakcija koji će se u konačnici distribuirati svim peer-ovima na kanalu za konačnu provjeru i izvršiti u trećoj fazi. Čvorovi usluge poravnavanja istodobno primaju transakcije od mnogo različitih klijenata aplikacija. Ovi čvorovi usluge poravnavanja rade zajedno kako bi zajednički formirali uslugu poravnavanja. Njihov je posao organizirati serije primljenih transakcija u točno definiran redoslijed i pakirati ih u blokove. Ti će blokovi postati blokovi blockchaina!
 
-U svojoj implementaciji odlučio sam orderer čvor staviti u zasebnu orderer organizaciju .  Koristim samo jedan orderer čvor orderer.unzig.hr radi jednostavnije demonstracije Fabric radnog okvira. Za bolje djelovanje Fabric mreže poželjno je imati 3 ili 5 ordering čvora. 
+Osim promicanja konačnosti,  odvajanje odobrenja i izvođenja chaincodea (što se događa na peer-ovima) od poravnavanja transakcija daje prednosti Fabric-u u performansama i skalabilnosti i uklanjanje uskih grla koje se mogu pojaviti kada izvršenje i poravnanje provode isti čvorovi.
+
+U svojoj implementaciji odlučio sam orderer čvor staviti u zasebnu orderer organizaciju.  Koristim samo jedan orderer čvor orderer.unzig.hr radi jednostavnije demonstracije Fabric radnog okvira. Za bolje djelovanje Fabric mreže poželjno je imati 3 ili 5 ordering čvora. 
 
 
 \section{Chaincode}
-Chaincode je program napisan u programskom jeziku Go,  Node.js ili Java koji implementira propisano sučelje.  Chaincode radi u zaštićenom Dockerovom kontejneru izoliranom od procesa odobravajućeg peer-a.  Chaincode inicijalizira stanje glavne knjige i upravlja njime putem transakcija koje prima od aplikacija.
+Chaincode je program napisan u programskom jeziku Go,  Node.js ili Java koji implementira propisano sučelje.  Chaincode radi u zaštićenom Dockerovom kontejneru izoliranom od procesa odobravajućeg peer-a.  Chaincode inicijalizira stanje glavne knjige i upravlja njime putem transakcija koje prima od aplikacija. \cite{Fabric}
+
 
 Chaincode obično obrađuje poslovnu logiku s kojom su se složili članovi mreže, pa se može smatrati "pametnim ugovorom". Ažuriranja glavne knjige stvorena chaincode-om opsega su isključivo na taj chaincode i ne može im se izravno pristupiti drugim chaincode-om. Međutim, unutar iste mreže, s obzirom na odgovarajuće dopuštenje,  chaincode može pozvati drugi chaincode za pristup svom stanju.
 
-Životni ciklus chaincode-a u Fabric mreži zahtjeva da se ogranizacije slože u parametrima koji definiraju chaincode, kao što su ime, verzija i politiku odobravanja.  Članovi kanala dolaze do sporazuma kroz sljedeća četiri koraka, ali ne moraju sve organizacije napraviti svaki korak:
+Životni ciklus chaincode-a u Fabric mreži zahtjeva da se organizacije slože u parametrima koji definiraju chaincode, kao što su ime, verzija i politika odobravanja.  Članovi kanala dolaze do sporazuma kroz sljedeća četiri koraka, ali ne moraju sve organizacije napraviti svaki korak:
 
 \begin{enumerate}
 \item Pakiranje chaincode-a - ovaj korak može napraviti jedna,  više ili sve organizacije u kanalu.  Naredba koja se koristi za ovaj korak je: 
-\textit{peer lifecycle chaincode package}
+\textit{peer lifecycle chaincode package};
 
 \item Instaliranje chaincode-a na peer - svaka organizacija koja će koristiti chaincode kako bi odobrila transakciju ili zatražila podatke s glavne knjige mora izvršiti ovaj korak.  Naredba:
-\textit{peer lifecycle chaincode install}
+\textit{peer lifecycle chaincode install};
 
 \item Odobrenje definicije chaincode-a za organizaciju - svaka organizacija koja će koristiti chaincode mora izvršiti ovaj korak.  Definiciju chaincode-a mora odobriti dovoljan broj organizacija kako bi se zadovoljile politike životnog vijeka kanala (većina,  prema zadanim postavkama) prije nego što se chaincode može pokrenuti na kanalu.  Naredba:
-\textit{peer lifecycle chaincode approveformyorg}
+\textit{peer lifecycle chaincode approveformyorg};
 
 \item  Postavljanje definicije chaincode-a na kanal - transakciju postavljanja mora predati jedna organizacija nakon što je potreban broj organizacija na kanalu odobrilo chaincode. Podnositelj zahtjeva prvo prikuplja odobrenja od dovoljnog broja organizacija,  a zatim predaje transakciju kako bi postavio definiciju chaincode-a na kanal. Naredba:
-\textit{peer lifecycle chaincode commit}
+\textit{peer lifecycle chaincode commit};
 \end{enumerate}
 
-U ovoj implementaciji koristio sam dva chaincode-a. Chaincode za ERC-20 token koji predstavlja bodove za menzu i chaincode za ERC-721 token koji predstavlja rektorovu nagradu. Pisani su u JavaScript programskom jeziku.
+U ovoj implementaciji korištena su dva chaincode-a. Chaincode za ERC-20 token koji predstavlja bodove za menzu i chaincode za ERC-721 token koji predstavlja rektorovu nagradu. Pisani su u JavaScript programskom jeziku.
 
 \section{Kanal}
 
-Kanal je primarni komunikacijski mehanizam kojim članovi konzorcija mogu međusobno komunicirati. U mreži mogu biti više kanala. Kanali su korisni jer pružaju mehanizam za privatne komunikacije i privatne podatke između članova konzorcija. Kanali pružaju privatnost od drugih kanala, ali i od mreže. Fabric je moćan u tom pogledu, jer organizacijama omogućuje dijeljenje infrastrukture i čuvaju je privatnom u isto vrijeme. Ovdje nema kontradikcije - različite konzorcije unutar mreže imat će potrebu za različitim informacijama i procesima da se na odgovarajući način dijele, a kanali pružaju učinkovit mehanizam za to. Kanali pružaju učinkovito dijeljenje infrastrukture uz zadržavanje privatnosti podataka i komunikacije.
+Kanal je primarni komunikacijski mehanizam kojim članovi konzorcija mogu međusobno komunicirati. U mreži mogu biti više kanala. Kanali su korisni jer pružaju mehanizam za privatne komunikacije i privatne podatke između članova konzorcija. Kanali pružaju privatnost od drugih kanala, ali i od mreže. Fabric je moćan u tom pogledu, jer organizacijama omogućuje dijeljenje infrastrukture i čuvaju je privatnom u isto vrijeme. Ovdje nema kontradikcije - različite konzorcije unutar mreže imat će potrebu za različitim informacijama i procesima da se na odgovarajući način dijele, a kanali pružaju učinkovit mehanizam za to. Kanali pružaju učinkovito dijeljenje infrastrukture uz zadržavanje privatnosti podataka i komunikacije. \cite{Fabric}
+
 
 \section{Klijent}
 
@@ -790,7 +765,7 @@ Klijentska aplikacija se sastoji od dva dijela,"prednji" (eng. \textit{frontend}
 % ANGULAR
 \subsection{Poslužitelj}
 
-"Stražnji" dio aplikacije ili \textit{Backend}, programirao sam koristeći TypeScript programski jezik i Node.js \textit{runtime} okruženje.  Ovaj dio aplikacije izveden je uz REST načela \cite{BATTLE200861} programiranja web poslužitelja. Uz Node.js koristio sam i radni okvir Express.js koji olakšava i poboljšava programiranje aplikacija na poslužiteljskoj strani.%citat rest
+"Stražnji" dio aplikacije ili \textit{Backend}, programiran je koristeći TypeScript programski jezik i Node.js \textit{runtime} okruženje.  Ovaj dio aplikacije izveden je uz REST načela \cite{BATTLE200861} programiranja web poslužitelja. Uz Node.js koristio sam i radni okvir Express.js koji olakšava i poboljšava programiranje aplikacija na poslužiteljskoj strani.%citat rest
 
 U "običnim" web aplikacijama, ovaj dio bi komunicirao s "običnom" bazom podataka, na primjer MySQL, PostgreSQL i slično. U ovom primjeru komunicira s Fabric blockchain mrežom, koja zapravo služi kao baza podataka, raspodijeljena baza podataka do koje pristup imaju, i svi podaci su jednaki, sve organizacije koje su članovi te mreže ili kanala unutar te mreže. 
 
@@ -806,9 +781,20 @@ Tijek aplikacije na primjeru stvaranja bodova za menzu:
 
 \section{Analiza}
 
-Analiza rješenja je provedena koristeći radni okvir Hyperledger Caliper.  Caliper je radni okvir za testiranje performansi raznih blockchain rješenja s unaprijed definiranim slučajevima uporabe.  Caliper omogućava da se blockchain testira s nekolicinom raznih parametara kao što su: propusnost transakcija,  latencija i konzumacija resursa poput procesora, memorije i slično.
+Analiza rješenja je provedena koristeći radni okvir Hyperledger Caliper (\url{https://hyperledger.github.io/caliper/}).  Caliper je radni okvir za testiranje performansi raznih blockchain rješenja s unaprijed definiranim slučajevima uporabe.  Caliper omogućava da se blockchain testira s nekolicinom raznih parametara kao što su: propusnost transakcija,  latencija i konzumacija resursa poput procesora, memorije i slično.
 
-Primjer korišten za testiranje i analizu Fabric blockchain mreže je korištenje \textit{Transfer} funkcije ERC20 chaincode-a. Ovaj je test izveden tako da se prije početka inicijalizira neka količina (u ovom slučaju 100) tokena te se šalju transakcije koje pozivaju funkciju \textit{Transfer} koja prebacuje tokene s računa inicijatora transakcije na račun druge stranke - u ovom slučaju to se događa između FER-a i FSB-a.  Test je izveden uz \textit{linear-rate} kontrolu količine transakcija po sekundi - od 25 TPS do 125 TPS. Rezultati dobiveni su prikazani u tablici \ref{tbl:performance}.
+Caliper pruža skup sučelja za aplikacije za interakciju s blockchain sustavom. Programeri mogu samo jednom napisati test i pokrenuti ga na različitim blockchain-ima.  Općenito,  za napisati test za blockchain pomoću Caliper-a, potrebno je:
+\begin{itemize}
+
+\item napisati pametne ugovore za sisteme koji se testiraju;
+\item napisati slijed testiranja. Caliper pruža zadani softver za testiranje koji se lako može podesiti;
+\item napisati konfiguracijsku datoteku za definiranje mreže i argumenata testova.
+
+\end{itemize}
+
+Brzina kojom transakcije ulaze u blockchain sustav ključni je čimbenik u izvedbama testova.  Poželjno je transakcije slati po unaprijed specificiranoj stopi ili prateći specifični profil. Caliper omogućuje specificiranje stope transakcija korisniku, kako bi mogao provoditi testove po vlastitom mehanizmu. Korisnik može napraviti vlastit kontroler stope transakcija ili koristiti jednu od ponuđenih opcija kao što su fiksna stopa (eng. \textit{fixed-rate}),  fiksna stopa s povratnim informacijama (eng. \textit{fixed-feedback-rate}), linearna stopa (eng. \textit{linear-rate}),  itd.
+
+Primjer korišten za testiranje i analizu implementacije Fabric blockchain mreže je korištenje \textit{Transfer} funkcije ERC20 chaincode-a. Ovaj je test izveden tako da se prije početka inicijalizira neka količina (u ovom slučaju 100) tokena te se šalju transakcije koje pozivaju funkciju \textit{Transfer} koja prebacuje tokene s računa inicijatora transakcije na račun druge stranke - u ovom slučaju to se događa između FER-a i FSB-a.  Test je izveden uz \textit{linear-rate} kontrolu količine transakcija po sekundi - od 25 TPS do 125 TPS. Rezultati dobiveni su prikazani u tablici \ref{tbl:performance}.
 
 
 \begin{table}[htb]
@@ -824,6 +810,8 @@ Transfer & 1306 & 0     & 43.6          & 3.99                & 0.03            
 \end{tabular}%
 }
 \end{table}
+
+Za pregled korištenja resursa Caliper koristi \textit{monitor}-e.  Caliper monitori skupljaju statistiku utilizacije resursa tokom testiranja,  ta se statistika pretvara u izvještaj na kraju testiranja. Caliper također pruža izvještavanje o trenutnom statusu transakcija u realnom vremenu kroz promatrače (eng. \textit{observers}).  Operativna preciznost monitora postavlja se kroz zadanu konfiguracijsku datoteku Caliper-a, a korisnik je može urediti kako bi povećao ili smanjio numeričku preciznost koja se koristi u izlaznim izvješćima.
 
 \begin{table}[htb]
 \centering
@@ -849,27 +837,27 @@ ca\_fsb                  & 0.00        & 0.00          & 3.36                   
 \end{table}
 
 \chapter{Zaključak}
-Blockchain je tehnologija koja sasvim sigurno ostavlja veliki utjecaj u četvrtoj industrijskoj revoluciji. Predstavlja novi način na koji razmišljamo o djeljenju podataka. Donosi rješenja za probleme koje se dugo vremena nije moglo riješiti. To je naročito zainteresiralo poslovni svijet.  Stoga su nastale razne implementacije te tehnologije koje se natječu u rješavanju poslovnih problema, a u ovom radu smo spomenuli Quorum, Corda i Hyperledger Fabric. 
+Blockchain je tehnologija koja sasvim sigurno ostavlja veliki utjecaj u četvrtoj industrijskoj revoluciji. Predstavlja novi način na koji razmišljamo o dijeljenju podataka. Donosi rješenja za probleme koje se dugo vremena nije moglo riješiti. To je naročito zainteresiralo poslovni svijet.  Stoga su nastale razne implementacije te tehnologije koje se natječu u rješavanju poslovnih problema, a u ovom radu smo spomenuli Quorum, Corda i Hyperledger Fabric.  
 
-Hyperledger Fabric je radni okvir za implementaciju blockchaina s ograničenim pravom pristupa koji je korišten za implementacijski dio rada. Fabric je najmodularniji i pokazuje najbolje performanse od svih prethodno spomenutih izvedbi blockchaina s ograničenim pravom pristupa.
+Fabric je najmodularniji i pokazuje najbolje performanse od svih prethodno spomenutih izvedbi blockchaina s ograničenim pravom pristupa i stoga je izabran za korištenje u implementacijskom dijelu ovog rada. U kombinaciji, različite mogućnosti Fabric-a čine ga visoko skalabilnim sustavom za blockchaine s ograničenim pravom pristupa koji podržava fleksibilne pretpostavke povjerenja koji omogućavaju platformi da podrži širok spektar slučajeva korištenja u industriji, vladi, financijama, logistici, zdravstvu i tako dalje.
 
-Na jednostavnom primjeru bodova u menzi i rekotorovih nagrada između FER-a i FSB-a pokazalo se i analiziralo kako izgleda konkretan primjer korištenja Hyperledger Fabric platforme. Sama blockchain mreža se koristi kao raspodijeljena baza podataka koja se dijeli između FER-a i FSB-a, a klijentska aplikacija je inicijator transakcija kojima se dolazi do podataka na mreži ili ih se ažurira. 
 
 \bibliographystyle{fer}
 \bibliography{literatura}
 
 \begin{sazetak}
-Ulančani blokovi (eng. \textit{blockchain}) jedna je od tehnologija s velikim značajem u četvrtoj industrijskoj revoluciji. Jednostavno, blockchain je zapis podataka o transakcijama između stranaka u mreži.  Blockchain se dijeli na dvije vrste: sa i bez ograničenog pristupa. U ovom radu analiziramo one s ograničenim pravom pristupa.  Hyperledger Fabric, Quorum i Corda. Implementacija je odrađena korištenjem Fabric-a na primjeru dijeljenja bodova za menzu koji predstavljaju zamjenjive tokene i rektorovih nagrada koje predstavljaju nezamjenjive tokene. Tokeni su implementiranu u obliku pametnih ugovora i razmjenjuju se između između FER-a i FSB-a i provedena je analiza korištenjem Hyperledger Caliper radnog okvira. 
+Ulančani blokovi (eng. \textit{blockchain}) jedna je od tehnologija s velikim značajem u četvrtoj industrijskoj revoluciji. Jednostavno, blockchain je zapis podataka o transakcijama između stranaka u mreži.  Blockchain se dijeli na dvije vrste: sa i bez ograničenog pristupa. U ovom radu analiziramo one s ograničenim pravom pristupa, a to su Hyperledger Fabric, Quorum i Corda. Implementacija rješenja je odrađena korištenjem Fabric-a na primjeru dijeljenja bodova za menzu koji predstavljaju zamjenjive tokene i rektorovih nagrada koje predstavljaju nezamjenjive tokene. Tokeni su implementiranu u obliku pametnih ugovora i hipotetski se razmjenjuju između FER-a i FSB-a.  Analiza je provedena korištenjem Hyperledger Caliper radnog okvira na primjeru razmjene zamjenjivih tokena između stranaka. 
 
-\kljucnerijeci{ključne riječi, odvojene zarezima.}
+\kljucnerijeci{blockchain, pametni ugovor, token, analiza, transakcija, baza podataka, glavna knjiga}
 \end{sazetak}
 
 % TODO: Navedite naslov na engleskom jeziku.
 \engtitle{Permissioned blockchain and distributed ledger technologies with smart contracts}
 \begin{abstract}
 
+Blockchain is one of technologies that has a huge impact on the 4th industrial revolution. Simply put,  blockchain is a transaction data log between parties in a network.  Blockchain can be permissioned or permissionless. In this paper, we analyze permissioned blockchains like Hyperledger Fabric, Quorum and Corda. Implementation of solution is done using Hyperledger Fabric on example of sharing menza points that represent fungible tokens and rectors' awards that represent non-fungible tokens. Tokens are implemented in form of smart contract and they are hypothetically traded between FER and FSB. Analysis was done using Hyperledger Caliper framework on the example of transfering fungible tokens between the two parties.
 
-\keywords{Keywords.}
+\keywords{blockchain, smart contract, token, analysis, transaction, database, ledger.}
 \end{abstract}
 
 \end{document}

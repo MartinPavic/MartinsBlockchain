@@ -1,7 +1,7 @@
 
 'use strict';
 
-import { Wallets, Gateway } from 'fabric-network';
+import { Wallets, Gateway, Identity } from 'fabric-network';
 import * as path from 'path';
 import { getConnectionFile, getConfig } from './config';
 import { Response } from './response';
@@ -56,7 +56,7 @@ export async function GetCurrentOrgBalance() {
 }
 
 export async function GetUserBalance(user: string) {
-  return _submitTransaction('erc20', 'ClientAccountBalance', [], user)
+  return _submitTransaction('erc20', 'BalanceOf', [user])
 }
 
 export async function MintAward(id: string) {
