@@ -3,49 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: diplomski.aux
 The style file: fer.bst
 Database file #1: literatura.bib
-Warning--I didn't find a database entry for "DBLP:journals/corr/abs-2004-07060"
 Warning--empty journal in ethereum-smart-contract
 Warning--empty journal in intro
 Warning--empty journal in lagarde2019security
-You've used 18 entries,
+You've used 20 entries,
             2773 wiz_defined-function locations,
-            714 strings with 8773 characters,
-and the built_in function-call counts, 9350 in all, are:
-= -- 810
-> -- 688
-< -- 11
-+ -- 231
-- -- 213
-* -- 789
-:= -- 1499
-add.period$ -- 73
-call.type$ -- 18
-change.case$ -- 124
-chr.to.int$ -- 18
-cite$ -- 39
-duplicate$ -- 389
-empty$ -- 648
-format.name$ -- 242
-if$ -- 1930
+            724 strings with 9090 characters,
+and the built_in function-call counts, 10269 in all, are:
+= -- 893
+> -- 748
+< -- 12
++ -- 251
+- -- 231
+* -- 867
+:= -- 1645
+add.period$ -- 80
+call.type$ -- 20
+change.case$ -- 136
+chr.to.int$ -- 20
+cite$ -- 43
+duplicate$ -- 429
+empty$ -- 717
+format.name$ -- 264
+if$ -- 2119
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 18
-newline$ -- 116
-num.names$ -- 72
-pop$ -- 230
+missing$ -- 20
+newline$ -- 127
+num.names$ -- 80
+pop$ -- 249
 preamble$ -- 1
-purify$ -- 106
+purify$ -- 116
 quote$ -- 0
-skip$ -- 326
+skip$ -- 359
 stack$ -- 0
-substring$ -- 178
-swap$ -- 37
+substring$ -- 201
+swap$ -- 39
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 198
+type$ -- 220
 warning$ -- 3
-while$ -- 68
+while$ -- 76
 width$ -- 0
-write$ -- 270
-(There were 4 warnings)
+write$ -- 298
+(There were 3 warnings)

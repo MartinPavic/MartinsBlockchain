@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{20}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -45,6 +45,13 @@ Robert Battle i Edward Benson.
 \newblock URL
   \url{https://www.sciencedirect.com/science/article/pii/S1570826807000510}.
 \newblock Semantic Web and Web 2.0.
+
+\bibitem[Berendea et~al.(2020)Berendea, Mercier, Onica, i
+  Rivi{\`{e}}re]{gossip-protocol}
+Nicolae Berendea, Hugues Mercier, Emanuel Onica, i Etienne Rivi{\`{e}}re.
+\newblock Fair and efficient gossip in hyperledger fabric.
+\newblock \emph{CoRR}, abs/2004.07060, 2020.
+\newblock URL \url{https://arxiv.org/abs/2004.07060}.
 
 \bibitem[Blummer et~al.(2018.)Blummer, Bohan, Bowman, i et. al.]{intro}
 Tamas Blummer, Sean Bohan, Mic Bowman, i et. al.
@@ -109,6 +116,12 @@ Ahmed~Afif Monrat, Olov Schelén, i Karl Andersson.
 \newblock U \emph{2020 IEEE Asia-Pacific Conference on Computer Science and
   Data Engineering (CSDE)}, stranice 1--8, 2020.
 \newblock \doi{10.1109/CSDE50874.2020.9411380}.
+
+\bibitem[Netzer i Miller(1992)]{netzer1992race}
+Robert~HB Netzer i Barton~P Miller.
+\newblock What are race conditions? some issues and formalizations.
+\newblock \emph{ACM Letters on Programming Languages and Systems (LOPLAS)},
+  1\penalty0 (1):\penalty0 74--88, 1992.
 
 \bibitem[Ongaro i Ousterhout(2014)]{raft}
 Diego Ongaro i John Ousterhout.

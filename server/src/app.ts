@@ -13,6 +13,8 @@ app.use(morgan("combined"));
 app.use(express.json());
 app.use(cors());
 
+const config = getConfig(); 
+
 app.route("/points")
   .get(async (req, res) => {
     const response = await network.QueryAllPoints();
@@ -44,7 +46,6 @@ app.route("/organization").get(async (req, res) => {
   const organization: Response = await network.GetUserID();
   const balance: Response = await network.GetCurrentOrgBalance();
   if (!balance.success) {
-    const config = getConfig(); 
     res.json({
       id: config.organization + '.unizg.hr',
       name: config.organization,
@@ -95,8 +96,6 @@ app.route("/users/:id")
     const walletPath = path.join(process.cwd(), "wallet");
     const wallet = await Wallets.newFileSystemWallet(walletPath);
     const userIdentity = await wallet.get(req.params.id);
-    const userBalance = await network.GetUserBalance(req.params.id);
-    console.log(userBalance);
     userIdentity ? res.status(200).json(userIdentity) : res.status(404).send();
   })
   
@@ -118,7 +117,7 @@ app.route("/awards")
       const tokensPath = path.join(process.cwd(), "nfts");
       const tokensFiles = fs.readdirSync(tokensPath);
       const tokens = tokensFiles.map(file => JSON.parse(fs.readFileSync(tokensPath + `/${file}`, 'utf-8')));
-      res.status(200).json(tokens);
+      res.status(200).json(tokens.filter(token => token.owner.includes(config.organization)));
     } catch {
       res.status(404).send("Not found")
     }

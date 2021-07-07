@@ -3,10 +3,10 @@
     <mat-card class="card-header">
       <h2 style="margin-bottom: 0; display: flex;">
         Total supply:
-        <ng-container *ngIf="totalSupply; else loading">
+        <ng-container *ngIf="totalSupply; else loadingone">
           {{ totalSupply }}
         </ng-container>
-        <ng-template #loading>
+        <ng-template #loadingone>
           <mat-spinner style="margin-left: 20px" diameter="20"></mat-spinner>
         </ng-template>
       </h2>
@@ -35,7 +35,7 @@
   <div class="col">
     <h1 style="margin-top: 1rem;">Rector award</h1>
     <button mat-stroked-button (click)="createAward()">Create award</button>
-    <ng-container *ngIf="awards; else loadingfour">
+    <ng-container *ngIf="awards && organization; else loadingfour">
       <mat-card style="margin-top: 1rem;" *ngFor="let award of awards">
         <mat-card-header>
           <mat-card-title>
@@ -43,11 +43,13 @@
           </mat-card-title>
         </mat-card-header> 
         <mat-card-content>
-          Holder: {{ award.holder }}
+          <p>Owner: {{ organization.name }}</p>
+          <p *ngIf="award.holder !== 'Admin'">Holder: {{ award.holder }}</p>
         </mat-card-content>
-        <button *ngIf="!award.holder" mat-stroked-button [matMenuTriggerFor]="menu">
+        <button *ngIf="award.holder === 'Admin'" mat-stroked-button [matMenuTriggerFor]="menu">
           Assign award to student
         </button>
+        <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
         <mat-menu #menu="matMenu">
           <button mat-menu-item *ngFor="let user of users$ | async" (click)="assignAwardToStudent(award, user)">{{ user.id }}</button>
         </mat-menu>
