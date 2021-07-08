@@ -117,7 +117,7 @@ app.route("/awards")
       const tokensPath = path.join(process.cwd(), "nfts");
       const tokensFiles = fs.readdirSync(tokensPath);
       const tokens = tokensFiles.map(file => JSON.parse(fs.readFileSync(tokensPath + `/${file}`, 'utf-8')));
-      res.status(200).json(tokens.filter(token => token.owner.includes(config.organization)));
+      res.status(200).json(tokens);
     } catch {
       res.status(404).send("Not found")
     }

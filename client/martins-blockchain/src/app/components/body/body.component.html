@@ -43,7 +43,7 @@
           </mat-card-title>
         </mat-card-header> 
         <mat-card-content>
-          <p>Owner: {{ organization.name }}</p>
+          <p>Owner: {{ award.owner | owner }}</p>
           <p *ngIf="award.holder !== 'Admin'">Holder: {{ award.holder }}</p>
         </mat-card-content>
         <button *ngIf="award.holder === 'Admin'" mat-stroked-button [matMenuTriggerFor]="menu">
